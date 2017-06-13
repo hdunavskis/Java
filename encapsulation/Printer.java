@@ -19,21 +19,21 @@ public class Printer {
 			
 				this.pagesPrinted +=amount;
 				this.tonerLevel -= (amount * price);
-				System.out.println("Pages is printed successfully. Remaining toner is : " + getTonerLevel() + " total printed pages : " + getPagesPrinted());
+				System.out.println("Pages is printed successfully. Remaining toner is : " + pagesPrinted + " total printed pages : " + pagesPrinted);
 			}else if(type.equalsIgnoreCase("duplex") && (amount *(price*2) <= tonerLevel)){
-			
+			//Validation for double side printing
 				this.pagesPrinted += (amount / 2);
 				this.tonerLevel -= (price *2);
-				System.out.println("Duplex page is printed successfully. Remaining toner is : " + getTonerLevel() + " total printed pages : " + getPagesPrinted());
+				System.out.println("Duplex page is printed successfully. Remaining toner is : " + tonerLevel + " total printed pages : " + pagesPrinted);
 			}else{
-				System.out.println("Not enogh toner to print!!!" + getTonerLevel());
+				System.out.println("Not enogh toner to print!!!" + tonerLevel);
 			}
 		}
 	public void topUp(int topUp){
 		//Validation to not allow to top up more than 100 toner credits.
 		if((topUp + tonerLevel) <= 100){
 			this.tonerLevel += topUp;
-			System.out.println("Top up was successfull. Toner level is : " + getTonerLevel());
+			System.out.println("Top up was successfull. Toner level is : " + tonerLevel);
 		}else{
 			System.out.println("Please enter smaller number!");
 		}
