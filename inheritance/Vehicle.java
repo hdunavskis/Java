@@ -1,5 +1,5 @@
 package inheritance;
-//inheritance
+//Vehicle class should be abstract class
 public class Vehicle {
 	
 	private String typeOfVehicle;
