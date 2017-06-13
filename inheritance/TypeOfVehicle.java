@@ -1,5 +1,5 @@
 package inheritance;
-
+//inheritance
 public class TypeOfVehicle extends Car{
 
 	private String make;

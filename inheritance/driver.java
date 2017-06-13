@@ -1,5 +1,5 @@
 package inheritance;
-
+//main class inheritance
 public class driver {
 
 	public static void main(String[] args) {

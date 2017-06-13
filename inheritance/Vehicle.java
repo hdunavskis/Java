@@ -1,5 +1,5 @@
 package inheritance;
-
+//inheritance
 public class Vehicle {
 	
 	private String typeOfVehicle;
