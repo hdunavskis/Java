@@ -1,5 +1,5 @@
 package encapsulation;
-
+//main class encapsulation
 public class driver {
 
 	public static void main(String[] args) {

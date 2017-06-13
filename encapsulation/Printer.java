@@ -1,6 +1,7 @@
 package encapsulation;
 // Printer class that prints single page or double side page.
 // User must topUpp toner to be able to print. 
+//encapsulation
 public class Printer {
 	// variables are private and can not be accessible outside the class.
 	private int tonerLevel = 0;
