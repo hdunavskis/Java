@@ -1,5 +1,5 @@
 package Constructors;
-
+//constructors
 public class VipCustomer {
 	private String name;
 	private String creditLimit;
