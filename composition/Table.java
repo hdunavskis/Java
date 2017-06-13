@@ -1,5 +1,5 @@
 package composition;
-
+//composition
 public class Table {
 	
 	private int size;

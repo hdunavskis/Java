@@ -1,7 +1,7 @@
 package composition;
-
+//composition
 public class Bed {
-
+	
 	private String bedType;
 	private String manufacturer;
 	

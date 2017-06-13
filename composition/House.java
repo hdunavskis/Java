@@ -1,5 +1,5 @@
 package composition;
-
+//composition
 public class House {
 	
 	private Room singleRoom;

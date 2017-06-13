@@ -1,5 +1,5 @@
 package composition;
-
+//composition
 public class Room {
 	// allows to have objects as a members from another class.
 	private Chair chair;
