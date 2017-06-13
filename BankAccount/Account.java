@@ -1,5 +1,5 @@
 package BankAccount;
-
+//constructors
 /*
  Account class with fields account number, balance, customer name, email and phone number
 Getters and Setters for each field
