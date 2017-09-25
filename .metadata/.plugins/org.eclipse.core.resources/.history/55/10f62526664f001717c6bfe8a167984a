@@ -1,0 +1,13 @@
+package composition;
+
+public class House {
+	
+	private Room singleRoom;
+	
+	public House(Room singleRoom){
+		this.singleRoom = singleRoom;
+	}
+	
+	
+
+}

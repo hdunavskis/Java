@@ -1,0 +1,19 @@
+INDEX VERSION 1.130+/home/helmuts/Desktop/Java/.metadata/.plugins/org.eclipse.jdt.core
+1813029386.index
+3268294551.index
+697261513.index
+4003125285.index
+100003969.index
+2785870271.index
+381119583.index
+1078954026.index
+2049966151.index
+2678108084.index
+1912932847.index
+759234874.index
+1086582198.index
+1356479409.index
+739414215.index
+2868207552.index
+1081742048.index
+2674825421.index
