@@ -33,6 +33,7 @@ public class MobilePhone extends Contacts{
 		
 		return this.myContacts.indexOf(contact);
 	}
+	
 	private int findContact(String contactName) {
 		
 		for (int i = 0; i < this.myContacts.size(); i++) {
