@@ -1,5 +1,0 @@
-Build all java files(including test):
-javac -cp /usr/share/java/junit4.jar *.java
-
-Run unitests:
-java -cp /usr/share/java/junit4.jar:. org.junit.runner.JUnitCore <file name>
