@@ -1,5 +1,7 @@
 package JUnitProject;
 
+import static org.junit.Assert.assertEquals;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -397,6 +399,98 @@ public class DunavskisHelmutsTestTask1 {
 		reducedPeriod.add(new Period(22,23));
 		
 		new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+	}
+	@Test
+	public void testCase31() {
+		
+		BigDecimal normalRate = new BigDecimal(1);
+		BigDecimal reducedRate = new BigDecimal(1);
+		ArrayList<Period> normalPeriod = new ArrayList<Period>();
+		ArrayList<Period> reducedPeriod = new ArrayList<Period>();
+		
+		normalPeriod.add(new Period(3,4));
+		reducedPeriod.add(new Period(22,23));
+		
+		Rate r = new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		
+		assertEquals(1, r.Calculate(normalPeriod.get(0)));
+	}
+	@Test
+	public void testCase32() {
+		
+		BigDecimal normalRate = new BigDecimal(1);
+		BigDecimal reducedRate = new BigDecimal(1);
+		ArrayList<Period> normalPeriod = new ArrayList<Period>();
+		ArrayList<Period> reducedPeriod = new ArrayList<Period>();
+		
+		normalPeriod.add(new Period(0,0));
+		reducedPeriod.add(new Period(22,23));
+		
+		Rate r = new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		
+		assertEquals(0, r.Calculate(normalPeriod.get(0)));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testCase33() {
+		
+		BigDecimal normalRate = new BigDecimal(1);
+		BigDecimal reducedRate = new BigDecimal(1);
+		ArrayList<Period> normalPeriod = new ArrayList<Period>();
+		ArrayList<Period> reducedPeriod = new ArrayList<Period>();
+		
+		normalPeriod.add(new Period(-2,0));
+		reducedPeriod.add(new Period(4,5));
+		
+		new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		Rate r = new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		
+		r.Calculate(normalPeriod.get(0));
+	}
+	@Test
+	public void testCase34() {
+		
+		BigDecimal normalRate = new BigDecimal(1);
+		BigDecimal reducedRate = new BigDecimal(1);
+		ArrayList<Period> normalPeriod = new ArrayList<Period>();
+		ArrayList<Period> reducedPeriod = new ArrayList<Period>();
+		
+		normalPeriod.add(new Period(3,4));
+		reducedPeriod.add(new Period(22,23));
+		
+		Rate r = new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		
+		assertEquals(1, r.Calculate(reducedPeriod.get(0)));
+	}
+	@Test
+	public void testCase35() {
+		
+		BigDecimal normalRate = new BigDecimal(1);
+		BigDecimal reducedRate = new BigDecimal(1);
+		ArrayList<Period> normalPeriod = new ArrayList<Period>();
+		ArrayList<Period> reducedPeriod = new ArrayList<Period>();
+		
+		normalPeriod.add(new Period(3,4));
+		reducedPeriod.add(new Period(0,0));
+		
+		Rate r = new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		
+		assertEquals(1, r.Calculate(reducedPeriod.get(0)));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testCase36() {
+		
+		BigDecimal normalRate = new BigDecimal(1);
+		BigDecimal reducedRate = new BigDecimal(1);
+		ArrayList<Period> normalPeriod = new ArrayList<Period>();
+		ArrayList<Period> reducedPeriod = new ArrayList<Period>();
+		
+		normalPeriod.add(new Period(1,2));
+		reducedPeriod.add(new Period(-2,0));
+		
+		new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		Rate r = new Rate(carParkingKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+		
+		r.Calculate(reducedPeriod.get(0));
 	}
 
 }
