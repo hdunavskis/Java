@@ -1,5 +1,5 @@
 package JUnitProject;
 
-enum carParkingKind{
+enum CarParkKind{
 	STAFF, STUDENT, MANAGMENT, VISITOR
 }

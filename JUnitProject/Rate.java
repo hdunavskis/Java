@@ -5,13 +5,13 @@ import java.util.ArrayList;;
 
 public class Rate {
 	
-	private carParkingKind kind;
+	private CarParkKind kind;
 	private BigDecimal normalRate;
 	private BigDecimal reducedRate;
 	private ArrayList<Period> reducedPeriods;
 	private ArrayList<Period> normalPeriods;
 	
-	public Rate(carParkingKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods,
+	public Rate(CarParkKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods,
 			ArrayList<Period> normalPeriods) {
 		
 		this.kind = kind;
@@ -22,7 +22,7 @@ public class Rate {
 	}
 	
 	
-public BigDecimal Calculate(Period periodStay) {
+public BigDecimal calculate(Period periodStay) {
 	return BigDecimal.TEN;
 }
 
