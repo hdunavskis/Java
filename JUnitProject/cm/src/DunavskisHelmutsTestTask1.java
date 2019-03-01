@@ -1,5 +1,3 @@
-package JUnitProject;
-
 import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
@@ -49,7 +47,7 @@ public class DunavskisHelmutsTestTask1 {
 		
 		new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
 	}
-	@Test
+	@Test 
 	public void testCase4() {
 		
 		BigDecimal normalRate = new BigDecimal(0);
