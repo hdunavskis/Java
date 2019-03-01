@@ -405,7 +405,7 @@ public class DunavskisHelmutsTestTask3 {
 
         Rate r =  new Rate(CarParkKind.VISITOR, normalRate, reducedRate, reducedPeriod, normalPeriod);
 
-        assertEquals(BigDecimal.valueOf(9), r.calculate(new Period(1,7)));
+        assertEquals(BigDecimal.valueOf(8.5), r.calculate(new Period(1,7)));
 
     }
     @Test

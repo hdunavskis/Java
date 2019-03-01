@@ -12,6 +12,7 @@ public class Rate {
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
 
+
     public Rate(CarParkKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods
             , ArrayList<Period> normalPeriods) {
         if (reducedPeriods == null || normalPeriods == null) {
@@ -93,8 +94,19 @@ public class Rate {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
 
-        return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
-                this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
+        if(this.kind.equals(CarParkKind.STAFF)){
+            return new Staff().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+        }
+        else if(this.kind.equals(CarParkKind.STUDENT)){
+            return new Student().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+        }
+        else if(this.kind.equals(CarParkKind.MANAGEMENT)){
+            return new Managment().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+        }
+        else{
+            return new Visitor().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+        }
+
     }
 
 }
