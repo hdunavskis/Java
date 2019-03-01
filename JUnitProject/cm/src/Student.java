@@ -1,7 +1,6 @@
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
-public class Student {
+public class Student implements ICalculate {
     private BigDecimal amountToPay;
     private static final BigDecimal discountStartingRate = BigDecimal.valueOf(5.5);
     private static final BigDecimal discount = BigDecimal.valueOf(0.25);

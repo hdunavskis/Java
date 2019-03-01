@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="db2c9f81-d5a5-4aa3-a3f1-5fcc7a1c8c67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cm/DunavskisHelmutsTestTask3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cm/DunavskisHelmutsTestTask3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cm/Managment.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cm/Rate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cm/Rate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cm/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cm/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cm/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cm/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cm/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cm/Visitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DunavskisHelmutsTestTask3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DunavskisHelmutsTestTask3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Management.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +30,7 @@
     <SUITE FILE_PATH="coverage/cm$DunavskisHelmutsTestTask2_testCase25.ic" NAME="DunavskisHelmutsTestTask2.testCase25 Coverage Results" MODIFIED="1550745037909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/cm$DunavskisHelmutsTestTask2.ic" NAME="DunavskisHelmutsTestTask2 Coverage Results" MODIFIED="1550755301544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/cm$DunavskisHelmutsTestTask3_testCas32.ic" NAME="DunavskisHelmutsTestTask3.testCas32 Coverage Results" MODIFIED="1551465084330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/cm$DunavskisHelmutsTestTask3.ic" NAME="DunavskisHelmutsTestTask3 Coverage Results" MODIFIED="1551465193356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/cm$DunavskisHelmutsTestTask3.ic" NAME="DunavskisHelmutsTestTask3 Coverage Results" MODIFIED="1551475474355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="138" />
@@ -45,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CarParkKind.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="72">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
@@ -54,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Period.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="660">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#780#781#0" expanded="true" />
@@ -66,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DunavskisHelmutsTestTask3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6649">
-              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <state relative-caret-position="84">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,29 +90,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Rate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="592">
+              <caret line="94" column="62" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Managment.java">
+        <entry file="file://$PROJECT_DIR$/src/ICalculate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="69" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="69" />
+            <state>
+              <caret column="28" selection-start-column="28" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -111,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="24">
+              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -120,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Staff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="68" />
+            <state relative-caret-position="24">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -132,6 +138,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -144,12 +151,15 @@
         <option value="$PROJECT_DIR$/src/CarParkKind.java" />
         <option value="$PROJECT_DIR$/src/DunavskisHelmutsTestTask2.java" />
         <option value="$PROJECT_DIR$/DunavskisHelmutsTestTask3.java" />
-        <option value="$PROJECT_DIR$/src/Rate.java" />
-        <option value="$PROJECT_DIR$/src/Staff.java" />
+        <option value="$PROJECT_DIR$/src/Calculate.java" />
         <option value="$PROJECT_DIR$/src/Visitor.java" />
-        <option value="$PROJECT_DIR$/src/Managment.java" />
-        <option value="$PROJECT_DIR$/src/DunavskisHelmutsTestTask3.java" />
+        <option value="$PROJECT_DIR$/src/Staff.java" />
         <option value="$PROJECT_DIR$/src/Student.java" />
+        <option value="$PROJECT_DIR$/src/Managment.java" />
+        <option value="$PROJECT_DIR$/src/Management.java" />
+        <option value="$PROJECT_DIR$/src/ICalculate.java" />
+        <option value="$PROJECT_DIR$/src/DunavskisHelmutsTestTask3.java" />
+        <option value="$PROJECT_DIR$/src/Rate.java" />
       </list>
     </option>
   </component>
@@ -159,11 +169,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="438" />
-    <option name="y" value="191" />
-    <option name="width" value="1262" />
-    <option name="height" value="691" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1916" />
+    <option name="width" value="1928" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -173,18 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="cm" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +198,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="cm" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,7 +219,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551465885064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551475472754" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -237,7 +246,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DunavskisHelmutsTestTask3.testCas32">
+  <component name="RunManager" selected="JUnit.DunavskisHelmutsTestTask3">
     <configuration name="DunavskisHelmutsTestTask3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cm" />
       <extension name="coverage" per_test_coverage_enabled="false" sample_coverage="false" />
@@ -246,16 +255,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DunavskisHelmutsTestTask3.testCas31" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cm" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DunavskisHelmutsTestTask3" />
-      <option name="METHOD_NAME" value="testCas31" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -280,30 +279,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DunavskisHelmutsTestTask3.testCas34" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DunavskisHelmutsTestTask3.testCas37" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cm" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DunavskisHelmutsTestTask3" />
-      <option name="METHOD_NAME" value="testCas34" />
+      <option name="METHOD_NAME" value="testCas37" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DunavskisHelmutsTestTask3.testCase26" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DunavskisHelmutsTestTask3" />
+      <option name="METHOD_NAME" value="testCase26" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas31" />
       <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas32" />
-      <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas34" />
       <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas33" />
       <item itemvalue="JUnit.DunavskisHelmutsTestTask3" />
+      <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas37" />
+      <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCase26" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas32" />
         <item itemvalue="JUnit.DunavskisHelmutsTestTask3" />
+        <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCase26" />
+        <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas37" />
+        <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas32" />
         <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas33" />
-        <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas34" />
-        <item itemvalue="JUnit.DunavskisHelmutsTestTask3.testCas31" />
       </list>
     </recent_temporary>
   </component>
@@ -325,31 +334,12 @@
       <workItem from="1550757222996" duration="1024000" />
       <workItem from="1551450878690" duration="4746000" />
       <workItem from="1551461320285" duration="4569000" />
+      <workItem from="1551466334072" duration="3649000" />
+      <workItem from="1551472841135" duration="2471000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DunavskisHelmutsTestTask3_testCas32 - 2019.03.01 at 18h 27m 57s.xml">
-      <configuration name="DunavskisHelmutsTestTask3.testCas32" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DunavskisHelmutsTestTask3_testCas33 - 2019.03.01 at 18h 28m 08s.xml">
-      <configuration name="DunavskisHelmutsTestTask3.testCas33" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DunavskisHelmutsTestTask3_testCas32 - 2019.03.01 at 18h 28m 16s.xml">
-      <configuration name="DunavskisHelmutsTestTask3.testCas32" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DunavskisHelmutsTestTask3_testCas32 - 2019.03.01 at 18h 30m 25s.xml">
-      <configuration name="DunavskisHelmutsTestTask3.testCas32" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DunavskisHelmutsTestTask3_testCas32 - 2019.03.01 at 18h 31m 25s.xml">
-      <configuration name="DunavskisHelmutsTestTask3.testCas32" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.01 at 18h 31m 51s.xml">
-      <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.01 at 18h 32m 17s.xml">
-      <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.01 at 18h 32m 33s.xml">
       <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
     </history-entry>
@@ -359,9 +349,30 @@
     <history-entry file="DunavskisHelmutsTestTask3_testCas32 - 2019.03.01 at 18h 44m 20s.xml">
       <configuration name="DunavskisHelmutsTestTask3.testCas32" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3_testCas37 - 2019.03.01 at 19h 22m 51s.xml">
+      <configuration name="DunavskisHelmutsTestTask3.testCas37" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3_testCas37 - 2019.03.01 at 19h 23m 59s.xml">
+      <configuration name="DunavskisHelmutsTestTask3.testCas37" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.01 at 19h 27m 23s.xml">
+      <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3_testCase26 - 2019.03.01 at 19h 51m 48s.xml">
+      <configuration name="DunavskisHelmutsTestTask3.testCase26" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3_testCase26 - 2019.03.01 at 21h 13m 26s.xml">
+      <configuration name="DunavskisHelmutsTestTask3.testCase26" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.01 at 21h 24m 25s.xml">
+      <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.01 at 21h 24m 35s.xml">
+      <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22264000" />
+    <option name="totallyTimeSpent" value="28384000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -373,9 +384,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="438" y="191" width="1262" height="691" extended-state="0" />
+    <frame x="1916" y="0" width="1928" height="1084" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2726524" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27789587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -383,8 +394,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946582" weight="0.49103943" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32930845" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946582" weight="0.22633745" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2535519" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -397,7 +408,7 @@
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32896176" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.22939068" visible="true" weight="0.48023063" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.22839506" visible="true" weight="0.17003188" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" sideWeight="0.495114" weight="0.32959402" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -405,7 +416,7 @@
       <window_info anchor="right" id="Database" order="6" sideWeight="0.49674267" weight="0.32959402" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.7706093" side_tool="true" visible="true" weight="0.48023063" />
+      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.77160496" side_tool="true" visible="true" weight="0.17003188" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,30 +449,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Management.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CarParkKind.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="72">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Managment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="69" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Period.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="660">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#780#781#0" expanded="true" />
@@ -472,37 +476,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Visitor.java">
+    <entry file="file://$PROJECT_DIR$/src/ICalculate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rate.java">
+    <entry file="file://$PROJECT_DIR$/src/Staff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="24">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DunavskisHelmutsTestTask3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6649">
-          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        <state relative-caret-position="84">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Visitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="94" column="62" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
         </state>
       </provider>
     </entry>

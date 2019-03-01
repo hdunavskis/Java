@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class Visitor {
+public class Visitor implements ICalculate {
     private BigDecimal amountToPay;
     private static final BigDecimal freeCredit = BigDecimal.valueOf(8);
     private static final BigDecimal discount = BigDecimal.valueOf(0.5);

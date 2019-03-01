@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class Staff {
+public class Staff implements ICalculate {
 
     private BigDecimal amountToPay;
     private static final BigDecimal maxPay = BigDecimal.valueOf(16);

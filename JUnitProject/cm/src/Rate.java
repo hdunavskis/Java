@@ -94,17 +94,21 @@ public class Rate {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
 
-        if(this.kind.equals(CarParkKind.STAFF)){
-            return new Staff().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+       if(this.kind.equals(CarParkKind.STAFF)){
+           ICalculate calculateStuff  = new Staff();
+           return  calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
         }
         else if(this.kind.equals(CarParkKind.STUDENT)){
-            return new Student().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+           ICalculate calculateStuff  = new Student();
+           return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
         }
         else if(this.kind.equals(CarParkKind.MANAGEMENT)){
-            return new Managment().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+           ICalculate calculateStuff  = new Management();
+           return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
         }
         else{
-            return new Visitor().calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+           ICalculate calculateStuff  = new Visitor();
+           return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
         }
 
     }
