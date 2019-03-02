@@ -3,8 +3,8 @@
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>592</x>
-      <y>768</y>
+      <x>488</x>
+      <y>608</y>
       <w>168</w>
       <h>64</h>
     </coordinates>
@@ -18,8 +18,8 @@ name
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>800</x>
-      <y>976</y>
+      <x>696</x>
+      <y>816</y>
       <w>168</w>
       <h>64</h>
     </coordinates>
@@ -33,8 +33,8 @@ location
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>696</x>
-      <y>808</y>
+      <x>592</x>
+      <y>648</y>
       <w>168</w>
       <h>184</h>
     </coordinates>
@@ -45,8 +45,8 @@ m2=1..*</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>952</x>
-      <y>760</y>
+      <x>848</x>
+      <y>600</y>
       <w>160</w>
       <h>112</h>
     </coordinates>
@@ -65,8 +65,8 @@ status:CarParkStatus
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>944</x>
-      <y>848</y>
+      <x>840</x>
+      <y>688</y>
       <w>104</w>
       <h>176</h>
     </coordinates>
@@ -77,8 +77,8 @@ m2=1..*</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>736</x>
-      <y>784</y>
+      <x>632</x>
+      <y>624</y>
       <w>232</w>
       <h>40</h>
     </coordinates>
@@ -89,8 +89,8 @@ m2=1..*</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>296</x>
-      <y>976</y>
+      <x>192</x>
+      <y>816</y>
       <w>168</w>
       <h>64</h>
     </coordinates>
@@ -105,8 +105,8 @@ charge
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>440</x>
-      <y>960</y>
+      <x>336</x>
+      <y>800</y>
       <w>376</w>
       <h>56</h>
     </coordinates>
@@ -119,8 +119,8 @@ entry</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>440</x>
-      <y>984</y>
+      <x>336</x>
+      <y>824</y>
       <w>376</w>
       <h>56</h>
     </coordinates>
@@ -133,8 +133,8 @@ exit</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>656</x>
-      <y>560</y>
+      <x>552</x>
+      <y>400</y>
       <w>88</w>
       <h>224</h>
     </coordinates>
@@ -145,26 +145,8 @@ m2=1..*</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>1080</x>
-      <y>960</y>
-      <w>120</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
-CarParkKind
---
-STAFF
-STUDENT
-MANAGEMENT
-VISITOR
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.baselet.element.old.element.Class</type>
-    <coordinates>
-      <x>1080</x>
-      <y>1088</y>
+      <x>992</x>
+      <y>800</y>
       <w>120</w>
       <h>88</h>
     </coordinates>
@@ -180,8 +162,8 @@ FULL
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>1112</x>
-      <y>528</y>
+      <x>1008</x>
+      <y>368</y>
       <w>136</w>
       <h>112</h>
     </coordinates>
@@ -199,8 +181,8 @@ overlaps(Period):Boolean
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>912</x>
-      <y>536</y>
+      <x>808</x>
+      <y>376</y>
       <w>216</w>
       <h>40</h>
     </coordinates>
@@ -212,8 +194,8 @@ m2=1..*</panel_attributes>
   <element>
     <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>912</x>
-      <y>560</y>
+      <x>808</x>
+      <y>400</y>
       <w>216</w>
       <h>40</h>
     </coordinates>
@@ -225,8 +207,8 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>528</y>
+      <x>184</x>
+      <y>368</y>
       <w>168</w>
       <h>152</h>
     </coordinates>
@@ -243,8 +225,8 @@ allowed: Boolean
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>624</y>
+      <x>344</x>
+      <y>464</y>
       <w>184</w>
       <h>160</h>
     </coordinates>
@@ -255,8 +237,8 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>672</y>
+      <x>208</x>
+      <y>512</y>
       <w>40</w>
       <h>320</h>
     </coordinates>
@@ -269,8 +251,8 @@ log</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>672</y>
+      <x>304</x>
+      <y>512</y>
       <w>64</w>
       <h>320</h>
     </coordinates>
@@ -283,8 +265,8 @@ current</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>616</y>
+      <x>728</x>
+      <y>456</y>
       <w>216</w>
       <h>160</h>
     </coordinates>
@@ -297,8 +279,8 @@ r1=rate
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>728</x>
-      <y>528</y>
+      <x>624</x>
+      <y>368</y>
       <w>208</w>
       <h>96</h>
     </coordinates>
@@ -317,8 +299,8 @@ calculate(Period):BigDecimal
   <element>
     <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>664</x>
-      <y>360</y>
+      <x>560</x>
+      <y>200</y>
       <w>328</w>
       <h>56</h>
     </coordinates>
@@ -333,8 +315,8 @@ calculate(BigDecimal, Bigdecimal, int, int):BigDecimal
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>408</y>
+      <x>728</x>
+      <y>248</y>
       <w>24</w>
       <h>136</h>
     </coordinates>
@@ -344,8 +326,8 @@ calculate(BigDecimal, Bigdecimal, int, int):BigDecimal
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>160</y>
+      <x>376</x>
+      <y>0</y>
       <w>320</w>
       <h>64</h>
     </coordinates>
@@ -357,8 +339,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>160</y>
+      <x>744</x>
+      <y>0</y>
       <w>320</w>
       <h>64</h>
     </coordinates>
@@ -370,8 +352,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1200</x>
-      <y>160</y>
+      <x>1096</x>
+      <y>0</y>
       <w>320</w>
       <h>64</h>
     </coordinates>
@@ -383,8 +365,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>104</x>
-      <y>160</y>
+      <x>0</x>
+      <y>0</y>
       <w>320</w>
       <h>64</h>
     </coordinates>
@@ -396,8 +378,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>256</x>
-      <y>216</y>
+      <x>152</x>
+      <y>56</y>
       <w>416</w>
       <h>184</h>
     </coordinates>
@@ -407,8 +389,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>224</y>
+      <x>520</x>
+      <y>64</y>
       <w>72</w>
       <h>136</h>
     </coordinates>
@@ -418,8 +400,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>856</x>
-      <y>216</y>
+      <x>752</x>
+      <y>56</y>
       <w>72</w>
       <h>152</h>
     </coordinates>
@@ -429,8 +411,8 @@ calculate(BigDecimal, BigDecimal, int, int):BigDecimal</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>992</x>
-      <y>216</y>
+      <x>888</x>
+      <y>56</y>
       <w>264</w>
       <h>160</h>
     </coordinates>

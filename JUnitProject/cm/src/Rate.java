@@ -6,7 +6,6 @@ import java.util.List;
  * Created by CM on 01/02/2018.
  */
 public class Rate {
-    private CarParkKind kind;
     private BigDecimal hourlyNormalRate;
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
@@ -14,7 +13,7 @@ public class Rate {
     private ICalculate calculateStuff;
 
 
-    public Rate(CarParkKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods
+    public Rate(BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods
             , ArrayList<Period> normalPeriods, ICalculate calculateStuff) {
         if (reducedPeriods == null || normalPeriods == null) {
             throw new IllegalArgumentException("periods cannot be null");
@@ -34,7 +33,6 @@ public class Rate {
         if (!isValidPeriods(reducedPeriods, normalPeriods)) {
             throw new IllegalArgumentException("The periods overlaps");
         }
-        this.kind = kind;
         this.hourlyNormalRate = normalRate;
         this.hourlyReducedRate = reducedRate;
         this.reduced = reducedPeriods;
