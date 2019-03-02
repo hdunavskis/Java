@@ -18,7 +18,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test
     public void testCase2() {
@@ -31,7 +31,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
 
     }
     @Test(expected = IllegalArgumentException.class)
@@ -45,7 +45,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test (expected = IllegalArgumentException.class)
     public void testCase4() {
@@ -58,7 +58,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class)
     public void testCase5() {
@@ -71,7 +71,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test
     public void testCase6() {
@@ -84,7 +84,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class)
     public void testCase7() {
@@ -97,7 +97,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class)
     public void testCase8() {
@@ -110,7 +110,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class)
     public void testCase9() {
@@ -123,7 +123,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test
     public void testCase10() {
@@ -136,7 +136,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test
     public void testCase11() {
@@ -149,7 +149,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class)
     public void testCase12() {
@@ -162,7 +162,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,7));
         reducedPeriod.add(new Period(1,2));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test
     public void testCase13() {
@@ -175,7 +175,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(2,3));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test
     public void testCase14() {
@@ -188,7 +188,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(3,4));
         reducedPeriod.add(new Period(22,23));
 
-       new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+       new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         assertEquals(1, new Period(1,2));
     }
     @Test
@@ -202,7 +202,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(0,0));
         reducedPeriod.add(new Period(22,23));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         assertEquals(1, new Period(1,2));
     }
     @Test(expected = IllegalArgumentException.class)
@@ -216,7 +216,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(-2,0));
         reducedPeriod.add(new Period(2,3));
 
-        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         r.calculate(normalPeriod.get(0));
     }
     @Test
@@ -230,7 +230,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(3,4));
         reducedPeriod.add(new Period(22,23));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         assertEquals(1, new Period(1,2));
     }
     @Test
@@ -244,7 +244,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(3,4));
         reducedPeriod.add(new Period(0,0));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         assertEquals(1, new Period(1,2));
     }
     @Test(expected = IllegalArgumentException.class)
@@ -258,7 +258,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(-2,0));
 
-        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         r.calculate(reducedPeriod.get(0));
     }
     @Test(expected = IllegalArgumentException.class) // new
@@ -270,7 +270,7 @@ public class DunavskisHelmutsTestTask3 {
 
         reducedPeriod.add(new Period(1,2));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, null);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, null, new Staff());
     }
     @Test(expected = IllegalArgumentException.class) // new
     public void testCase21() {
@@ -281,7 +281,7 @@ public class DunavskisHelmutsTestTask3 {
 
         normalPeriod.add(new Period(1,2));
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, null, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, null, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class) // new
     public void testCase22() {
@@ -297,7 +297,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(null);
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
     }
     @Test(expected = IllegalArgumentException.class) // new
     public void testCase23() {
@@ -315,7 +315,7 @@ public class DunavskisHelmutsTestTask3 {
         reducedPeriod.add(new Period(2,3));
 
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
 
     }
     @Test // new
@@ -334,7 +334,7 @@ public class DunavskisHelmutsTestTask3 {
         reducedPeriod.add(new Period(6,7));
 
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
 
     }
     @Test (expected = IllegalArgumentException.class) // new
@@ -354,7 +354,7 @@ public class DunavskisHelmutsTestTask3 {
         reducedPeriod.add(new Period(6,7));
 
 
-        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
 
     }
     @Test
@@ -368,7 +368,7 @@ public class DunavskisHelmutsTestTask3 {
         normalPeriod.add(new Period(1,2));
         reducedPeriod.add(new Period(6,7));
 
-        Rate r = new Rate(CarParkKind.VISITOR, normalRate, reducedRate, reducedPeriod, normalPeriod);
+        Rate r = new Rate(CarParkKind.VISITOR, normalRate, reducedRate, reducedPeriod, normalPeriod, new Visitor());
        assertEquals(BigDecimal.valueOf(8), r.calculate(new Period(1,7)));
 
     }
@@ -377,8 +377,15 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(6);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(7), new Visitor().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.VISITOR, normalRate, reducedRate, reducedPeriod, normalPeriod, new Visitor());
+
+        assertEquals(BigDecimal.valueOf(7), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -386,8 +393,15 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(8);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(8.5), new Visitor().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.VISITOR, normalRate, reducedRate, reducedPeriod, normalPeriod, new Visitor());
+
+        assertEquals(BigDecimal.valueOf(8.5), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -395,8 +409,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(2);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(3), new Management().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.MANAGEMENT, normalRate, reducedRate, reducedPeriod, normalPeriod, new Management());
+        assertEquals(BigDecimal.valueOf(3), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -404,8 +424,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(3);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(4), new Management().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.MANAGEMENT, normalRate, reducedRate, reducedPeriod, normalPeriod, new Management());
+        assertEquals(BigDecimal.valueOf(4), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -413,8 +439,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(1);
         BigDecimal reducedRate = new BigDecimal(0.5);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(3), new Management().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.MANAGEMENT, normalRate, reducedRate, reducedPeriod, normalPeriod, new Management());
+        assertEquals(BigDecimal.valueOf(3), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -422,8 +454,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(5.5);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(6.25), new Student().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.STUDENT, normalRate, reducedRate, reducedPeriod, normalPeriod, new Student());
+        assertEquals(BigDecimal.valueOf(6.25), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -431,8 +469,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(4);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(5), new Student().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.STUDENT, normalRate, reducedRate, reducedPeriod, normalPeriod, new Student());
+        assertEquals(BigDecimal.valueOf(5), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -440,8 +484,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(4.5);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(5.5), new Student().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.STUDENT, normalRate, reducedRate, reducedPeriod, normalPeriod, new Student());
+        assertEquals(BigDecimal.valueOf(5.5), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -449,8 +499,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(15);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(16), new Staff().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
+        assertEquals(BigDecimal.valueOf(16), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -458,8 +514,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(14);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(15), new Staff().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
+        assertEquals(BigDecimal.valueOf(15), r.calculate(new Period(1,7)));
 
     }
     @Test
@@ -467,8 +529,14 @@ public class DunavskisHelmutsTestTask3 {
 
         BigDecimal normalRate = new BigDecimal(16);
         BigDecimal reducedRate = new BigDecimal(1);
+        ArrayList<Period> normalPeriod = new ArrayList<Period>();
+        ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        assertEquals(BigDecimal.valueOf(16), new Staff().calculate(normalRate, reducedRate, 1, 1));
+        normalPeriod.add(new Period(1,2));
+        reducedPeriod.add(new Period(6,7));
+
+        Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
+        assertEquals(BigDecimal.valueOf(16), r.calculate(new Period(1,7)));
 
     }
 }

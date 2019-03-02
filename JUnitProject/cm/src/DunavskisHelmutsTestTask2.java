@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class DunavskisHelmutsTestTask2 {
 
-	@Test
+/*	@Test
 	public void testCase1() {
 		
 		BigDecimal normalRate = new BigDecimal(1);
@@ -356,6 +356,6 @@ public class DunavskisHelmutsTestTask2 {
 
 		new Rate(CarParkKind.STAFF, normalRate, reducedRate, normalPeriod, reducedPeriod);
 
-	}
+	}*/
 
 }

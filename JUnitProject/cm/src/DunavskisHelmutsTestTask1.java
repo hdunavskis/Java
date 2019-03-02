@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class DunavskisHelmutsTestTask1 {
 
-	@Test
+	/*@Test
 	public void testCase1() {
 		
 		BigDecimal normalRate = new BigDecimal(1);
@@ -261,6 +261,6 @@ public class DunavskisHelmutsTestTask1 {
 		Rate r = new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod);
 		r.calculate(reducedPeriod.get(0));
 	}
-	
+	*/
 
 }

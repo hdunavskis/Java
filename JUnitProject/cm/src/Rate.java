@@ -11,10 +11,11 @@ public class Rate {
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
+    private ICalculate calculateStuff;
 
 
     public Rate(CarParkKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods
-            , ArrayList<Period> normalPeriods) {
+            , ArrayList<Period> normalPeriods, ICalculate calculateStuff) {
         if (reducedPeriods == null || normalPeriods == null) {
             throw new IllegalArgumentException("periods cannot be null");
         }
@@ -38,6 +39,7 @@ public class Rate {
         this.hourlyReducedRate = reducedRate;
         this.reduced = reducedPeriods;
         this.normal = normalPeriods;
+        this.calculateStuff = calculateStuff;
     }
 
     /**
@@ -94,22 +96,7 @@ public class Rate {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
 
-       if(this.kind.equals(CarParkKind.STAFF)){
-           ICalculate calculateStuff  = new Staff();
-           return  calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
-        }
-        else if(this.kind.equals(CarParkKind.STUDENT)){
-           ICalculate calculateStuff  = new Student();
-           return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
-        }
-        else if(this.kind.equals(CarParkKind.MANAGEMENT)){
-           ICalculate calculateStuff  = new Management();
-           return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
-        }
-        else{
-           ICalculate calculateStuff  = new Visitor();
-           return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
-        }
+        return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
 
     }
 
