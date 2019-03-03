@@ -11,9 +11,11 @@ public class Rate {
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
+    private ICalculate calculateStuff;
+
 
     public Rate(CarParkKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods
-            , ArrayList<Period> normalPeriods) {
+            , ArrayList<Period> normalPeriods, ICalculate calculateStuff) {
         if (reducedPeriods == null || normalPeriods == null) {
             throw new IllegalArgumentException("periods cannot be null");
         }
@@ -37,6 +39,7 @@ public class Rate {
         this.hourlyReducedRate = reducedRate;
         this.reduced = reducedPeriods;
         this.normal = normalPeriods;
+        this.calculateStuff = calculateStuff;
     }
 
     /**
@@ -92,8 +95,9 @@ public class Rate {
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
-        return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
-                this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
+
+        return calculateStuff.calculate(hourlyNormalRate, hourlyReducedRate, normalRateHours, reducedRateHours);
+
     }
 
 }
