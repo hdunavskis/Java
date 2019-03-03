@@ -199,7 +199,7 @@ public class DunavskisHelmutsTestTask3 {
         ArrayList<Period> normalPeriod = new ArrayList<Period>();
         ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
-        normalPeriod.add(new Period(0,0));
+        normalPeriod.add(new Period(0,1));
         reducedPeriod.add(new Period(22,23));
 
         new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
@@ -242,7 +242,7 @@ public class DunavskisHelmutsTestTask3 {
         ArrayList<Period> reducedPeriod = new ArrayList<Period>();
 
         normalPeriod.add(new Period(3,4));
-        reducedPeriod.add(new Period(0,0));
+        reducedPeriod.add(new Period(0,1));
 
         new Rate(CarParkKind.STAFF, normalRate, reducedRate, reducedPeriod, normalPeriod, new Staff());
         assertEquals(1, new Period(1,2));
