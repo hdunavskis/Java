@@ -209,7 +209,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551612518472" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551612527512" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -327,14 +327,11 @@
       <workItem from="1551466334072" duration="3649000" />
       <workItem from="1551472841135" duration="2471000" />
       <workItem from="1551506924049" duration="828000" />
-      <workItem from="1551612404345" duration="109000" />
+      <workItem from="1551612404345" duration="188000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DunavskisHelmutsTestTask3_testCase29 - 2019.03.02 at 06h 17m 28s.xml">
-      <configuration name="DunavskisHelmutsTestTask3.testCase29" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DunavskisHelmutsTestTask3_testCas30 - 2019.03.02 at 06h 17m 32s.xml">
       <configuration name="DunavskisHelmutsTestTask3.testCas30" configurationId="JUnit" />
     </history-entry>
@@ -362,9 +359,12 @@
     <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.03 at 11h 27m 39s.xml">
       <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DunavskisHelmutsTestTask3 - 2019.03.03 at 11h 28m 43s.xml">
+      <configuration name="DunavskisHelmutsTestTask3" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29321000" />
+    <option name="totallyTimeSpent" value="29400000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -377,7 +377,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28320935" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -388,7 +387,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32930845" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946582" visible="true" weight="0.22633745" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946582" weight="0.22633745" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2535519" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -401,7 +400,7 @@
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32896176" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.22839506" visible="true" weight="0.17003188" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.22736625" visible="true" weight="0.17003188" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" sideWeight="0.495114" weight="0.32959402" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -409,7 +408,7 @@
       <window_info anchor="right" id="Database" order="6" sideWeight="0.49674267" weight="0.32959402" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.77160496" side_tool="true" visible="true" weight="0.17003188" />
+      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.77263373" side_tool="true" visible="true" weight="0.17003188" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
