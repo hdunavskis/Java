@@ -1,0 +1,28 @@
+.table{
+	border-style: solid;
+	border-color: #000000;
+	
+} 
+td > input {
+	width:75px;
+}
+th {
+  border-bottom: 3px solid #000;
+  background: #CCC;
+} 
+
+tr:nth-child(even) {
+	background: #CCC;
+	border-collapse: collapse;
+	
+}
+tr:nth-child(odd) {
+	background: #FFF;
+	order-collapse: collapse;
+}
+td{
+	width: 20px;
+}
+.header{
+	background: #CCC;
+}

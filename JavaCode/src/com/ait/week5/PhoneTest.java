@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class PhoneTest {
+class PhoneTest{
 	Phone p = new Phone("999", "Tom", 10);
 	@Test
 	void testGetOwnerName() {
