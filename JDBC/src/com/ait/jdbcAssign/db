@@ -1,14 +1,14 @@
 CREATE DATABASE IF NOT EXISTS A00268649;
 USE A00268649;
 
-DROP TABLE IF EXISTS CyberAttacks;
+DROP TABLE IF EXISTS CyberAttack_Log;
 DROP TABLE IF EXISTS Attacked_Organization;
 DROP TABLE IF EXISTS Hacker;
-DROP TABLE IF EXISTS Organizations_discovered;
+DROP TABLE IF EXISTS Organizations_Discovered;
+DROP TABLE IF EXISTS Attacks;
 
 CREATE TABLE Attacked_Organization(
-	Company_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
-	Name VARCHAR(50),
+	Attack_Org_Name VARCHAR(50) PRIMARY KEY,
     Type_of_Business VARCHAR(50),
     Size_Of_Organization INTEGER,
 	Location VARCHAR(20),
@@ -16,55 +16,65 @@ CREATE TABLE Attacked_Organization(
 	)engine=innodb charset=utf8;
 	
 
-INSERT INTO Attacked_Organization VALUES (null, 'Apple', 'IT', 1230000, 'California, US', 22900000);
-INSERT INTO Attacked_Organization VALUES (null, 'Samsung', 'Mobile Phones', 320000, 'Suwon, South Korea', 21100000);
-INSERT INTO Attacked_Organization VALUES (null, 'Amazon', 'IT', 613300, 'Seatle, US', 177900);
-INSERT INTO Attacked_Organization VALUES (null, 'Foxconn', 'Electronics', 803126, 'New Taipei City, Taiwan', 15800);
-INSERT INTO Attacked_Organization VALUES (null, 'Huawei', 'Mobile Phones', 8900, 'Shenzhen', 1000);
-INSERT INTO Attacked_Organization VALUES (null, 'Sony', 'Electronics', 11700, 'Tokyo, Japan', 7700);
+INSERT INTO Attacked_Organization VALUES ('Apple', 'IT', 1230000, 'California, US', 22900000);
+INSERT INTO Attacked_Organization VALUES ('Samsung', 'Mobile Phones', 320000, 'Suwon, South Korea', 21100000);
+INSERT INTO Attacked_Organization VALUES ('Amazon', 'IT', 613300, 'Seatle, US', 177900);
+INSERT INTO Attacked_Organization VALUES ('Foxconn', 'Electronics', 803126, 'New Taipei City, Taiwan', 15800);
+INSERT INTO Attacked_Organization VALUES ('Huawei', 'Mobile Phones', 8900, 'Shenzhen', 1000);
+INSERT INTO Attacked_Organization VALUES ('Sony', 'Electronics', 11700, 'Tokyo, Japan', 7700);
 
 CREATE TABLE Hacker(
-	Hacker_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
-	Name VARCHAR(20),
+	Hacker_Name VARCHAR(50) PRIMARY KEY,
     Size INTEGER,
 	Location VARCHAR(20)
 	)engine=innodb charset=utf8;
 	
-INSERT INTO Hacker VALUES (null, 'Anonymous', 200, 'US');
-INSERT INTO Hacker VALUES (null, 'Cicada', 50, 'China');
-INSERT INTO Hacker VALUES (null, 'DCLeaks', 30, 'US');
-INSERT INTO Hacker VALUES (null, 'Derp', 15, 'Russia');
-INSERT INTO Hacker VALUES (null, 'Ghost Squad Hackers', 44, 'GBR');
-INSERT INTO Hacker VALUES (null, 'Hackweist', 100, 'Israel');
+INSERT INTO Hacker VALUES ('Anonymous', 200, 'US');
+INSERT INTO Hacker VALUES ('Cicada', 50, 'China');
+INSERT INTO Hacker VALUES ('DCLeaks', 30, 'US');
+INSERT INTO Hacker VALUES ('Derp', 15, 'Russia');
+INSERT INTO Hacker VALUES ('Ghost Squad Hackers', 44, 'GBR');
+INSERT INTO Hacker VALUES ('Hackweist', 100, 'Israel');
 
 CREATE TABLE Organizations_discovered(
-	Disc_Org_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
-	Name VARCHAR(50),
+	Discov_Org_Name VARCHAR(50) PRIMARY KEY,
     Size_Of_Organization INTEGER,
 	Location VARCHAR(20)
 	)engine=innodb charset=utf8;
 
-INSERT INTO Organizations_discovered VALUES (null, 'ADF Solutions', 1000, 'US');
-INSERT INTO Organizations_discovered VALUES (null, 'AhnLab, Inc', 500, 'Germany');
-INSERT INTO Organizations_discovered VALUES (null, 'HackerOne', 33, 'GBR');
-INSERT INTO Organizations_discovered VALUES (null, 'Clavister', 58, 'Ireland');
-INSERT INTO Organizations_discovered VALUES (null, 'SonicWall', 90, 'China');
+INSERT INTO Organizations_discovered VALUES ('ADF Solutions', 1000, 'US');
+INSERT INTO Organizations_discovered VALUES ('AhnLab, Inc', 500, 'Germany');
+INSERT INTO Organizations_discovered VALUES ('HackerOne', 33, 'GBR');
+INSERT INTO Organizations_discovered VALUES ('Clavister', 58, 'Ireland');
+INSERT INTO Organizations_discovered VALUES ('SonicWall', 90, 'China');
 
-CREATE TABLE CyberAttacks(
+CREATE TABLE Attacks(
+    Attack_Name VARCHAR(50) PRIMARY KEY,
+    TypeOfAttack VARCHAR(20),
+    Description VARCHAR(255)
+    )engine=innodb charset=utf8;
+    
+INSERT INTO Attacks VALUES ('Phishing', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES ('Password Attack', 'WEB', 'somedescription');
+INSERT INTO Attacks VALUES ('DoS', 'Network', 'somedescription');
+INSERT INTO Attacks VALUES ('Malware', 'Email', 'somedescription');
+
+CREATE TABLE CyberAttack_Log(
 	Cyber_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
-	Disc_Org_ID INTEGER NOT NULL,
-	Hacker_ID INTEGER NOT NULL,
-	Company_ID INTEGER NOT NULL,
-	FOREIGN KEY(Disc_Org_ID) REFERENCES Organizations_discovered(Disc_Org_ID),
-    FOREIGN KEY(Hacker_ID) REFERENCES Hacker(Hacker_ID),
-    FOREIGN KEY(Company_ID) REFERENCES Attacked_Organization(Company_ID),
-	Date  DATETIME NOT NULL,
-	TypeOfAttack VARCHAR(20),
+	Attack_ID VARCHAR(50),
+	Disc_Org_ID VARCHAR(50),
+	Hacker_ID VARCHAR(50),
+	Attacked_Org_ID VARCHAR(50),
+	FOREIGN KEY(Disc_Org_ID) REFERENCES Organizations_discovered(Discov_Org_Name),
+    FOREIGN KEY(Hacker_ID) REFERENCES Hacker(Hacker_Name),
+    FOREIGN KEY(Attacked_Org_ID) REFERENCES Attacked_Organization(Attack_Org_Name),
+    FOREIGN KEY(Attack_ID) REFERENCES Attacks(Attack_Name),
+	Date  DATE NOT NULL,
 	How_Attack_Delivered VARCHAR(100),
-	Description VARCHAR(255),
 	Damage DECIMAL
 	)engine=innodb charset=utf8;
 	
-INSERT INTO CyberAttacks VALUES (null, 1, 1, 1, now(), 'Sql Injection', 'database attack via port', 'some description', 23000);
-INSERT INTO CyberAttacks VALUES (null, 1, 2, 2, '2019-09-13', 'XSS', 'website attack', 'some description', 55000);
-INSERT INTO CyberAttacks VALUES (null, 2, 3, 3, '2018-08-11', 'Sql Injection', 'database attack via port', 'some description', 33000);
+INSERT INTO CyberAttack_Log VALUES (null, 'Phishing', 'ADF Solutions', 'Anonymous', 'Apple', now(), 'Sql Injection', 23000);
+INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'HackerOne', 'Cicada', 'Samsung', '2019-09-13', 'XSS', 55000);
+INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'SonicWall', 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
+INSERT INTO CyberAttack_Log VALUES (null, 'DoS', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);

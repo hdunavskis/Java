@@ -89,6 +89,7 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		detailsPanel.setBackground(Color.lightGray);
 		detailsPanel.setBorder(BorderFactory.createTitledBorder(lineBorder, "AP Details"));
 			
+		//labels
 		detailsPanel.add(RecordIDLabel);			
 		detailsPanel.add(RecordIDTF);
 		detailsPanel.add(SSIDLabel);		
@@ -112,7 +113,7 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		detailsPanel.add(gpsLatLabel);
 		detailsPanel.add(gpsLatTF);
 		
-		//setup details panel and add the components to it
+		//export data 
 		exportButtonPanel=new JPanel();
 		exportButtonPanel.setLayout(new GridLayout(3,2));
 		exportButtonPanel.setBackground(Color.lightGray);
@@ -154,16 +155,18 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		content.add(deleteButton);
 		content.add(clearButton);
 
-				
+		//database content		
 		TableofDBContents.setPreferredScrollableViewportSize(new Dimension(900, 300));
 	
 		dbContentsPanel=new JScrollPane(TableofDBContents,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		dbContentsPanel.setBackground(Color.lightGray);
 		dbContentsPanel.setBorder(BorderFactory.createTitledBorder(lineBorder,"Database Content"));
 		
+		//detail size
 		detailsPanel.setSize(360, 300);
 		detailsPanel.setLocation(3,0);
-		dbContentsPanel.setSize(700, 300);
+		//datagrid size
+		dbContentsPanel.setSize(1100, 300);
 		dbContentsPanel.setLocation(477, 0);
 		
 		content.add(detailsPanel);
@@ -278,7 +281,7 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
  				System.out.println(updateTemp);
  				stmt.executeUpdate(updateTemp);
  				//these lines do nothing but the table updates when we access the db.
- 				rs = stmt.executeQuery("SELECT * from CyberAttacks ");
+ 				rs = stmt.executeQuery("SELECT * from CyberAttack_Log ");
  				rs.next();
  				rs.close();	
  			}
