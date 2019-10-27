@@ -33,36 +33,28 @@ class QueryTableModel extends AbstractTableModel
 	public Object getValueAt(int row, int col){
 		return ((String[])modelData.elementAt(row))[col];
 	}
-
-	public void refreshFromDB( Statement stmt1)
-	{
-		//modelData is the data stored by the table
-		//when set query is called the data from the 
-		//DB is queried using �SELECT * FROM myInfo� 
-		//and the data from the result set is copied 
-		//into the modelData. Every time refreshFromDB is
-		//called the DB is queried and a new 
-		//modelData is created  
-
+	
+	public void refreshFromDB( Statement stmt1, String type)
+	{	
 		modelData = new Vector();
 		stmt = stmt1;
 		try{
 			//Execute the query and store the result set and its metadata
-			rs = stmt.executeQuery("SELECT * FROM CyberAttack_Log");
+			rs = stmt.executeQuery("SELECT * FROM " + type);
 			ResultSetMetaData meta = rs.getMetaData();
-		
+			
 			//to get the number of columns
 			colCount = meta.getColumnCount(); 
 			// Now must rebuild the headers array with the new column names
 			headers = new String[colCount];
-	
+			
 			for(int h = 0; h<colCount; h++)
 			{
 				headers[h] = meta.getColumnName(h+1);
 			}//end for loop
-		
+			
 			// fill the cache with the records from the query, ie get all the rows
-		
+			
 			while(rs.next())
 			{
 				record = new String[colCount];
@@ -75,7 +67,7 @@ class QueryTableModel extends AbstractTableModel
 			fireTableChanged(null); //Tell the listeners a new table has arrived.
 		}//end try clause
 		catch(Exception e) {
-					System.out.println("Error with refreshFromDB Method\n"+e.toString());
+			System.out.println("Error with refreshFromDB Method\n"+e.toString());
 		} // end catch clause to query table
 	}//end refreshFromDB method
 }// end class QueryTableModel

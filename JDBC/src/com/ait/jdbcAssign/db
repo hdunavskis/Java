@@ -4,60 +4,64 @@ USE A00268649;
 DROP TABLE IF EXISTS CyberAttack_Log;
 DROP TABLE IF EXISTS Attacked_Organization;
 DROP TABLE IF EXISTS Hacker;
-DROP TABLE IF EXISTS Organizations_Discovered;
+DROP TABLE IF EXISTS Organizations_discovered;
 DROP TABLE IF EXISTS Attacks;
 
 CREATE TABLE Attacked_Organization(
-	Attack_Org_Name VARCHAR(50) PRIMARY KEY,
+    attOrg_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+	Attack_Org_Name VARCHAR(50),
     Type_of_Business VARCHAR(50),
     Size_Of_Organization INTEGER,
 	Location VARCHAR(20),
-	Worth DECIMAL
+	Worth DECIMAL(10,1)
 	)engine=innodb charset=utf8;
 	
 
-INSERT INTO Attacked_Organization VALUES ('Apple', 'IT', 1230000, 'California, US', 22900000);
-INSERT INTO Attacked_Organization VALUES ('Samsung', 'Mobile Phones', 320000, 'Suwon, South Korea', 21100000);
-INSERT INTO Attacked_Organization VALUES ('Amazon', 'IT', 613300, 'Seatle, US', 177900);
-INSERT INTO Attacked_Organization VALUES ('Foxconn', 'Electronics', 803126, 'New Taipei City, Taiwan', 15800);
-INSERT INTO Attacked_Organization VALUES ('Huawei', 'Mobile Phones', 8900, 'Shenzhen', 1000);
-INSERT INTO Attacked_Organization VALUES ('Sony', 'Electronics', 11700, 'Tokyo, Japan', 7700);
+INSERT INTO Attacked_Organization VALUES (null, 'Apple', 'IT', 1230000, 'California, US', 22900000);
+INSERT INTO Attacked_Organization VALUES (null, 'Samsung', 'Mobile Phones', 320000, 'Suwon, South Korea', 21100000);
+INSERT INTO Attacked_Organization VALUES (null, 'Amazon', 'IT', 613300, 'Seatle, US', 177900);
+INSERT INTO Attacked_Organization VALUES (null, 'Foxconn', 'Electronics', 803126, 'New Taipei City, Taiwan', 15800);
+INSERT INTO Attacked_Organization VALUES (null, 'Huawei', 'Mobile Phones', 8900, 'Shenzhen', 1000);
+INSERT INTO Attacked_Organization VALUES (null, 'Sony', 'Electronics', 11700, 'Tokyo, Japan', 7700);
 
 CREATE TABLE Hacker(
-	Hacker_Name VARCHAR(50) PRIMARY KEY,
+    h_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+	Hacker_Name VARCHAR(50),
     Size INTEGER,
 	Location VARCHAR(20)
 	)engine=innodb charset=utf8;
 	
-INSERT INTO Hacker VALUES ('Anonymous', 200, 'US');
-INSERT INTO Hacker VALUES ('Cicada', 50, 'China');
-INSERT INTO Hacker VALUES ('DCLeaks', 30, 'US');
-INSERT INTO Hacker VALUES ('Derp', 15, 'Russia');
-INSERT INTO Hacker VALUES ('Ghost Squad Hackers', 44, 'GBR');
-INSERT INTO Hacker VALUES ('Hackweist', 100, 'Israel');
+INSERT INTO Hacker VALUES (null, 'Anonymous', 200, 'US');
+INSERT INTO Hacker VALUES (null, 'Cicada', 50, 'China');
+INSERT INTO Hacker VALUES (null, 'DCLeaks', 30, 'US');
+INSERT INTO Hacker VALUES (null, 'Derp', 15, 'Russia');
+INSERT INTO Hacker VALUES (null, 'Ghost Squad Hackers', 44, 'GBR');
+INSERT INTO Hacker VALUES (null, 'Hackweist', 100, 'Israel');
 
 CREATE TABLE Organizations_discovered(
-	Discov_Org_Name VARCHAR(50) PRIMARY KEY,
+    sec_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+	Discov_Org_Name VARCHAR(50),
     Size_Of_Organization INTEGER,
 	Location VARCHAR(20)
 	)engine=innodb charset=utf8;
 
-INSERT INTO Organizations_discovered VALUES ('ADF Solutions', 1000, 'US');
-INSERT INTO Organizations_discovered VALUES ('AhnLab, Inc', 500, 'Germany');
-INSERT INTO Organizations_discovered VALUES ('HackerOne', 33, 'GBR');
-INSERT INTO Organizations_discovered VALUES ('Clavister', 58, 'Ireland');
-INSERT INTO Organizations_discovered VALUES ('SonicWall', 90, 'China');
+INSERT INTO Organizations_discovered VALUES (null, 'ADF Solutions', 1000, 'US');
+INSERT INTO Organizations_discovered VALUES (null, 'AhnLab, Inc', 500, 'Germany');
+INSERT INTO Organizations_discovered VALUES (null, 'HackerOne', 33, 'GBR');
+INSERT INTO Organizations_discovered VALUES (null, 'Clavister', 58, 'Ireland');
+INSERT INTO Organizations_discovered VALUES (null, 'SonicWall', 90, 'China');
 
 CREATE TABLE Attacks(
-    Attack_Name VARCHAR(50) PRIMARY KEY,
+    attack_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    Attack_Name VARCHAR(50),
     TypeOfAttack VARCHAR(20),
     Description VARCHAR(255)
     )engine=innodb charset=utf8;
     
-INSERT INTO Attacks VALUES ('Phishing', 'Email', 'somedescription');
-INSERT INTO Attacks VALUES ('Password Attack', 'WEB', 'somedescription');
-INSERT INTO Attacks VALUES ('DoS', 'Network', 'somedescription');
-INSERT INTO Attacks VALUES ('Malware', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'Phishing', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'Password Attack', 'WEB', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'DoS', 'Network', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'Malware', 'Email', 'somedescription');
 
 CREATE TABLE CyberAttack_Log(
 	Cyber_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -65,16 +69,251 @@ CREATE TABLE CyberAttack_Log(
 	Disc_Org_ID VARCHAR(50),
 	Hacker_ID VARCHAR(50),
 	Attacked_Org_ID VARCHAR(50),
-	FOREIGN KEY(Disc_Org_ID) REFERENCES Organizations_discovered(Discov_Org_Name),
-    FOREIGN KEY(Hacker_ID) REFERENCES Hacker(Hacker_Name),
-    FOREIGN KEY(Attacked_Org_ID) REFERENCES Attacked_Organization(Attack_Org_Name),
-    FOREIGN KEY(Attack_ID) REFERENCES Attacks(Attack_Name),
 	Date  DATE NOT NULL,
 	How_Attack_Delivered VARCHAR(100),
-	Damage DECIMAL
+	Damage DECIMAL(10,1)
 	)engine=innodb charset=utf8;
 	
 INSERT INTO CyberAttack_Log VALUES (null, 'Phishing', 'ADF Solutions', 'Anonymous', 'Apple', now(), 'Sql Injection', 23000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'HackerOne', 'Cicada', 'Samsung', '2019-09-13', 'XSS', 55000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'SonicWall', 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
+
+DROP procedure IF EXISTS deleteHacker;
+DELIMITER $$
+CREATE PROCEDURE deleteHacker
+(
+    hackerID INTEGER
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        DELETE FROM Hacker WHERE h_ID = hackerID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS deleteLog;
+DELIMITER $$
+CREATE PROCEDURE deleteLog
+(
+    c_ID INT
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        DELETE FROM CyberAttack_Log WHERE Cyber_ID = c_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS deleteAttack;
+DELIMITER $$
+CREATE PROCEDURE deleteAttack
+(
+    att_ID INTEGER
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        DELETE FROM Attacks WHERE attack_ID = att_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS deleteAttOrg;
+DELIMITER $$
+CREATE PROCEDURE deleteAttOrg
+(
+    att_ID INTEGER
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        DELETE FROM Attacked_Organization WHERE attOrg_ID = att_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS deleteSecOrg;
+DELIMITER $$
+CREATE PROCEDURE deleteSecOrg
+(
+    secOrg_ID INTEGER
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        DELETE FROM Organizations_discovered WHERE sec_ID = secOrg_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS updateLogHacker;
+DELIMITER $$
+CREATE PROCEDURE updateLogHacker
+(
+    log_ID INTEGER,
+    hacker_ID VARCHAR(50)
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        UPDATE CyberAttack_Log SET Hacker_ID = hacker_ID WHERE Cyber_ID = log_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS updateLogSec;
+DELIMITER $$
+CREATE PROCEDURE updateLogSec
+(
+    log_ID INTEGER,
+    sec_ID VARCHAR(50)
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        UPDATE CyberAttack_Log SET Disc_Org_ID = sec_ID WHERE Cyber_ID = log_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS updateLogSecHack;
+DELIMITER $$
+CREATE PROCEDURE updateLogSecHack
+(
+    log_ID INTEGER,
+    sec_ID VARCHAR(50),
+    hack_ID VARCHAR(50)
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+        UPDATE CyberAttack_Log SET Disc_Org_ID = sec_ID, Hacker_ID = hack_ID WHERE Cyber_ID = log_ID;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateHackerName;
+DELIMITER $$
+CREATE TRIGGER updateHackerName
+AFTER UPDATE ON Hacker
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Hacker_ID = NEW.Hacker_name WHERE Hacker_ID = OLD.Hacker_name;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateAttack;
+DELIMITER $$
+CREATE TRIGGER updateAttack
+AFTER UPDATE ON Attacks
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Attack_ID = NEW.Attack_name WHERE Attack_ID = OLD.Attack_name;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateOrg;
+DELIMITER $$
+CREATE TRIGGER updateOrg
+AFTER UPDATE ON Attacked_Organization
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Attacked_Org_ID = NEW.Attack_Org_Name WHERE Attacked_Org_ID = OLD.Attack_Org_Name;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateSec;
+DELIMITER $$
+CREATE TRIGGER updateSec
+AFTER UPDATE ON Organizations_discovered
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Disc_Org_ID = NEW.Discov_Org_Name WHERE Disc_Org_ID = OLD.Discov_Org_Name;
+END$$
+DELIMITER ;
+
+DROP EVENT IF EXISTS removeLog;
+DELIMITER $$
+CREATE EVENT removeLog
+ON SCHEDULE EVERY 1 MINUTE 
+STARTS NOW() 
+DO BEGIN
+    DELETE FROM CyberAttack_Log WHERE Cyber_ID = 2;
+END$$
+DELIMITER ;
+

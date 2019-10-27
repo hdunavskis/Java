@@ -41,4 +41,7 @@
 <fullyQualifiedTypeName name="com.ait.game.IO"/>
 <fullyQualifiedTypeName name="org.mockito.internal.verification.Times"/>
 <fullyQualifiedTypeName name="com.ait.game.Die"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JFormattedTextField"/>
 </qualifiedTypeNameHistroy>

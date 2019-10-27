@@ -3,55 +3,122 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import java.sql.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
+import java.sql.*;
 
 @SuppressWarnings("serial")
 public class JDBCMainWindowContent extends JInternalFrame implements ActionListener
 {
+	private final String HACKER = "Hacker";
+	private final String ATTACKS = "Attacks";
+	private final String CYBER_ATTACK_LOG = "CyberAttack_Log";
+	private final String SEC_ORG = "Organizations_discovered";
+	private final String ATT_ORG = "Attacked_Organization";
+	private final String DATE_FORMAT = "yyyy-mm-dd";
 	// DB Connectivity Attributes
 	private Connection con = null;
 	private Statement stmt = null;
+	private PreparedStatement ps= null;
 	private ResultSet rs = null;
 	
 	private Container content;
 	
-	private JPanel detailsPanel;
+	private JPanel panelForCyberLog;
+	private JPanel panelHacker;
+	private JPanel panelAttOrg;
+	private JPanel panelAttacks;
+	private JPanel panelSecOrg;
 	private JPanel exportButtonPanel;
 	private JPanel exportConceptDataPanel;
-	private JScrollPane dbContentsPanel;
+	private JScrollPane attackLog;
+	private JScrollPane hackers;
+	private JScrollPane attacks;
+	private JScrollPane attOrg;
+	private JScrollPane secOrg;
+	private JTabbedPane tabs;
 	
 	private Border lineBorder;
-	
-	private JLabel RecordIDLabel=new JLabel("Record ID:                 ");
-	private JLabel SSIDLabel=new JLabel("SSID:               ");
-	private JLabel dateLabel=new JLabel("Date:      ");
-	private JLabel RSSLabel=new JLabel("RSS:        ");
-	private JLabel macLossLabel=new JLabel("MAC Loss:                 ");
-	private JLabel delayLabel=new JLabel("Delay:               ");
-	private JLabel channelLabel=new JLabel("Channel:      ");
-	private JLabel secLabel=new JLabel("Security:      ");
-	private JLabel swLabel=new JLabel("Sw Version:        ");
-	private JLabel gpsLongLabel=new JLabel("GPS Longitude:        ");
-	private JLabel gpsLatLabel=new JLabel("GPS Latitude:        ");
-	
-	private JTextField RecordIDTF= new JTextField(10);
-	private JTextField SSIDTF=new JTextField(10);
-	private JTextField dateTF=new JTextField(10);
-	private JTextField RSSTF=new JTextField(10);
-	private JTextField macLossTF=new JTextField(10);
-	private JTextField delayTF=new JTextField(10);
-	private JTextField channelTF=new JTextField(10);
-	private JTextField secTF=new JTextField(10);
-	private JTextField swTF=new JTextField(10);
-	private JTextField gpsLongTF=new JTextField(10);
-	private JTextField gpsLatTF=new JTextField(10);
+	//labels for cyberattacklog
+	private JLabel cyber_ID_Label = new JLabel("Cyber_ID");
+	private JLabel cyber_attack_ID_Label = new JLabel("Attack_ID");
+	private JLabel cyber_sec_org_ID_Label = new JLabel("Sec_Org_ID");
+	private JLabel cyber_hacker_ID_Label = new JLabel("Hacker_ID");
+	private JLabel cyber_attOrg_ID_Label = new JLabel("Att_Org_ID");
+	private JLabel cyber_date_Label = new JLabel("Date");
+	private JLabel cyber_howAttDelivered_Label = new JLabel("Attack Description");
+	private JLabel cyber_damage_Label = new JLabel("Damage");
+	// textfields for cyberattacklog
+	private JTextField cyber_ID_Text = new JTextField(11);
+	private JTextField cyber_attack_ID_Text = new JTextField(50);
+	private JTextField cyber_sec_org_ID_Text = new JTextField(50);
+	private JTextField cyber_hacker_ID_Text = new JTextField(50);
+	private JTextField cyber_attOrg_ID_Text = new JTextField(50);
+	private JTextField cyber_date_Text = new JFormattedTextField(DATE_FORMAT);
+	private JTextField cyber_howAttDelivered_Text = new JTextField(100);
+	private JTextField cyber_damage_Text = new JTextField(10);
 
+	//labels for hacker
+	private JLabel hacker_ID_Label = new JLabel("Hacker_ID");
+	private JLabel hacker_name_Label = new JLabel("Hacker_Name");
+	private JLabel hacker_size_Label = new JLabel("Size");
+	private JLabel hacker_location_Label = new JLabel("Location");
+	//textfields for hacker
+	private JTextField hacker_ID_Text = new JTextField(50);
+	private JTextField hacker_name_Text = new JTextField(50);
+	private JTextField hacker_size_Text = new JTextField(11);
+	private JTextField hacker_location_Text = new JTextField(20);
+	
+	//labels for attacked organizations
+	private JLabel attOrg_ID_Label = new JLabel("Attacked Org. ID");
+	private JLabel attOrg_name_Label = new JLabel("Attacked Org. Name");
+	private JLabel attOrg_business_Label = new JLabel("Type Of Business");
+	private JLabel attOrg_size_Label = new JLabel("Size of Organization");
+	private JLabel attOrg_location_Label = new JLabel("Location");
+	private JLabel attOrg_worth_Label = new JLabel("Worth");
+	//textfields for attacked organizations
+	private JTextField attOrg_ID_Text = new JTextField();
+	private JTextField attOrg_name_Text = new JTextField();
+	private JTextField attOrg_business_Text = new JTextField();
+	private JTextField attOrg_size_Text = new JTextField();
+	private JTextField attOrg_location_Text = new JTextField();
+	private JTextField attOrg_worth_Text = new JTextField();
+	
+	//labels for attacs
+	private JLabel attack_ID_Label = new JLabel("Attack ID");
+	private JLabel attack_name_Label = new JLabel("Attack Name");
+	private JLabel attack_type_Label = new JLabel("Type Of Attack");
+	private JLabel attack_description_Label = new JLabel("Description");
+	//textfields for attacks
+	private JTextField attack_ID_Text = new JTextField();
+	private JTextField attack_name_Text = new JTextField();
+	private JTextField attack_type_Text = new JTextField();
+	private JTextField attack_description_Text = new JTextField();
+
+	//labels for security organizations
+	private JLabel sec_ID_Label = new JLabel("Security Org. Name");
+	private JLabel secOrg_name_Label = new JLabel("Security Org. Name");
+	private JLabel secOrg_size_Label = new JLabel("Size");
+	private JLabel secOrg_location_Label = new JLabel("Location");
+	//textfields for security organizations
+	private JTextField secOrg_ID_Text = new JTextField();
+	private JTextField secOrg_name_Text = new JTextField();
+	private JTextField secOrg_size_Text = new JTextField();
+	private JTextField secOrg_lovation_Text = new JTextField();
 			
-	private static QueryTableModel TableModel = new QueryTableModel();
+	private static QueryTableModel AttackLog = new QueryTableModel();
+	private static QueryTableModel Hackers = new QueryTableModel();
+	private static QueryTableModel Attacks = new QueryTableModel();
+	private static QueryTableModel AttOrg = new QueryTableModel();
+	private static QueryTableModel SecOrg = new QueryTableModel();
 	
 	//Add the models to JTabels
-	private JTable TableofDBContents=new JTable(TableModel);
+	private JTable TableofDBContents=new JTable(AttackLog);
+	private JTable TableofDBContentsHack=new JTable(Hackers);
+	private JTable TableofDBContentsAttacks=new JTable(Attacks);
+	private JTable TableofDBContentsAttOrg=new JTable(AttOrg);
+	private JTable TableofDBContentsSecOrg=new JTable(SecOrg);
 	
 	//Buttons for inserting, and updating members
 	//also a clear button to clear details panel
@@ -61,14 +128,13 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	private JButton deleteButton  = new JButton("Delete");
 	private JButton clearButton  = new JButton("Clear");
 
-	private JButton last3LossRates  = new JButton("3 Previous Loss Rates per AP");
-	private JTextField last3LossRatesTF  = new JTextField(12);
-	private JButton avgofRSS  = new JButton("Avg Loss for last 3 Rec per AP");
-	private JTextField avgofRSSTF  = new JTextField(12);
-	private JButton overLappingAP  = new JButton("AP Location");
-	private JButton overLappingChannels  = new JButton("AP Channel");
-	
-
+	private JButton attacksInTime  = new JButton("Attacks in given Time");
+	private JTextField startDate  = new JFormattedTextField(DATE_FORMAT);
+	private JButton avgLostPerAttack  = new JButton("Avg Loss per Attack");
+	private JTextField endDate  = new JFormattedTextField(DATE_FORMAT);
+	private JButton mostAttackedCompanies  = new JButton("Most Attacked Companies");
+	private JButton numberOfAttacksPerHacker  = new JButton("Number Of Attacks per Hacker");
+	private JButton chart  = new JButton("Some Stats");
 
 	public JDBCMainWindowContent( String aTitle)
 	{	
@@ -83,53 +149,111 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		content.setBackground(Color.lightGray);
 		lineBorder = BorderFactory.createEtchedBorder(15, Color.red, Color.black);
 	
-		//setup details panel and add the components to it
-		detailsPanel=new JPanel();
-		detailsPanel.setLayout(new GridLayout(11,2));
-		detailsPanel.setBackground(Color.lightGray);
-		detailsPanel.setBorder(BorderFactory.createTitledBorder(lineBorder, "AP Details"));
-			
-		//labels
-		detailsPanel.add(RecordIDLabel);			
-		detailsPanel.add(RecordIDTF);
-		detailsPanel.add(SSIDLabel);		
-		detailsPanel.add(SSIDTF);
-		detailsPanel.add(dateLabel);	
-		detailsPanel.add(dateTF);
-		detailsPanel.add(RSSLabel);		
-		detailsPanel.add(RSSTF);
-		detailsPanel.add(macLossLabel);
-		detailsPanel.add(macLossTF);
-		detailsPanel.add(delayLabel);
-		detailsPanel.add(delayTF);
-		detailsPanel.add(channelLabel);
-		detailsPanel.add(channelTF);
-		detailsPanel.add(secLabel);
-		detailsPanel.add(secTF);
-		detailsPanel.add(swLabel);
-		detailsPanel.add(swTF);
-		detailsPanel.add(gpsLongLabel);
-		detailsPanel.add(gpsLongTF);
-		detailsPanel.add(gpsLatLabel);
-		detailsPanel.add(gpsLatTF);
+		//setup cyberLog panel
+		panelForCyberLog=new JPanel();
+		panelForCyberLog.setLayout(new GridLayout(11,2));
+		panelForCyberLog.setBackground(Color.lightGray);
+		panelForCyberLog.setBorder(BorderFactory.createTitledBorder(lineBorder, "Attack Log Details"));
+		//labels for cyberLog
+		panelForCyberLog.add(cyber_ID_Label);			
+		panelForCyberLog.add(cyber_ID_Text);
+		panelForCyberLog.add(cyber_attack_ID_Label);		
+		panelForCyberLog.add(cyber_attack_ID_Text);
+		panelForCyberLog.add(cyber_sec_org_ID_Label);	
+		panelForCyberLog.add(cyber_sec_org_ID_Text);
+		panelForCyberLog.add(cyber_hacker_ID_Label);		
+		panelForCyberLog.add(cyber_hacker_ID_Text);
+		panelForCyberLog.add(cyber_attOrg_ID_Label);
+		panelForCyberLog.add(cyber_attOrg_ID_Text);
+		panelForCyberLog.add(cyber_date_Label);
+		panelForCyberLog.add(cyber_date_Text);
+		panelForCyberLog.add(cyber_howAttDelivered_Label);
+		panelForCyberLog.add(cyber_howAttDelivered_Text);
+		panelForCyberLog.add(cyber_damage_Label);
+		panelForCyberLog.add(cyber_damage_Text);
+		
+		// set up hacker panel
+		panelHacker=new JPanel();
+		panelHacker.setLayout(new GridLayout(4,2));
+		panelHacker.setBackground(Color.lightGray);
+		panelHacker.setBorder(BorderFactory.createTitledBorder(lineBorder, "Hacker Details"));
+		//labels for hacker
+		panelHacker.add(hacker_ID_Label);
+		panelHacker.add(hacker_ID_Text);
+		panelHacker.add(hacker_name_Label);
+		panelHacker.add(hacker_name_Text);
+		panelHacker.add(hacker_size_Label);
+		panelHacker.add(hacker_size_Text);
+		panelHacker.add(hacker_location_Label);
+		panelHacker.add(hacker_location_Text);
+		
+		// set up attacked organizations panel
+		panelAttOrg=new JPanel();
+		panelAttOrg.setLayout(new GridLayout(6,2));
+		panelAttOrg.setBackground(Color.lightGray);
+		panelAttOrg.setBorder(BorderFactory.createTitledBorder(lineBorder, "Attacked Org. Details"));
+		//labels for attacked organizations
+		panelAttOrg.add(attOrg_ID_Label);
+		panelAttOrg.add(attOrg_ID_Text);
+		panelAttOrg.add(attOrg_name_Label);
+		panelAttOrg.add(attOrg_name_Text);
+		panelAttOrg.add(attOrg_business_Label);
+		panelAttOrg.add(attOrg_business_Text);
+		panelAttOrg.add(attOrg_size_Label);
+		panelAttOrg.add(attOrg_size_Text);
+		panelAttOrg.add(attOrg_location_Label);
+		panelAttOrg.add(attOrg_location_Text);
+		panelAttOrg.add(attOrg_worth_Label);
+		panelAttOrg.add(attOrg_worth_Text);
+		
+		// set up attacks
+		panelAttacks=new JPanel();
+		panelAttacks.setLayout(new GridLayout(4,2));
+		panelAttacks.setBackground(Color.lightGray);
+		panelAttacks.setBorder(BorderFactory.createTitledBorder(lineBorder, "Attacks Details"));
+		//labels for attacks
+		panelAttacks.add(attack_ID_Label);
+		panelAttacks.add(attack_ID_Text);
+		panelAttacks.add(attack_name_Label);
+		panelAttacks.add(attack_name_Text);
+		panelAttacks.add(attack_type_Label);
+		panelAttacks.add(attack_type_Text);
+		panelAttacks.add(attack_description_Label);
+		panelAttacks.add(attack_description_Text);
+		
+		// set up security organizations
+		panelSecOrg=new JPanel();
+		panelSecOrg.setLayout(new GridLayout(4,2));
+		panelSecOrg.setBackground(Color.lightGray);
+		panelSecOrg.setBorder(BorderFactory.createTitledBorder(lineBorder, "Security Org. Details"));
+		//labels for security organizations
+		panelSecOrg.add(sec_ID_Label);
+		panelSecOrg.add(secOrg_ID_Text);
+		panelSecOrg.add(secOrg_name_Label);
+		panelSecOrg.add(secOrg_name_Text);
+		panelSecOrg.add(secOrg_size_Label);
+		panelSecOrg.add(secOrg_size_Text);
+		panelSecOrg.add(secOrg_location_Label);
+		panelSecOrg.add(secOrg_lovation_Text);
+
+
 		
 		//export data 
 		exportButtonPanel=new JPanel();
-		exportButtonPanel.setLayout(new GridLayout(3,2));
+		exportButtonPanel.setLayout(new GridLayout(3,0));
 		exportButtonPanel.setBackground(Color.lightGray);
 		exportButtonPanel.setBorder(BorderFactory.createTitledBorder(lineBorder, "Export Data"));
-		exportButtonPanel.add(last3LossRates);
-		exportButtonPanel.add(last3LossRatesTF);
-		exportButtonPanel.add(avgofRSS);
-		exportButtonPanel.add(avgofRSSTF);
-		exportButtonPanel.add(overLappingAP);
-		exportButtonPanel.add(overLappingChannels);
-		exportButtonPanel.setSize(500, 200);
+		exportButtonPanel.add(attacksInTime);
+		exportButtonPanel.add(startDate);
+		exportButtonPanel.add(endDate);
+		exportButtonPanel.add(avgLostPerAttack);
+		exportButtonPanel.add(mostAttackedCompanies);
+		exportButtonPanel.add(numberOfAttacksPerHacker);
+		exportButtonPanel.add(chart);
+		exportButtonPanel.setSize(700, 200);
 		exportButtonPanel.setLocation(3, 300);
 		content.add(exportButtonPanel);
 		
-		
-	
 		insertButton.setSize(100, 30);
 		updateButton.setSize(100, 30);
 		exportButton.setSize (100, 30);
@@ -154,28 +278,116 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		content.add(exportButton);
 		content.add(deleteButton);
 		content.add(clearButton);
+		
+		ChangeListener ch = new ChangeListener() {
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				
+				if (tabs.getSelectedIndex() == 0) {
+					panelSecOrg.setVisible(false);
+					panelHacker.setVisible(false);
+					panelAttacks.setVisible(false);
+					panelAttOrg.setVisible(false);
+					panelForCyberLog.setVisible(true);
+				} else if (tabs.getSelectedIndex() == 1 ) {
+					//attack details
+					panelAttacks.setSize(360, 140);
+					panelAttacks.setLocation(3,0);
+					
+					panelForCyberLog.setVisible(false);
+					panelHacker.setVisible(false);
+					panelSecOrg.setVisible(false);
+					panelAttOrg.setVisible(false);
+					panelAttacks.setVisible(true);
+					
+				} else if (tabs.getSelectedIndex() == 2) {
+					//hacker details
+					panelHacker.setSize(360, 150);
+					panelHacker.setLocation(3,0);
+					
+					panelForCyberLog.setVisible(false);
+					panelAttOrg.setVisible(false);
+					panelAttacks.setVisible(false);
+					panelSecOrg.setVisible(false);
+					panelHacker.setVisible(true);
+				} else if (tabs.getSelectedIndex() == 3) {
+					//attacked organizations details
+					panelAttOrg.setSize(360, 220);
+					panelAttOrg.setLocation(3,0);
+					
+					panelForCyberLog.setVisible(false);
+					panelHacker.setVisible(false);
+					panelAttacks.setVisible(false);
+					panelSecOrg.setVisible(false);
+					panelAttOrg.setVisible(true);
+					
+				} else if (tabs.getSelectedIndex() == 4) {
+					//security organizations details
+					panelSecOrg.setSize(360, 150);
+					panelSecOrg.setLocation(3,0);
+					
+					panelForCyberLog.setVisible(false);
+					panelHacker.setVisible(false);
+					panelAttOrg.setVisible(false);
+					panelAttacks.setVisible(false);
+					panelSecOrg.setVisible(true);
+				}
+			}
+		};
 
 		//database content		
 		TableofDBContents.setPreferredScrollableViewportSize(new Dimension(900, 300));
 	
-		dbContentsPanel=new JScrollPane(TableofDBContents,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		dbContentsPanel.setBackground(Color.lightGray);
-		dbContentsPanel.setBorder(BorderFactory.createTitledBorder(lineBorder,"Database Content"));
+		attackLog=new JScrollPane(TableofDBContents,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		attackLog.setBackground(Color.lightGray);
+		
+		hackers=new JScrollPane(TableofDBContentsHack,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		hackers.setBackground(Color.lightGray);
+
+		attacks=new JScrollPane(TableofDBContentsAttacks,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		attacks.setBackground(Color.lightGray);
+		
+		attOrg=new JScrollPane(TableofDBContentsAttOrg,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		attOrg.setBackground(Color.lightGray);
+		
+		secOrg=new JScrollPane(TableofDBContentsSecOrg,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		secOrg.setBackground(Color.lightGray);
+		
+		tabs = new JTabbedPane();
+		
+		
+		tabs.addTab("Attack Log", attackLog);
+		tabs.add("Attacks", attacks);
+		tabs.add("Hackers", hackers);
+		tabs.add("Attacked Organization", attOrg);
+		tabs.add("Security Companies", secOrg);
+		tabs.addChangeListener(ch);
+		
+		
+		tabs.setSize(1100, 300);
+		tabs.setLocation(477, 0);
+		tabs.setBorder(BorderFactory.createTitledBorder(lineBorder,"Database Content"));
 		
 		//detail size
-		detailsPanel.setSize(360, 300);
-		detailsPanel.setLocation(3,0);
-		//datagrid size
-		dbContentsPanel.setSize(1100, 300);
-		dbContentsPanel.setLocation(477, 0);
+		panelForCyberLog.setSize(360, 300);
+		panelForCyberLog.setLocation(3,0);
 		
-		content.add(detailsPanel);
-		content.add(dbContentsPanel);
+		content.add(panelForCyberLog);
+		content.add(panelHacker).setVisible(false);
+		content.add(panelAttOrg).setVisible(false);
+		content.add(panelAttacks).setVisible(false);
+		content.add(panelSecOrg).setVisible(false);
+		content.add(tabs, BorderLayout.CENTER);
 		
 		setSize(982,645);
 		setVisible(true);
 	
-		TableModel.refreshFromDB(stmt);
+		AttackLog.refreshFromDB(stmt, CYBER_ATTACK_LOG);
+		Attacks.refreshFromDB(stmt, ATTACKS);
+		AttOrg.refreshFromDB(stmt, ATT_ORG);
+		SecOrg.refreshFromDB(stmt, SEC_ORG);
+		Hackers.refreshFromDB(stmt, HACKER);
 	}
 	
 	public void initiate_db_conn()
@@ -203,30 +415,106 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		 Object target=e.getSource();
 		 if (target == clearButton)
 		 {
-			 RecordIDTF.setText("");
-			 SSIDTF.setText("");
-			 dateTF.setText("");
-			 RSSTF.setText("");
-			 macLossTF.setText("");
-			 delayTF.setText("");
-			 channelTF.setText("");
-			 secTF.setText("");
-			 swTF.setText("");
-			 gpsLongTF.setText("");
-			 gpsLatTF.setText("");
-			 	 
+			 if(tabs.getSelectedIndex() == 0) {
+				 cyber_ID_Text.setText("");
+				 cyber_attack_ID_Text.setText("");
+				 cyber_sec_org_ID_Text.setText("");
+				 cyber_hacker_ID_Text.setText("");
+				 cyber_attOrg_ID_Text.setText("");
+				 cyber_date_Text.setText(DATE_FORMAT);
+				 cyber_howAttDelivered_Text.setText("");
+				 cyber_damage_Text.setText("");	 
+				 
+			 } else if (tabs.getSelectedIndex() == 1 ) {
+				 attack_ID_Text.setText(""); 
+				 attack_name_Text.setText(""); 
+				 attack_type_Text.setText("");
+				 attack_description_Text.setText(""); 
+					
+			 } else if (tabs.getSelectedIndex() == 2) {
+				 hacker_ID_Text.setText("");
+				 hacker_name_Text.setText("");
+				 hacker_size_Text.setText("");
+				 hacker_location_Text.setText("");
+			 } else if (tabs.getSelectedIndex() == 3) {
+				 attOrg_ID_Text.setText("");
+				 attOrg_name_Text.setText("");
+				 attOrg_business_Text.setText("");
+				 attOrg_size_Text.setText("");
+				 attOrg_location_Text.setText("");
+				 attOrg_worth_Text.setText("");
+			 } else if (tabs.getSelectedIndex() == 4) {
+				 secOrg_ID_Text.setText("");
+				 secOrg_name_Text.setText("");
+				 secOrg_size_Text.setText("");
+				 secOrg_lovation_Text.setText("");
+			 }
 		 }
 		
 		 if (target == insertButton)
 		 {		 
 	 		try
 	 		{
- 				String updateTemp ="INSERT INTO APPERFDATA VALUES ('"+
- 		 				  RecordIDTF.getText()+"','"+SSIDTF.getText()+"','"+dateTF.getText()+"','"+RSSTF.getText()+"','"+macLossTF.getText()+"','"
- 		 				 +delayTF.getText()+"','"+channelTF.getText()+"','"+secTF.getText()+"','"+swTF.getText()+"','"+gpsLongTF.getText()+"','"+gpsLatTF.getText()+"');";
- 				
- 						
- 				stmt.executeUpdate(updateTemp);
+	 			if(tabs.getSelectedIndex() == 0) {
+					//log
+	 				//TODO stored procedure if does not exist create  
+					String  insert = "INSERT INTO " + CYBER_ATTACK_LOG + "(Cyber_ID, Attack_ID, Disc_Org_ID, Hacker_ID, Attacked_Org_ID, Date, "
+					  		+ "How_Attack_Delivered, Damage) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+					  ps = con.prepareStatement(insert);
+					  ps.setString(1, null);
+					  ps.setString(2, cyber_attack_ID_Text.getText());
+					  ps.setString(3, cyber_sec_org_ID_Text.getText());
+					  ps.setString(4, cyber_hacker_ID_Text.getText());
+					  ps.setString(5, cyber_attOrg_ID_Text.getText());
+					  ps.setString(6, cyber_date_Text.getText());
+					  ps.setString(7, cyber_howAttDelivered_Text.getText());
+					  ps.setDouble(8, Double.parseDouble(cyber_damage_Text.getText()));
+				} else if (tabs.getSelectedIndex() == 1 ) {
+					 //attacks
+					String	insert = "INSERT INTO " + ATTACKS + "(attack_ID, Attack_Name, TypeOfAttack, Description) "
+							+ " VALUES(?, ?, ?, ?)";
+					ps = con.prepareStatement(insert);
+					ps.setString(1, null);
+					ps.setString(2, attack_name_Text.getText());
+					ps.setString(3, attack_type_Text.getText());
+					ps.setString(4, attack_description_Text.getText());
+						
+				} else if (tabs.getSelectedIndex() == 2) {
+					//hacker
+					String insert = "INSERT INTO " + HACKER + "(h_ID, Hacker_Name, Size, Location) VALUES(?, ?, ?, ?)";
+					
+					ps = con.prepareStatement(insert);
+					ps.setString(1, null);		
+					ps.setString(2, hacker_name_Text.getText());		
+					ps.setInt(3, Integer.parseInt(hacker_size_Text.getText()));		
+					ps.setString(4, hacker_location_Text.getText());		
+							
+				} else if (tabs.getSelectedIndex() == 3) {
+					 //attorg
+					String insert = "INSERT INTO " + ATT_ORG + "(attOrg_ID, Attack_Org_Name, Type_of_Business, Size_Of_Organization, Location, Worth) "
+							+ "VALUES(?, ?, ?, ?, ?, ?)";
+					
+					ps = con.prepareStatement(insert);
+					ps.setString(1, null);
+					ps.setString(2, attOrg_name_Text.getText());
+					ps.setString(3, attOrg_business_Text.getText());
+					ps.setInt(4, Integer.parseInt(attOrg_size_Text.getText()));
+					ps.setString(5, attOrg_location_Text.getText());
+					ps.setDouble(6, Double.parseDouble(attOrg_worth_Text.getText()));
+				} else if (tabs.getSelectedIndex() == 4) {
+					 //secorg
+					String insert = "INSERT INTO " + SEC_ORG + "(sec_ID, Discov_Org_Name, Size_Of_Organization, Location) "
+							+ "VALUES(?, ?, ?, ?)";
+					
+					ps = con.prepareStatement(insert);
+					ps.setString(1, null);
+					ps.setString(2, secOrg_name_Text.getText());
+					ps.setInt(3, Integer.parseInt(secOrg_size_Text.getText()));
+					ps.setString(4, secOrg_lovation_Text.getText());
+				}
+ 					
+	 			ps.execute();
+ 				//stmt.executeUpdate(insert);
  			
 	 		}
 	 		catch (SQLException sqle)
@@ -235,7 +523,11 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	 		}
 	 		finally
 	 		{
-	 			TableModel.refreshFromDB(stmt);
+	 			AttackLog.refreshFromDB(stmt, CYBER_ATTACK_LOG);
+	 			Attacks.refreshFromDB(stmt, ATTACKS);
+	 			AttOrg.refreshFromDB(stmt, ATT_ORG);
+	 			SecOrg.refreshFromDB(stmt, SEC_ORG);
+	 			Hackers.refreshFromDB(stmt, HACKER);
 			}
 		 }
 		 if (target == deleteButton)
@@ -243,9 +535,36 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		 	
 	 		try
 	 		{
- 				String updateTemp ="DELETE FROM APPERFDATA WHERE Rec_id = "+RecordIDTF.getText()+";"; 
- 				stmt.executeUpdate(updateTemp);
- 			
+	 			if(tabs.getSelectedIndex() == 0) {
+					//log
+					String delete = "call deleteLog(?)";
+					ps = con.prepareCall(delete);
+					ps.setInt(1, Integer.parseInt(cyber_ID_Text.getText()));
+					
+				} else if (tabs.getSelectedIndex() == 1 ) {
+					 //attacks
+					String delete = "call deleteAttack(?)";
+					ps = con.prepareCall(delete);
+					ps.setString(1, attack_ID_Text.getText());
+						
+				} else if (tabs.getSelectedIndex() == 2) {
+					//hacker
+					String delete = "call deleteHacker(?)";
+					ps = con.prepareCall(delete);
+					ps.setInt(1, Integer.parseInt(hacker_ID_Text.getText()));
+					
+				} else if (tabs.getSelectedIndex() == 3) {
+					 //attorg
+					String delete = "call deleteAttOrg(?)";
+					ps = con.prepareCall(delete);
+					ps.setString(1, attOrg_ID_Text.getText());
+				} else if (tabs.getSelectedIndex() == 4) {
+					 //secorg
+					String delete = "call deleteSecOrg(?)";
+					ps = con.prepareCall(delete);
+					ps.setInt(1, Integer.parseInt(secOrg_ID_Text.getText()));
+				}
+	 			ps.execute();
 	 		}
 	 		catch (SQLException sqle)
 	 		{
@@ -253,46 +572,78 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	 		}
 	 		finally
 	 		{
-	 			TableModel.refreshFromDB(stmt);
+	 			AttackLog.refreshFromDB(stmt, CYBER_ATTACK_LOG);
+	 			Attacks.refreshFromDB(stmt, ATTACKS);
+	 			AttOrg.refreshFromDB(stmt, ATT_ORG);
+	 			SecOrg.refreshFromDB(stmt, SEC_ORG);
+	 			Hackers.refreshFromDB(stmt, HACKER);
 			}
 		 }
 		 if (target == updateButton)
 		 {	 	
 	 		try
 	 		{ 			
- 				String updateTemp ="UPDATE APPERFDATA SET SSID = '"+SSIDTF.getText()+
- 									
- 									"', Date = "+
- 									"'"+dateTF.getText()+"'"+
- 									", RSS = "+RSSTF.getText()+
- 									", MAC_Loss = "+macLossTF.getText()+
- 									", Delay = "+delayTF.getText()+
- 									", Channel = "+channelTF.getText()+
- 									", Sec = "+
- 									"'"+secTF.getText()+"'"+
- 									", Software_Version = "+swTF.getText()+
- 									", GPS_Long = "+gpsLongTF.getText()+
- 									", GPS_Lat = "+gpsLatTF.getText()+
- 									" where Rec_id = "+RecordIDTF.getText();
- 				
- 	
- 				
- 				
- 				System.out.println(updateTemp);
- 				stmt.executeUpdate(updateTemp);
- 				//these lines do nothing but the table updates when we access the db.
- 				rs = stmt.executeQuery("SELECT * from CyberAttack_Log ");
- 				rs.next();
- 				rs.close();	
+	 			if(tabs.getSelectedIndex() == 0) {
+					//log
+	 				if(cyber_hacker_ID_Text.getText().length() > 0 && cyber_sec_org_ID_Text.getText().length() > 0) {
+	 					String update = "call updateLogSecHack(?, ?, ?)";
+		 				ps = con.prepareCall(update);
+		 				ps.setInt(1, Integer.parseInt(cyber_ID_Text.getText()));
+		 				ps.setString(2, cyber_sec_org_ID_Text.getText());	
+		 				ps.setString(3, cyber_hacker_ID_Text.getText());	
+	 				} else if (cyber_hacker_ID_Text.getText().length() > 0) { 
+	 					String update = "call updateLogHacker(?,?)";
+		 				ps = con.prepareCall(update);
+		 				ps.setInt(1, Integer.parseInt(cyber_ID_Text.getText()));
+		 				ps.setString(2, cyber_hacker_ID_Text.getText());	
+	 				} else if(cyber_sec_org_ID_Text.getText().length() > 0) {
+	 					String update = "call updateLogSec(?,?)";
+	 					
+		 				ps = con.prepareCall(update);
+		 				ps.setInt(1, Integer.parseInt(cyber_ID_Text.getText()));
+		 				ps.setString(2, cyber_sec_org_ID_Text.getText());
+	 				}
+	 				
+				} else if (tabs.getSelectedIndex() == 1 ) {
+					 //attacks
+					String update = "UPDATE " + ATTACKS + " SET Attack_name = (?) WHERE attack_ID = (?)";
+					ps = con.prepareStatement(update);
+					ps.setString(1, attack_name_Text.getText());
+					ps.setString(2, attack_ID_Text.getText());
+						
+				} else if (tabs.getSelectedIndex() == 2) {
+					//hacker
+					String update = "UPDATE " + HACKER + " SET Hacker_name = (?) WHERE h_ID = (?)";
+					ps = con.prepareStatement(update);
+					ps.setString(1, hacker_name_Text.getText());
+					ps.setString(2, hacker_ID_Text.getText());
+					
+				} else if (tabs.getSelectedIndex() == 3) {
+					 //attorg
+					String update = "UPDATE " + ATT_ORG + " SET Attack_Org_Name = (?) WHERE attOrg_ID = (?)";
+					ps = con.prepareStatement(update);
+					ps.setString(1, attOrg_name_Text.getText());
+					ps.setString(2, attOrg_ID_Text.getText());
+				} else if (tabs.getSelectedIndex() == 4) {
+					 //secorg
+					String update = "UPDATE " + SEC_ORG + " SET Discov_Org_Name = (?) WHERE sec_ID = (?)";
+					ps = con.prepareStatement(update);
+					ps.setString(1, secOrg_name_Text.getText());
+					ps.setString(2, secOrg_ID_Text.getText());
+				}
+	 			ps.execute();
+				
  			}
 	 		catch (SQLException sqle){
 	 			System.err.println("Error with members insert:\n"+sqle.toString());
 	 		}
 	 		finally{
-	 			TableModel.refreshFromDB(stmt);
+	 			AttackLog.refreshFromDB(stmt, CYBER_ATTACK_LOG);
+	 			Attacks.refreshFromDB(stmt, ATTACKS);
+	 			AttOrg.refreshFromDB(stmt, ATT_ORG);
+	 			SecOrg.refreshFromDB(stmt, SEC_ORG);
+	 			Hackers.refreshFromDB(stmt, HACKER);
 			}
 		 }		 	
 	}
-	
-
 }
