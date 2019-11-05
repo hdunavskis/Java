@@ -6,7 +6,6 @@ public class DiceRollerApp
     public static void main(String args[])
     {
         Game game=new Game();
-       // PairOfDice die = new PairOfDice();
         Die die = new Die();
         IO io = new IO();
         io.welcome();

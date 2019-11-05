@@ -38,6 +38,7 @@ class QueryTableModel extends AbstractTableModel
 	{	
 		modelData = new Vector();
 		stmt = stmt1;
+		
 		try{
 			//Execute the query and store the result set and its metadata
 			rs = stmt.executeQuery("SELECT * FROM " + type);

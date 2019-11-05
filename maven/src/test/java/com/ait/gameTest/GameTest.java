@@ -9,14 +9,12 @@ import static org.mockito.Mockito.*;
 import com.ait.game.Die;
 import com.ait.game.Game;
 import com.ait.game.IO;
-import com.ait.game.PairOfDice;
 import com.ait.game.Player;
 
 public class GameTest {
 	private Game game;
 	private Player pl1;
 	private Player pl2;
-	//private PairOfDice pd;
 	private Die pd;
 	private IO io;
 	
@@ -25,7 +23,6 @@ public class GameTest {
 		game = new Game();
 		pl1 = new Player("first");
 		pl2 = new Player("second");
-		//pd = mock(PairOfDice.class);
 		pd = mock(Die.class);
 		io = mock(IO.class);
 	}

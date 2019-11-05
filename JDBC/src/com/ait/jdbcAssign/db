@@ -17,12 +17,12 @@ CREATE TABLE Attacked_Organization(
 	)engine=innodb charset=utf8;
 	
 
-INSERT INTO Attacked_Organization VALUES (null, 'Apple', 'IT', 1230000, 'California, US', 22900000);
-INSERT INTO Attacked_Organization VALUES (null, 'Samsung', 'Mobile Phones', 320000, 'Suwon, South Korea', 21100000);
-INSERT INTO Attacked_Organization VALUES (null, 'Amazon', 'IT', 613300, 'Seatle, US', 177900);
-INSERT INTO Attacked_Organization VALUES (null, 'Foxconn', 'Electronics', 803126, 'New Taipei City, Taiwan', 15800);
+INSERT INTO Attacked_Organization VALUES (null, 'Apple', 'IT', 1230000, 'California US', 22900000);
+INSERT INTO Attacked_Organization VALUES (null, 'Samsung', 'Mobile Phones', 320000, 'Suwon South Korea', 21100000);
+INSERT INTO Attacked_Organization VALUES (null, 'Amazon', 'IT', 613300, 'Seatle US', 177900);
+INSERT INTO Attacked_Organization VALUES (null, 'Foxconn', 'Electronics', 803126, 'New Taipei City Taiwan', 15800);
 INSERT INTO Attacked_Organization VALUES (null, 'Huawei', 'Mobile Phones', 8900, 'Shenzhen', 1000);
-INSERT INTO Attacked_Organization VALUES (null, 'Sony', 'Electronics', 11700, 'Tokyo, Japan', 7700);
+INSERT INTO Attacked_Organization VALUES (null, 'Sony', 'Electronics', 11700, 'Tokyo Japan', 7700);
 
 CREATE TABLE Hacker(
     h_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -46,7 +46,7 @@ CREATE TABLE Organizations_discovered(
 	)engine=innodb charset=utf8;
 
 INSERT INTO Organizations_discovered VALUES (null, 'ADF Solutions', 1000, 'US');
-INSERT INTO Organizations_discovered VALUES (null, 'AhnLab, Inc', 500, 'Germany');
+INSERT INTO Organizations_discovered VALUES (null, 'AhnLab Inc', 500, 'Germany');
 INSERT INTO Organizations_discovered VALUES (null, 'HackerOne', 33, 'GBR');
 INSERT INTO Organizations_discovered VALUES (null, 'Clavister', 58, 'Ireland');
 INSERT INTO Organizations_discovered VALUES (null, 'SonicWall', 90, 'China');
@@ -61,7 +61,10 @@ CREATE TABLE Attacks(
 INSERT INTO Attacks VALUES (null, 'Phishing', 'Email', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'Password Attack', 'WEB', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'DoS', 'Network', 'somedescription');
-INSERT INTO Attacks VALUES (null, 'Malware', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'XSS', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'CSRF', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'SQL Injection', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'Session Hijacking', 'Email', 'somedescription');
 
 CREATE TABLE CyberAttack_Log(
 	Cyber_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -75,8 +78,11 @@ CREATE TABLE CyberAttack_Log(
 	)engine=innodb charset=utf8;
 	
 INSERT INTO CyberAttack_Log VALUES (null, 'Phishing', 'ADF Solutions', 'Anonymous', 'Apple', now(), 'Sql Injection', 23000);
-INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'HackerOne', 'Cicada', 'Samsung', '2019-09-13', 'XSS', 55000);
+INSERT INTO CyberAttack_Log VALUES (null, 'Malware', 'HackerOne', 'Cicada', 'Samsung', '2019-09-13', 'XSS', 55000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'SonicWall', 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
+INSERT INTO CyberAttack_Log VALUES (null, 'CSRF', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
+INSERT INTO CyberAttack_Log VALUES (null, 'CSRF', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
+INSERT INTO CyberAttack_Log VALUES (null, 'CSRF', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
 
 DROP procedure IF EXISTS deleteHacker;
@@ -315,5 +321,123 @@ STARTS NOW()
 DO BEGIN
     DELETE FROM CyberAttack_Log WHERE Cyber_ID = 2;
 END$$
+DELIMITER ;
+
+drop view if exists logView;
+CREATE VIEW logView AS
+SELECT Attack_ID, Disc_Org_ID, Hacker_ID, Attacked_Org_ID, How_Attack_Delivered, Damage FROM CyberAttack_Log;
+
+drop view if exists attacksView;
+CREATE VIEW attacksView AS
+SELECT Attack_Name, TypeOfAttack, Description FROM Attacks;
+
+drop view if exists hackerView;
+CREATE VIEW hackerView AS
+SELECT Hacker_Name, Location FROM Hacker;
+
+drop view if exists attacked_orgView;
+CREATE VIEW attacked_orgView AS
+SELECT Attack_Org_Name, Type_of_Business, Location FROM Attacked_Organization;
+
+drop view if exists securityView;
+CREATE VIEW securityView AS
+SELECT Discov_Org_Name, Location FROM Organizations_discovered;
+
+
+drop procedure if exists avgLossPerAttack;
+DELIMITER $$
+
+CREATE PROCEDURE avgLossPerAttack
+(
+    typeOfAttack VARCHAR(50)
+)
+BEGIN
+    DECLARE select_clause VARCHAR(200);
+    DECLARE where_clause VARCHAR(200);
+    
+    SET select_clause = "SELECT ROUND(SUM(Damage)/COUNT(Attack_ID),2) FROM CyberAttack_Log ";
+    Set where_clause = "WHERE ";
+    
+    IF typeOfAttack IS NOT NULL THEN
+        SET where_clause = CONCAT(where_clause, " Attack_ID = '", typeOfAttack, "'");
+    END IF;
+    
+    IF where_clause = "WHERE " THEN
+        SET @dynamic_sql = select_clause;
+    ELSE
+        SET @dynamic_sql = CONCAT(select_clause, where_clause);
+    END IF;
+
+    PREPARE select_statement FROM @dynamic_sql;
+
+    EXECUTE select_statement;
+    
+    DEALLOCATE PREPARE select_statement;
+
+END $$
+DELIMITER ;
+
+DROP procedure IF EXISTS mostAttackedCompany;
+DELIMITER $$
+CREATE PROCEDURE mostAttackedCompany
+(
+    OUT company VARCHAR(50),
+    OUT number int
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+       SELECT Attacked_Org_ID, COUNT(Attacked_Org_ID) AS comp FROM CyberAttack_Log GROUP BY Attacked_Org_ID ORDER BY COMP DESC LIMIT 1;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+DROP procedure IF EXISTS chart;
+DELIMITER $$
+CREATE PROCEDURE chart
+(
+    OUT attack1 VARCHAR(50),
+    OUT attack2 VARCHAR(50),
+    OUT attack3 VARCHAR(50)
+)
+BEGIN
+    DECLARE sql_error TINYINT DEFAULT FALSE;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+        SET sql_error = TRUE;
+
+    START TRANSACTION;
+       SELECT Attack_ID, COUNT(Attack_ID) AS numAttacks FROM CyberAttack_Log GROUP BY Attack_ID ASC LIMIT 3;
+    
+    IF sql_error = FALSE THEN
+        COMMIT;
+    ELSE
+        ROLLBACK;
+    END IF;
+    
+    END$$
+DELIMITER ;
+
+drop function if exists numOfHackers;
+DELIMITER $$
+
+CREATE Function numOfHackers
+(
+)
+RETURNS INT(10)
+BEGIN
+    DECLARE hackers INT(10);
+         SELECT COUNT(DISTINCT Hacker_ID) INTO hackers FROM CyberAttack_Log;
+    RETURN hackers;
+
+END $$
 DELIMITER ;
 
