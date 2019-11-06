@@ -23,7 +23,10 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	private final String ATTACKS = "Attacks";
 	private final String CYBER_ATTACK_LOG = "CyberAttack_Log";
 	private final String SEC_ORG = "Organizations_discovered";
-	protected final String ATT_ORG = "Attacked_Organization";
+	private final String ATT_ORG = "Attacked_Organization";
+	private final String CYBER_ATT = "BreaComp";
+	private final String CYBER_SEC = "CyberDiscovered";
+	private final String CYBER_HACKER = "CyberHack";
 	private final String DATE_FORMAT = "yyyy-mm-dd";
 	// DB Connectivity Attributes
 	private Connection con = null;
@@ -45,6 +48,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	private JScrollPane attacks;
 	private JScrollPane attOrg;
 	private JScrollPane secOrg;
+	private JScrollPane cyber_attacked_org;
+	private JScrollPane cyber_sec_org;
+	private JScrollPane cyber_hacker;
 	private JTabbedPane tabs;
 	
 
@@ -121,6 +127,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	private static QueryTableModel Attacks = new QueryTableModel();
 	private static QueryTableModel AttOrg = new QueryTableModel();
 	private static QueryTableModel SecOrg = new QueryTableModel();
+	private static QueryTableModel Cyber_Att = new QueryTableModel();
+	private static QueryTableModel Cyber_Sec = new QueryTableModel();
+	private static QueryTableModel Cyber_Hack = new QueryTableModel();
 
 	// Add the models to JTabels
 	private JTable TableofDBContents = new JTable(AttackLog);
@@ -128,6 +137,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	private JTable TableofDBContentsAttacks = new JTable(Attacks);
 	private JTable TableofDBContentsAttOrg = new JTable(AttOrg);
 	private JTable TableofDBContentsSecOrg = new JTable(SecOrg);
+	private JTable TableofDBContentsCyber_Attack = new JTable(Cyber_Att);
+	private JTable TableofDBContentsCyber_sec_org = new JTable(Cyber_Sec);
+	private JTable TableofDBContentsCyber_Hacker = new JTable(Cyber_Hack);
 
 	// Buttons for inserting, and updating members
 	// also a clear button to clear details panel
@@ -347,7 +359,7 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		};
 
 		// database content
-		TableofDBContents.setPreferredScrollableViewportSize(new Dimension(900, 300));
+		//TableofDBContents.setPreferredScrollableViewportSize(new Dimension(900, 300));
 
 		attackLog = new JScrollPane(TableofDBContents, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -368,6 +380,18 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		secOrg = new JScrollPane(TableofDBContentsSecOrg, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		secOrg.setBackground(Color.lightGray);
+		
+		cyber_attacked_org = new JScrollPane(TableofDBContentsCyber_Attack, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		cyber_attacked_org.setBackground(Color.lightGray);
+		
+		cyber_sec_org = new JScrollPane(TableofDBContentsCyber_sec_org, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		cyber_sec_org.setBackground(Color.lightGray);
+		
+		cyber_hacker = new JScrollPane(TableofDBContentsCyber_Hacker, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		cyber_hacker.setBackground(Color.lightGray);
 
 		tabs = new JTabbedPane();
 
@@ -376,6 +400,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		tabs.add("Hackers", hackers);
 		tabs.add("Attacked Organization", attOrg);
 		tabs.add("Security Companies", secOrg);
+		tabs.add("CyberAttack/Attacked_Org", cyber_attacked_org);
+		tabs.add("CyberAttack/Sec_Org", cyber_sec_org);
+		tabs.add("CyberAttack/Hacker", cyber_hacker);
 		tabs.addChangeListener(ch);
 
 		tabs.setSize(1100, 300);
@@ -401,6 +428,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 		AttOrg.refreshFromDB(stmt, ATT_ORG);
 		SecOrg.refreshFromDB(stmt, SEC_ORG);
 		Hackers.refreshFromDB(stmt, HACKER);
+		Cyber_Att.refreshFromDB(stmt, CYBER_ATT);
+		Cyber_Hack.refreshFromDB(stmt, CYBER_HACKER);
+		Cyber_Sec.refreshFromDB(stmt, CYBER_SEC);
 	}
 
 	public void initiate_db_conn() {
@@ -537,6 +567,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	 			AttOrg.refreshFromDB(stmt, ATT_ORG);
 	 			SecOrg.refreshFromDB(stmt, SEC_ORG);
 	 			Hackers.refreshFromDB(stmt, HACKER);
+	 			Cyber_Att.refreshFromDB(stmt, CYBER_ATT);
+	 			Cyber_Hack.refreshFromDB(stmt, CYBER_HACKER);
+	 			Cyber_Sec.refreshFromDB(stmt, CYBER_SEC);
 			}
 		 }
 		 if (target == deleteButton)
@@ -586,6 +619,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	 			AttOrg.refreshFromDB(stmt, ATT_ORG);
 	 			SecOrg.refreshFromDB(stmt, SEC_ORG);
 	 			Hackers.refreshFromDB(stmt, HACKER);
+	 			Cyber_Att.refreshFromDB(stmt, CYBER_ATT);
+	 			Cyber_Hack.refreshFromDB(stmt, CYBER_HACKER);
+	 			Cyber_Sec.refreshFromDB(stmt, CYBER_SEC);
 			}
 		 }
 		 if (target == updateButton)
@@ -654,6 +690,9 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	 			AttOrg.refreshFromDB(stmt, ATT_ORG);
 	 			SecOrg.refreshFromDB(stmt, SEC_ORG);
 	 			Hackers.refreshFromDB(stmt, HACKER);
+	 			Cyber_Att.refreshFromDB(stmt, CYBER_ATT);
+	 			Cyber_Hack.refreshFromDB(stmt, CYBER_HACKER);
+	 			Cyber_Sec.refreshFromDB(stmt, CYBER_SEC);
 			}
 		 }
 		 if (target == exportButton){  		

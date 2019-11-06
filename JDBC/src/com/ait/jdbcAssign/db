@@ -6,21 +6,22 @@ DROP TABLE IF EXISTS Attacked_Organization;
 DROP TABLE IF EXISTS Hacker;
 DROP TABLE IF EXISTS Organizations_discovered;
 DROP TABLE IF EXISTS Attacks;
+DROP TABLE IF EXISTS BreaComp;
+DROP TABLE IF EXISTS CyberDiscovered;
+DROP TABLE IF EXISTS CyberHack;
 
 CREATE TABLE Attacked_Organization(
     attOrg_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
 	Attack_Org_Name VARCHAR(50),
     Type_of_Business VARCHAR(50),
     Size_Of_Organization INTEGER,
-	Location VARCHAR(20),
-	Worth DECIMAL(10,1)
+	Location VARCHAR(50),
+	Worth DECIMAL(20,1)
 	)engine=innodb charset=utf8;
-	
-
 INSERT INTO Attacked_Organization VALUES (null, 'Apple', 'IT', 1230000, 'California US', 22900000);
 INSERT INTO Attacked_Organization VALUES (null, 'Samsung', 'Mobile Phones', 320000, 'Suwon South Korea', 21100000);
 INSERT INTO Attacked_Organization VALUES (null, 'Amazon', 'IT', 613300, 'Seatle US', 177900);
-INSERT INTO Attacked_Organization VALUES (null, 'Foxconn', 'Electronics', 803126, 'New Taipei City Taiwan', 15800);
+INSERT INTO Attacked_Organization VALUES (null, 'Foxconn', 'Electronics', 803126, 'Taiwan', 15800);
 INSERT INTO Attacked_Organization VALUES (null, 'Huawei', 'Mobile Phones', 8900, 'Shenzhen', 1000);
 INSERT INTO Attacked_Organization VALUES (null, 'Sony', 'Electronics', 11700, 'Tokyo Japan', 7700);
 
@@ -30,7 +31,6 @@ CREATE TABLE Hacker(
     Size INTEGER,
 	Location VARCHAR(20)
 	)engine=innodb charset=utf8;
-	
 INSERT INTO Hacker VALUES (null, 'Anonymous', 200, 'US');
 INSERT INTO Hacker VALUES (null, 'Cicada', 50, 'China');
 INSERT INTO Hacker VALUES (null, 'DCLeaks', 30, 'US');
@@ -44,7 +44,6 @@ CREATE TABLE Organizations_discovered(
     Size_Of_Organization INTEGER,
 	Location VARCHAR(20)
 	)engine=innodb charset=utf8;
-
 INSERT INTO Organizations_discovered VALUES (null, 'ADF Solutions', 1000, 'US');
 INSERT INTO Organizations_discovered VALUES (null, 'AhnLab Inc', 500, 'Germany');
 INSERT INTO Organizations_discovered VALUES (null, 'HackerOne', 33, 'GBR');
@@ -57,7 +56,6 @@ CREATE TABLE Attacks(
     TypeOfAttack VARCHAR(20),
     Description VARCHAR(255)
     )engine=innodb charset=utf8;
-    
 INSERT INTO Attacks VALUES (null, 'Phishing', 'Email', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'Password Attack', 'WEB', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'DoS', 'Network', 'somedescription');
@@ -65,6 +63,7 @@ INSERT INTO Attacks VALUES (null, 'XSS', 'Email', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'CSRF', 'Email', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'SQL Injection', 'Email', 'somedescription');
 INSERT INTO Attacks VALUES (null, 'Session Hijacking', 'Email', 'somedescription');
+INSERT INTO Attacks VALUES (null, 'Malware', 'Email', 'somedescription');
 
 CREATE TABLE CyberAttack_Log(
 	Cyber_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -76,7 +75,6 @@ CREATE TABLE CyberAttack_Log(
 	How_Attack_Delivered VARCHAR(100),
 	Damage DECIMAL(10,1)
 	)engine=innodb charset=utf8;
-	
 INSERT INTO CyberAttack_Log VALUES (null, 'Phishing', 'ADF Solutions', 'Anonymous', 'Apple', now(), 'Sql Injection', 23000);
 INSERT INTO CyberAttack_Log VALUES (null, 'Malware', 'HackerOne', 'Cicada', 'Samsung', '2019-09-13', 'XSS', 55000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', 'SonicWall', 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
@@ -84,6 +82,48 @@ INSERT INTO CyberAttack_Log VALUES (null, 'CSRF', null, 'Ghost Squad Hackers', '
 INSERT INTO CyberAttack_Log VALUES (null, 'CSRF', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
 INSERT INTO CyberAttack_Log VALUES (null, 'CSRF', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
 INSERT INTO CyberAttack_Log VALUES (null, 'DoS', null, 'Ghost Squad Hackers', 'Sony', '2018-08-11', 'Sql Injection', 33000);
+
+CREATE TABLE BreaComp(
+	breacomp_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+	attackedOrg_ID INTEGER,
+	cyberAttackLog_ID INTEGER,
+	insertDate DATE
+	)engine=innodb charset=utf8;
+INSERT INTO BreaComp VALUES (null, 1, 1, now());
+INSERT INTO BreaComp VALUES (null, 2, 2, now());
+INSERT INTO BreaComp VALUES (null, 6, 3, now());
+INSERT INTO BreaComp VALUES (null, 6, 4, now());
+INSERT INTO BreaComp VALUES (null, 6, 5, now());
+INSERT INTO BreaComp VALUES (null, 6, 6, now());
+INSERT INTO BreaComp VALUES (null, 6, 7, now());
+
+CREATE TABLE CyberDiscovered(
+	cb_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+	discoveredOrg_ID INTEGER,
+	cyberAttackLog_ID INTEGER,
+	insertDate DATE
+	)engine=innodb charset=utf8;
+INSERT INTO CyberDiscovered VALUES (null, 1, 1, now());
+INSERT INTO CyberDiscovered VALUES (null, 3, 2, now());
+INSERT INTO CyberDiscovered VALUES (null, 5, 3, now());
+INSERT INTO CyberDiscovered VALUES (null, 5, 4, now());
+INSERT INTO CyberDiscovered VALUES (null, 5, 5, now());
+INSERT INTO CyberDiscovered VALUES (null, 5, 6, now());
+INSERT INTO CyberDiscovered VALUES (null, 5, 7, now());
+
+CREATE TABLE CyberHack(
+	cb_ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+	hacker_ID INTEGER,
+	cyberAttackLog_ID INTEGER,
+	insertDate DATE
+	)engine=innodb charset=utf8;
+INSERT INTO CyberHack VALUES (null, 1, 1, now());
+INSERT INTO CyberHack VALUES (null, 2, 2, now());
+INSERT INTO CyberHack VALUES (null, 5, 3, now());
+INSERT INTO CyberHack VALUES (null, null, 4, now());
+INSERT INTO CyberHack VALUES (null, null, 5, now());
+INSERT INTO CyberHack VALUES (null, null, 6, now());
+INSERT INTO CyberHack VALUES (null, null, 7, now());
 
 DROP procedure IF EXISTS deleteHacker;
 DELIMITER $$
@@ -273,80 +313,8 @@ BEGIN
     END$$
 DELIMITER ;
 
-DROP TRIGGER IF EXISTS updateHackerName;
-DELIMITER $$
-CREATE TRIGGER updateHackerName
-AFTER UPDATE ON Hacker
-FOR EACH ROW
-    BEGIN
-    UPDATE CyberAttack_Log SET Hacker_ID = NEW.Hacker_name WHERE Hacker_ID = OLD.Hacker_name;
-END$$
-DELIMITER ;
-
-DROP TRIGGER IF EXISTS updateAttack;
-DELIMITER $$
-CREATE TRIGGER updateAttack
-AFTER UPDATE ON Attacks
-FOR EACH ROW
-    BEGIN
-    UPDATE CyberAttack_Log SET Attack_ID = NEW.Attack_name WHERE Attack_ID = OLD.Attack_name;
-END$$
-DELIMITER ;
-
-DROP TRIGGER IF EXISTS updateOrg;
-DELIMITER $$
-CREATE TRIGGER updateOrg
-AFTER UPDATE ON Attacked_Organization
-FOR EACH ROW
-    BEGIN
-    UPDATE CyberAttack_Log SET Attacked_Org_ID = NEW.Attack_Org_Name WHERE Attacked_Org_ID = OLD.Attack_Org_Name;
-END$$
-DELIMITER ;
-
-DROP TRIGGER IF EXISTS updateSec;
-DELIMITER $$
-CREATE TRIGGER updateSec
-AFTER UPDATE ON Organizations_discovered
-FOR EACH ROW
-    BEGIN
-    UPDATE CyberAttack_Log SET Disc_Org_ID = NEW.Discov_Org_Name WHERE Disc_Org_ID = OLD.Discov_Org_Name;
-END$$
-DELIMITER ;
-
-DROP EVENT IF EXISTS removeLog;
-DELIMITER $$
-CREATE EVENT removeLog
-ON SCHEDULE EVERY 1 MINUTE 
-STARTS NOW() 
-DO BEGIN
-    DELETE FROM CyberAttack_Log WHERE Cyber_ID = 2;
-END$$
-DELIMITER ;
-
-drop view if exists logView;
-CREATE VIEW logView AS
-SELECT Attack_ID, Disc_Org_ID, Hacker_ID, Attacked_Org_ID, How_Attack_Delivered, Damage FROM CyberAttack_Log;
-
-drop view if exists attacksView;
-CREATE VIEW attacksView AS
-SELECT Attack_Name, TypeOfAttack, Description FROM Attacks;
-
-drop view if exists hackerView;
-CREATE VIEW hackerView AS
-SELECT Hacker_Name, Location FROM Hacker;
-
-drop view if exists attacked_orgView;
-CREATE VIEW attacked_orgView AS
-SELECT Attack_Org_Name, Type_of_Business, Location FROM Attacked_Organization;
-
-drop view if exists securityView;
-CREATE VIEW securityView AS
-SELECT Discov_Org_Name, Location FROM Organizations_discovered;
-
-
 drop procedure if exists avgLossPerAttack;
 DELIMITER $$
-
 CREATE PROCEDURE avgLossPerAttack
 (
     typeOfAttack VARCHAR(50)
@@ -374,6 +342,38 @@ BEGIN
     
     DEALLOCATE PREPARE select_statement;
 
+END $$
+DELIMITER ;
+
+
+drop procedure if exists selectAttacks;
+DELIMITER $$
+CREATE PROCEDURE selectAttacks
+(
+    typeOfAttack VARCHAR(50)
+)
+BEGIN
+    DECLARE select_clause VARCHAR(200);
+    DECLARE where_clause VARCHAR(200);
+    
+    SET select_clause = "SELECT COUNT(Attack_ID) FROM CyberAttack_Log ";
+    SET where_clause = "WHERE ";
+    
+    IF typeOfAttack IS NOT NULL THEN
+        SET where_clause = CONCAT(where_clause, " Attack_ID = '", typeOfAttack, "'");
+    END IF;
+    
+    IF where_clause = "WHERE " THEN
+        SET @dynamic_sql = select_clause;
+    ELSE
+        SET @dynamic_sql = CONCAT(select_clause, where_clause);
+    END IF;
+    
+    PREPARE select_statement FROM @dynamic_sql;
+    
+    EXECUTE select_statement;
+    DEALLOCATE PREPARE select_statement;
+    
 END $$
 DELIMITER ;
 
@@ -426,6 +426,86 @@ BEGIN
     END$$
 DELIMITER ;
 
+DROP TRIGGER IF EXISTS updateHackerName;
+DELIMITER $$
+CREATE TRIGGER updateHackerName
+AFTER UPDATE ON Hacker
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Hacker_ID = NEW.Hacker_name WHERE Hacker_ID = OLD.Hacker_name;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateAttack;
+DELIMITER $$
+CREATE TRIGGER updateAttack
+AFTER UPDATE ON Attacks
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Attack_ID = NEW.Attack_name WHERE Attack_ID = OLD.Attack_name;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateOrg;
+DELIMITER $$
+CREATE TRIGGER updateOrg
+AFTER UPDATE ON Attacked_Organization
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Attacked_Org_ID = NEW.Attack_Org_Name WHERE Attacked_Org_ID = OLD.Attack_Org_Name;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateSec;
+DELIMITER $$
+CREATE TRIGGER updateSec
+AFTER UPDATE ON Organizations_discovered
+FOR EACH ROW
+    BEGIN
+    UPDATE CyberAttack_Log SET Disc_Org_ID = NEW.Discov_Org_Name WHERE Disc_Org_ID = OLD.Discov_Org_Name;
+END$$
+DELIMITER ;
+
+DROP EVENT IF EXISTS removeLog;
+DELIMITER $$
+CREATE EVENT removeLog
+ON SCHEDULE EVERY 1 MINUTE 
+STARTS NOW() 
+DO BEGIN
+    DELETE FROM CyberAttack_Log WHERE Cyber_ID = 2;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateCyberHack;
+DELIMITER $$
+CREATE TRIGGER updateCyberHack
+AFTER INSERT ON CyberAttack_Log
+FOR EACH ROW
+    BEGIN
+    INSERT INTO CyberHack VALUES(null, (select h_ID from Hacker where Hacker_Name = NEW.Hacker_ID), (select COUNT(Cyber_ID) +1 from CyberAttack_Log), now());
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateBreaComp;
+DELIMITER $$
+CREATE TRIGGER updateBreaComp
+AFTER INSERT ON CyberAttack_Log
+FOR EACH ROW
+    BEGIN
+    INSERT INTO BreaComp VALUES(null, (select attOrg_ID from Attacked_Organization where Attack_Org_Name = NEW.Attacked_Org_ID), (select COUNT(Cyber_ID) +1 from CyberAttack_Log), now());
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS updateCyberDiscovered;
+DELIMITER $$
+CREATE TRIGGER updateCyberDiscovered
+AFTER INSERT ON CyberAttack_Log
+FOR EACH ROW
+    BEGIN
+    INSERT INTO CyberDiscovered VALUES(null, (select sec_ID from Organizations_discovered where Discov_Org_Name = NEW.Disc_Org_ID), (select COUNT(Cyber_ID) +1 from CyberAttack_Log), now());
+END$$
+DELIMITER ;
+
 drop function if exists numOfHackers;
 DELIMITER $$
 
@@ -441,3 +521,22 @@ BEGIN
 END $$
 DELIMITER ;
 
+drop view if exists logView;
+CREATE VIEW logView AS
+SELECT Attack_ID, Disc_Org_ID, Hacker_ID, Attacked_Org_ID, How_Attack_Delivered, Damage FROM CyberAttack_Log;
+
+drop view if exists attacksView;
+CREATE VIEW attacksView AS
+SELECT Attack_Name, TypeOfAttack, Description FROM Attacks;
+
+drop view if exists hackerView;
+CREATE VIEW hackerView AS
+SELECT Hacker_Name, Location FROM Hacker;
+
+drop view if exists attacked_orgView;
+CREATE VIEW attacked_orgView AS
+SELECT Attack_Org_Name, Type_of_Business, Location FROM Attacked_Organization;
+
+drop view if exists securityView;
+CREATE VIEW securityView AS
+SELECT Discov_Org_Name, Location FROM Organizations_discovered;
