@@ -482,7 +482,7 @@ CREATE TRIGGER updateCyberHack
 AFTER INSERT ON CyberAttack_Log
 FOR EACH ROW
     BEGIN
-    INSERT INTO CyberHack VALUES(null, (select h_ID from Hacker where Hacker_Name = NEW.Hacker_ID), (select COUNT(Cyber_ID) +1 from CyberAttack_Log), now());
+    INSERT INTO CyberHack VALUES(null, (select h_ID from Hacker where Hacker_Name = NEW.Hacker_ID), (select COUNT(Cyber_ID) from CyberAttack_Log), now());
 END$$
 DELIMITER ;
 
@@ -492,7 +492,7 @@ CREATE TRIGGER updateBreaComp
 AFTER INSERT ON CyberAttack_Log
 FOR EACH ROW
     BEGIN
-    INSERT INTO BreaComp VALUES(null, (select attOrg_ID from Attacked_Organization where Attack_Org_Name = NEW.Attacked_Org_ID), (select COUNT(Cyber_ID) +1 from CyberAttack_Log), now());
+    INSERT INTO BreaComp VALUES(null, (select attOrg_ID from Attacked_Organization where Attack_Org_Name = NEW.Attacked_Org_ID), (select COUNT(Cyber_ID) from CyberAttack_Log), now());
 END$$
 DELIMITER ;
 
@@ -502,7 +502,7 @@ CREATE TRIGGER updateCyberDiscovered
 AFTER INSERT ON CyberAttack_Log
 FOR EACH ROW
     BEGIN
-    INSERT INTO CyberDiscovered VALUES(null, (select sec_ID from Organizations_discovered where Discov_Org_Name = NEW.Disc_Org_ID), (select COUNT(Cyber_ID) +1 from CyberAttack_Log), now());
+    INSERT INTO CyberDiscovered VALUES(null, (select sec_ID from Organizations_discovered where Discov_Org_Name = NEW.Disc_Org_ID), (select COUNT(Cyber_ID) from CyberAttack_Log), now());
 END$$
 DELIMITER ;
 
