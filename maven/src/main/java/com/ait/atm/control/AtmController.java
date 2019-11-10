@@ -3,10 +3,10 @@ package com.ait.atm.control;
 import com.ait.atm.io.AtmInterface;
 import com.ait.boundaries.AccountDAO;
 import com.ait.boundaries.NotificationService;
-import com.ait.exception.ATMAccountException;
-import com.ait.exception.ATMException;
-import com.ait.exception.ATMInsufficientFundsException;
-import com.ait.exception.ATMPINLimitException;
+import com.ait.exception2.ATMAccountException;
+import com.ait.exception2.ATMException;
+import com.ait.exception2.ATMInsufficientFundsException;
+import com.ait.exception2.ATMPINLimitException;
 
 public class AtmController {
 	private AtmInterface atmInterface;

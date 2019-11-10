@@ -39,7 +39,6 @@ class MovieTest {
 		acc = new Account("123", "accName", "email");
 		movie = new Movie("TestMovie", 10.0);
 		msd = mock(MovieStoreDAO.class);
-		//msi = new MovieStoreImpl(msd, ds, ppf, mails);
 		msi = new MovieStoreImpl(msd, ds, ppf, mails);
 	}
 

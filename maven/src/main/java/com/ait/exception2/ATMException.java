@@ -1,4 +1,4 @@
-package com.ait.exception;
+package com.ait.exception2;
 /**
  * Exception used to indicate some error occurred when processing a 
  * request.

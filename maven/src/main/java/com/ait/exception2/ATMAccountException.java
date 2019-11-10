@@ -1,4 +1,4 @@
-package com.ait.exception;
+package com.ait.exception2;
 
 public class ATMAccountException extends ATMException {
 
