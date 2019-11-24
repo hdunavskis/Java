@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.ait.ex6B2.ArrayListPeople"/>
-<fullyQualifiedTypeName name="com.ait.ex6B2.Person"/>
-<fullyQualifiedTypeName name="com.ait.dataTableExample.Person"/>
-<fullyQualifiedTypeName name="com.ait.inheritance.Paper"/>
-<fullyQualifiedTypeName name="com.ait.inheritance.Product"/>
-<fullyQualifiedTypeName name="com.ait.inheritance.B"/>
-<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.ait.polyLab.Instrument"/>
 <fullyQualifiedTypeName name="com.ait.polyLab.Percussion"/>
 <fullyQualifiedTypeName name="com.ait.polyLab.Woodwind"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="com.ait.boundaries.NotificationService"/>
 <fullyQualifiedTypeName name="com.ait.atm.control.AtmController"/>
 <fullyQualifiedTypeName name="com.ait.exception2.ATMException"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.ait.practice.TestException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.ait.practice.Lecturer"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="com.ait.practice.Book"/>
+<fullyQualifiedTypeName name="com.ait.practice.BookStore"/>
+<fullyQualifiedTypeName name="com.ait.practice.BookStore.BookImpl"/>
 </qualifiedTypeNameHistroy>
