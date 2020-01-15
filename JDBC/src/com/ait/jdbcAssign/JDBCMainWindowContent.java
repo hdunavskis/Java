@@ -795,9 +795,6 @@ public class JDBCMainWindowContent extends JInternalFrame implements ActionListe
 	public  void pieGraph(ResultSet rs, String title) {
 		try {
 			DefaultPieDataset dataset = new DefaultPieDataset();
-			ResultSetMetaData rsmd = rs.getMetaData();
-			int numColumns = rsmd.getColumnCount();
-			//System.out.println(numColumns);
 			
 			while (rs.next()) {
 				String attack1 = rs.getString(1);

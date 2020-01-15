@@ -1,0 +1,8 @@
+Attack_ID,Disc_Org_ID,Hacker_ID,Attacked_Org_ID,How_Attack_Delivered,Damage,
+Phishing,ADF Solutions,Anonymous,Apple,Sql Injection,23000.0,
+Malware,newName,Cicada,Samsung,XSS,55000.0,
+DoS,SonicWall,Ghost Squad Hackers,Sony,Sql Injection,33000.0,
+CSRF,null,Ghost Squad Hackers,Sony,Sql Injection,33000.0,
+CSRF,null,Ghost Squad Hackers,Sony,Sql Injection,33000.0,
+CSRF,null,Ghost Squad Hackers,Sony,Sql Injection,33000.0,
+DoS,null,Ghost Squad Hackers,Sony,Sql Injection,33000.0,

@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.ait.polyLab.Instrument"/>
-<fullyQualifiedTypeName name="com.ait.polyLab.Percussion"/>
-<fullyQualifiedTypeName name="com.ait.polyLab.Woodwind"/>
-<fullyQualifiedTypeName name="com.ait.game.Game"/>
-<fullyQualifiedTypeName name="com.ait.game.Player"/>
-<fullyQualifiedTypeName name="com.ait.game.PairOfDice"/>
-<fullyQualifiedTypeName name="com.ait.game.IO"/>
-<fullyQualifiedTypeName name="com.ait.game.Die"/>
-<fullyQualifiedTypeName name="javax.swing.JLabel"/>
-<fullyQualifiedTypeName name="javax.swing.JFormattedTextField"/>
-<fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Formatter"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.ait.t.C"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="com.ait.jdbcAssign.JDBCMainWindow"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
@@ -40,7 +28,6 @@
 <fullyQualifiedTypeName name="com.ait.exception.MovieStoreUserException"/>
 <fullyQualifiedTypeName name="com.ait.exception.MovieNotAvailable"/>
 <fullyQualifiedTypeName name="com.ait.exception.MovieStoreDownloadException"/>
-<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 <fullyQualifiedTypeName name="com.ait.exception.MovieStoreException"/>
 <fullyQualifiedTypeName name="org.mockito.junit.MockitoJUnit"/>
 <fullyQualifiedTypeName name="com.ait.atm.control.Account"/>
@@ -50,7 +37,6 @@
 <fullyQualifiedTypeName name="com.ait.boundaries.NotificationService"/>
 <fullyQualifiedTypeName name="com.ait.atm.control.AtmController"/>
 <fullyQualifiedTypeName name="com.ait.exception2.ATMException"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.ait.practice.TestException"/>
@@ -60,4 +46,18 @@
 <fullyQualifiedTypeName name="com.ait.practice.Book"/>
 <fullyQualifiedTypeName name="com.ait.practice.BookStore"/>
 <fullyQualifiedTypeName name="com.ait.practice.BookStore.BookImpl"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.instrument.Instrumentation"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.ait.t.Animal"/>
+<fullyQualifiedTypeName name="com.ait.inheritance.B"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
+<fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
 </qualifiedTypeNameHistroy>
