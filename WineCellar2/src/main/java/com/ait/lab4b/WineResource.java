@@ -10,7 +10,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -66,21 +65,7 @@ public class WineResource {
 		return Response.status(Response.Status.NOT_FOUND).entity("Entity not found for " + wineID).build();
 	}
 
-	@GET
-	@Path("search/{query}")
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_ATOM_XML})
-	public List<Wine> findByName(@PathParam("query")String query){
-		
-		return dao.findByName(query);
-		
-	}
-	
-	@GET
-	@Path("/grapes")
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_ATOM_XML})
-	public List<Wine> findByCountryAndGrapes(@QueryParam("country") String country, @QueryParam("grapes") String grapes){
-		return dao.findByCountryAndGrapes(country, grapes);
-	}
+
 
 
 
