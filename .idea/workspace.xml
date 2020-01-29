@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd336186-a1f8-4230-832f-71caa5a9f9f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments.gen" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/05b0fe8524860bd73cbb07ef30fb34cc/segments.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments.gen" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/version.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/DAO/MovieStoreDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/atm/control/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/atm/control/AtmController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/atm/io/AtmInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/boundaries/AccountDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/boundaries/NotificationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/download/DownloadServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception/MovieNotAvailable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception/MovieStoreDownloadException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception/MovieStoreException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception/MovieStoreUserException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception2/ATMAccountException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception2/ATMException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception2/ATMInsufficientFundsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/exception2/ATMPINLimitException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/game/DiceRollerApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/game/Die.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/game/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/game/IO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/game/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/message/MailServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/movie/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/moviestore/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/moviestore/MovieStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/moviestore/MovieStoreImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/moviestore/MovieTransaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/payment/PayPalFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/retailers/BiggestBazarRetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/retailers/Inventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/retailers/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/retailers/Offer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/retailers/PublicAddressSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/stock/Stock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/stock/StockBroker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/main/java/com/ait/stock/StockListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/test/java/com/ait/atm/AtmTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/test/java/com/ait/gameTest/GameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/test/java/com/ait/movie/MovieTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/test/java/com/ait/retailersTest/RetailersInventoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/src/test/java/com/ait/stockTest/StockListenerTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="false" />
+        <option name="checksumPolicy" value="FAIL" />
+        <option name="failureBehavior" value="FAST" />
+        <option name="localRepository" value="" />
+        <option name="mavenHome" value="" />
+        <option name="nonRecursive" value="false" />
+        <option name="outputLevel" value="INFO" />
+        <option name="pluginUpdatePolicy" value="DEFAULT" />
+        <option name="printErrorStackTraces" value="false" />
+        <option name="usePluginRegistry" value="false" />
+        <option name="userSettingsFile" value="" />
+        <option name="workOffline" value="false" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="createModuleGroups" value="false" />
+        <option name="createModulesForAggregators" value="true" />
+        <option name="dedicatedModuleDir" value="" />
+        <option name="downloadDocsAutomatically" value="false" />
+        <option name="downloadSourcesAutomatically" value="false" />
+        <option name="excludeTargetFolder" value="true" />
+        <option name="generatedSourcesFolder" value="AUTODETECT" />
+        <option name="importAutomatically" value="false" />
+        <option name="keepSourceFolders" value="true" />
+        <option name="lookForNested" value="false" />
+        <option name="updateFoldersOnImportPhase" value="process-resources" />
+        <option name="useMavenOutput" value="true" />
+      </MavenImportingSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list />
+    </option>
+  </component>
+  <component name="ProjectId" id="1WWonLUlrwZ8wzSG3OE7VFtQeWc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="JBoss 15.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 15.0.1.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/web_war_exploded" />
+      <deployment>
+        <artifact name="web:war exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="" />
+        <option name="USERNAME" value="" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="web:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd336186-a1f8-4230-832f-71caa5a9f9f1" name="Default Changelist" comment="" />
+      <created>1579274877853</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579274877853</updated>
+      <workItem from="1579274883975" duration="674000" />
+      <workItem from="1579810128382" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="743" y="264" key="FileChooserDialogImpl" timestamp="1579275551805">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="743" y="264" key="FileChooserDialogImpl/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1579275551805" />
+    <state x="336" y="85" key="new project wizard" timestamp="1579275556045">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="336" y="85" key="new project wizard/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1579275556045" />
+  </component>
+</project>
