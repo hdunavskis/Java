@@ -12,7 +12,7 @@ import javax.ws.rs.core.Application;
  * annotation.
  * </p>
  */
-@ApplicationPath("/")
+@ApplicationPath("/V1")
 public class RestApplication extends Application {
    /* class body intentionally left blank */
 }

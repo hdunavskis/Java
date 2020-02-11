@@ -1,0 +1,28 @@
+var rootURL = "http://localhost:8080/WineCellarEJB/V1/wines";
+
+var findAll= function(){
+	console.log("findall");
+	$.ajax({
+		type:'GET',
+		url: rootURL,
+		dataType: "json",
+		success: renderList
+	});
+};
+
+var renderList = function(wines){
+	console.log("renderList");
+	$.each(wines, function(index,wine){
+		$('#table_body').append('<tr><td>' + 
+				wine.name+'</td><td>'+
+				wine.grapes+'</td><td>' + 
+				wine.country + '</td><td>' +
+				wine.year+'</td></tr>');
+	});
+};
+
+//retrieve the wine list when the dom is ready
+$(document).ready(function(){
+	findAll();
+	
+});

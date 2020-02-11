@@ -6,7 +6,7 @@ public abstract class Account {
     public Account(double balance){
         this.balance = balance;
     }
-    public abstract boolean withdraw();
+    public abstract boolean withdraw(double amount);
     public abstract String getDescription();
     public double getBalance() {
         return balance;

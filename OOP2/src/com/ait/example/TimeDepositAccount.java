@@ -13,16 +13,26 @@ public class  TimeDepositAccount extends Account{
 
     @Override
     public String toString(){
-        return null;
+    	return getDescription() + ": current balance is " + balance;
     }
 
     @Override
-    public boolean withdraw() {
-        return false;
+    public boolean withdraw(double amount) {
+    	Date today = new Date();
+        if(today.after(maturityDate)) {
+            if(amount <= balance) {
+                balance -= amount;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "Time Deposit Account " + maturityDate;
     }
 }

@@ -1,7 +1,7 @@
 package com.ait.example;
 
 public class Bank {
-    private Customer[] customers;
+    private Customer[] customers = new Customer[20];
     private int numberOfCustomers;
 
     public Bank(){};

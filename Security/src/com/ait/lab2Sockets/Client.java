@@ -13,11 +13,12 @@ public class Client {
 
         InetAddress inetAddress = InetAddress.getByName("localhost");
         Socket socket = new Socket(inetAddress, 2000);
-        OutputStream outputStream = socket.getOutputStream();
-        PrintWriter printWriter = new PrintWriter(outputStream);
+        
         InputStream inputStream = socket.getInputStream();
         Scanner scanner = new Scanner(inputStream);
-
+        OutputStream outputStream = socket.getOutputStream();
+        PrintWriter printWriter = new PrintWriter(outputStream);
+       
         printWriter.println("Test");
         printWriter.flush();
 

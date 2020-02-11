@@ -7,11 +7,14 @@ import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Scanner;
 
 public class Main {
 
@@ -64,6 +67,7 @@ public class Main {
     }
     public static void q3(){
         try {
+        	//key generator
             KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacSHA256");
             SecretKey secretKey = keyGenerator.generateKey();
 
@@ -159,11 +163,13 @@ public class Main {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
 
         //q1();
         //q2();
         //q3();
-        q4();
+        //q4();
+    	
     }
 }
