@@ -21,6 +21,8 @@ import com.ait.winecellar.winecellar_app.model.Wine;
 import com.ait.winecellar.winecellar_app.rest.JaxRsActivator;
 import com.ait.winecellar.winecellar_app.rest.WineWS;
 import com.ait.winecellar.winecellar_app.util.UtilsDAO;
+//Testing DAO Layer towards database
+//This class tests 100% of the WineDAO
 
 	//	@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 		@RunWith(Arquillian.class)
@@ -42,10 +44,6 @@ import com.ait.winecellar.winecellar_app.util.UtilsDAO;
 
 			}
 
-			 
-			@EJB
-			private WineWS wineWS;
-			
 			@EJB
 			private WineDAO wineDAO;
 			
@@ -53,9 +51,9 @@ import com.ait.winecellar.winecellar_app.util.UtilsDAO;
 			private UtilsDAO utilsDAO;
 			 
 			@Before
-			public void setUp() {
+			public void setUp() { 
 				//this function means that we start with an empty table
-				//And add one wine
+				//And add two wines
 				//it should be possible to test with an in memory db for efficiency
 				utilsDAO.deleteTable();
 				Wine wine=new Wine();
@@ -65,15 +63,103 @@ import com.ait.winecellar.winecellar_app.util.UtilsDAO;
 				wine.setRegion("Athlone");
 				wine.setYear("2000");
 				wine.setName("arq");
+				wine.setPicture("pic.jpg");
+				wineDAO.saveWine(wine);
+				wine=new Wine();
+				wine.setCountry("France");
+				wine.setGrapes("merlot");
+				wine.setDescription("another arquillian wine");
+				wine.setRegion("Dublin");
+				wine.setYear("2017");
+				wine.setName("ait");
+				wine.setPicture("pic1.jpg");
 				wineDAO.saveWine(wine);
 			}
 			
 			@Test
 			public void testGetAllWines() {
 				List<Wine> wineList = wineDAO.getAllWines();
-				assertEquals("Data fetch = data persisted", wineList.size(), 1);
+				assertEquals("Data fetch = data persisted", wineList.size(), 2);
 			}
 			
+			@Test
+			public void testWineById() {
+				Wine wine = wineDAO.getWineById(1);
+				assertEquals(wine.getId(), 1);
+				assertEquals(wine.getCountry(), "Ireland");
+				assertEquals(wine.getGrapes(), "sour");
+				assertEquals(wine.getYear(), "2000");
+				assertEquals(wine.getName(), "arq");
+				assertEquals(wine.getDescription(), "arquillian");
+				assertEquals(wine.getRegion(), "Athlone");
+				assertEquals(wine.getPicture(), "pic.jpg");
+				wine = wineDAO.getWineById(2);
+				assertEquals(wine.getId(), 2);
+				assertEquals(wine.getCountry(), "France");
+				assertEquals(wine.getGrapes(), "merlot");
+				assertEquals(wine.getYear(), "2017");
+				assertEquals(wine.getName(), "ait");
+				assertEquals(wine.getDescription(), "another arquillian wine");
+				assertEquals(wine.getRegion(), "Dublin");
+				assertEquals(wine.getPicture(), "pic1.jpg");
+			}
+			@Test
+			public void testAddWine() {
+				Wine wine = new Wine();
+				wine.setCountry("Spain");
+				wine.setDescription("added by arquillian");
+				wine.setGrapes("green");
+				wine.setName("added");
+				wine.setPicture("pic2.jpg");
+				wine.setRegion("Mayo");
+				wine.setYear("2016");
+				wineDAO.saveWine(wine);
+				List<Wine> wineList = wineDAO.getAllWines();
+				assertEquals(wineList.size(), 3);
+				assertEquals(wine.getId(), 3);
+				assertEquals(wine.getCountry(), "Spain");
+				assertEquals(wine.getGrapes(), "green");
+				assertEquals(wine.getYear(), "2016");
+				assertEquals(wine.getName(), "added");
+				assertEquals(wine.getDescription(), "added by arquillian");
+				assertEquals(wine.getRegion(), "Mayo");
+				assertEquals(wine.getPicture(), "pic2.jpg");
+			}
+			
+			@Test
+			public void testRemoveWine() {
+				List<Wine> wineList = wineDAO.getAllWines();
+				assertEquals(wineList.size(), 2);
+				wineDAO.removeWine(2);
+				wineList = wineDAO.getAllWines();
+				assertEquals(wineList.size(), 1);
+				assertEquals(null,wineDAO.getWineById(2));
+			}
+			
+			@Test
+			public void testUpdateWine() {
+				Wine wine = wineDAO.getWineById(2);
+				wine.setCountry("Italy");
+				wine.setYear("2015");
+				wine.setRegion("Westmeath");
+				wineDAO.updateWine(wine);
+				wineDAO.getWineById(2);
+				assertEquals(wine.getCountry(), "Italy");
+				assertEquals(wine.getGrapes(), "merlot");
+				assertEquals(wine.getYear(), "2015");
+				assertEquals(wine.getName(), "ait");
+				assertEquals(wine.getDescription(), "another arquillian wine");
+				assertEquals(wine.getPicture(), "pic1.jpg");
+			}
+			
+	/*
+	 * @Test public void testSearchWinesByName() { List<Wine> wineList =
+	 * wineDAO.getWinesByName("arq"); assertEquals(wineList.size(), 1); Wine
+	 * wine=wineList.get(0); assertEquals("arq",wine.getName());
+	 * assertEquals("Ireland",wine.getCountry());
+	 * 
+	 * }
+	 */
 			
 			
 }

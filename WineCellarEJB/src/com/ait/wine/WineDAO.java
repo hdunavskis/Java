@@ -8,8 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
-
 @Stateless
 @LocalBean
 public class WineDAO {
@@ -42,8 +40,15 @@ public class WineDAO {
 	}
 
 	public List<Wine> getByCountry(String country) {
-		Query query = em.createQuery("Select w from Wine w where w.country like? 1");
+		Query query = em.createQuery("Select w from Wine w where w.country like ? ");
 		query.setParameter(1,"%"+ country.toUpperCase() + "%");
+		return query.getResultList();
+	}
+
+	public List<Wine> searchByName(String name) {
+		
+		Query query = em.createQuery("Select w from Wine w where w.name like ? ");
+		query.setParameter(1,"%"+ name.toUpperCase() + "%");
 		return query.getResultList();
 	}
       

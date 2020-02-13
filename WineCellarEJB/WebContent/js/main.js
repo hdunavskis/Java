@@ -1,5 +1,5 @@
 // The root URL for the RESTful services
-var rootURL = "http://localhost:8080/WineCellarEJB/V1/wines";
+var rootURL = "http://localhost:8080/WineCellarEJB/V1/wines/";
 
 var currentWine;
 
@@ -18,21 +18,11 @@ var newWine=function () {
 	renderDetails(currentWine); // Display empty form
 };
 
-var findAll=function() {
-	console.log('findAll');
-	$.ajax({
-		type: 'GET',
-		url: rootURL,
-		dataType: "json", // data type of response
-		success: renderList
-	});
-};
-
 var findByName= function(searchKey) {
 	console.log('findByName: ' + searchKey);
 	$.ajax({
 		type: 'GET',
-		url: rootURL + '/search/' + searchKey,
+		url: rootURL + 'searchByName/' + searchKey,
 		dataType: "json",
 		success: renderList 
 	});
@@ -42,7 +32,7 @@ var findById= function(id) {
 	console.log('findById: ' + id);
 	$.ajax({
 		type: 'GET',
-		url: rootURL + '/' + id,
+		url: rootURL + id,
 		dataType: "json",
 		success: function(data){
 			$('#btnDelete').show();
@@ -95,7 +85,7 @@ var deleteWine=function() {
 	console.log('deleteWine');
 	$.ajax({
 		type: 'DELETE',
-		url: rootURL + '/' + $('#wineId').val(),
+		url: rootURL + $('#wineId').val(),
 		success: function(data, textStatus, jqXHR){
 			alert('Wine deleted successfully');
                          findAll();
@@ -105,6 +95,17 @@ var deleteWine=function() {
 		}
 	});
 };
+
+var findAll=function() {
+	console.log('findAll');
+	$.ajax({
+		type: 'GET',
+		url: rootURL,
+		dataType: "json", // data type of response
+		success: renderList
+	});
+};
+
 
 var renderList= function(data) {
 	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
@@ -141,9 +142,6 @@ var formToJSON=function () {
 		"description": $('#description').val()
 		});
 };
-
-//When the DOM is ready.
-$.noConflict();
 $(document).ready(function(){
 	// Nothing to delete in initial application state
 	$('#btnDelete').hide();
@@ -181,17 +179,18 @@ $(document).ready(function(){
 		return false;
 	});
 
-	//$('#wineList a').on("click",function() {
-	//	findById($(this).data('identity'));
-	//});
+	$('#wineList a').on("click",function() {
+		findById($(this).data('identity'));
+	});
 	
 	$(document).on("click", '#wineList a', function(){findById(this.id);});
 
 	// Replace broken images with generic wine bottle
-	$("img").error(function(){
+	$("img").on("error",function(){
 	  $(this).attr("src", "pics/generic.jpg");
 
 	});
+	
 	//reset form
 	$('#wineId').val("");
 	$('#name').val("");
@@ -201,6 +200,7 @@ $(document).ready(function(){
 	$('#year').val("");
 	$('#pic').attr('src', "");
 	$('#description').val("");
+
 	findAll();
 });
 

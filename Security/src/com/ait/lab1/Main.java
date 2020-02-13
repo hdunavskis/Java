@@ -1,20 +1,15 @@
 package com.ait.lab1;
 
-import com.sun.org.apache.xml.internal.security.algorithms.MessageDigestAlgorithm;
-
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
-import java.util.Scanner;
 
 public class Main {
 
@@ -35,7 +30,7 @@ public class Main {
         String encodedDigest = Base64.getEncoder().encodeToString(messageDigest);
         System.out.println("Base64 encoded message digest " + encodedDigest);
 
-        String newPassword = "randomPasswor";
+        String newPassword = "randomPassword";
 
         algorithm.reset();
         algorithm.update(newPassword.getBytes());
@@ -166,7 +161,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //q1();
+        q1();
         //q2();
         //q3();
         //q4();

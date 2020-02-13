@@ -27,13 +27,36 @@ public class WineWS {
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response findAllWines() {
-		System.out.println("Get all wines++test");
+		
+		System.out.println("test");
 		List<Wine> wines=wineDao.getAllWines();
-		System.out.println("got wines");
-		System.out.println(wines.size());
+		
 		return Response.status(200).entity(wines).build();
 	}
+	@GET
+	@Path("/search/{country}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response getWineByCountry(@PathParam("country") String country) {
+		try {
+			List<Wine> wines = wineDao.getByCountry(country);
+			return Response.status(200).entity(wines).build();
+		} catch (Exception e) {
+			return Response.status(400).entity(e).build();
+		}
+	}
 	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/searchByName/{name}")
+	public Response searchByName(@PathParam("name") String name) {
+
+		try {
+			return Response.status(200).entity(wineDao.searchByName(name)).build();
+		} catch (Exception e) {
+			return Response.status(400).build();
+		}
+	}
+	 
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	@Path("/{id}")
@@ -45,7 +68,8 @@ public class WineWS {
 			return Response.status(400).build();
 		}
 	}
-
+	
+	
 	@POST
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response saveWine(Wine wine) {
@@ -82,18 +106,4 @@ public class WineWS {
 			return Response.status(400).build();
 		}
 	}
-	
-	@GET
-	@Path("search/{country}")
-	@Produces({MediaType.APPLICATION_JSON})
-	public List<Wine> getWineByCountry(@PathParam("country") String country) {
-		try {
-			return wineDao.getByCountry(country);
-			//return Response.status(200).entity(wineDao.getByCountry(country)).build();
-		} catch (Exception e) {
-			return null;//Response.status(400).entity(e).build();
-		}
-	}
-	
-	
 }
