@@ -9,8 +9,9 @@ import cucumber.api.java.en.When;
 
 class UpdateOrderTest {
 
-	@When("^the user is on the MyOrders page$")
-	public void the_user_is_on_the_MyOrders_page() throws Throwable {
+
+	@When("^the customer is on the MyOrders page$")
+	public void the_customer_is_on_the_MyOrders_page() throws Throwable {
 	   
 	}
 
@@ -19,8 +20,8 @@ class UpdateOrderTest {
 	    
 	}
 
-	@When("^the user clicks on the \"([^\"]*)\" update$")
-	public void the_user_clicks_on_the_update(String arg1) throws Throwable {
+	@When("^the customer clicks on the \"([^\"]*)\" update$")
+	public void the_customer_clicks_on_the_update(String arg1) throws Throwable {
 	
 	}
 

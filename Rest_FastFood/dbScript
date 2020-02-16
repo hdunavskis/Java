@@ -1,0 +1,36 @@
+CREATE database IF NOT EXISTS 'fastFood';
+use  fastFood;
+ 
+DROP TABLE IF EXISTS Food;
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS User;
+
+
+CREATE TABLE `Food` (
+  `name` varchar(20) NOT NULL,
+  `price` decimal(4,2) NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `picture` varchar(20),
+  PRIMARY KEY (`name`)
+) engine=innodb charset=utf8;
+
+CREATE TABLE `Orders` (
+  `orderId` int(50) NOT NULL AUTO_INCREMENT,
+  `foodId` int(50) NOT NULL,
+  `isReady` tinyInt(1) NOT NULL,
+  `isPaid` tinyInt(1) NOT NULL,
+  PRIMARY KEY (`orderId`)
+) engine=innodb charset=utf8;
+
+CREATE TABLE `User` (
+  `userId` int(50) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `salt` varchar(20) NOT NULL,
+  `userType` varchar(20) NOT NULL,
+  PRIMARY KEY (`userId`)
+) engine=innodb charset=utf8;
+
+
+INSERT INTO Food VALUES('Hamburger', 9.20, 'decription', 'burger1.png' ),('Hamburger2', 5.20, 'decription2', 'burger2.png' ),('Hamburger3', 8.50, 'decription3','burger3.png' ),('Hamburger4', 3.20, 'decription4', 'burger4.png' ),('Hamburger5', 6.20, 'decription5', 'burger5.png' ),('Hamburger6', 2.20, 'decription6', 'burger6.png' );
+

@@ -1,4 +1,4 @@
-var rootURL = "http://localhost:8080/WineCellarEJB/V1/wines/";
+var rootURL = "http://localhost:8080/winecellar-app/rest/wines";
 
 var findAll=function() {
 	console.log('findAll');

@@ -28,7 +28,6 @@ public class WineWS {
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Response findAllWines() {
 		
-		System.out.println("test");
 		List<Wine> wines=wineDao.getAllWines();
 		
 		return Response.status(200).entity(wines).build();
