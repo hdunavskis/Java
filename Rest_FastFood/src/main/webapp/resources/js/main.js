@@ -13,19 +13,20 @@ var findAll=function() {
 var renderCards= function(data) {
 	
 	$.each(data, function(index, food) {
-		
+		var foodpic = "resources/images/"+food.picture
+		console.log(foodpic);
 		$('#foodList').append(
-				
+					
 				'<div class="card">'
-				+$('#pic').attr('src', 'resources/images/' + food.picture)
-				+'<img id="#pic" class="card-img-top" alt="..."/>'
+				+'<a href="#">'+' <img height=300 width = 200 src='+foodpic  + ' class="card-img-top" alt="..."/> </a>'
 				+'<div class="card-body">'+'<h5 class= "card-title">' + food.name + '</h5>' 
 				+ '<p class="card-text">'
-				+ food.price + '&euro;</p>' + '<a href = "#" class ="btn btn-primary">' + "Go" + '</a>' 
+				+ food.price + '&euro;</p>' + '<a href = "#" class ="btn btn-primary btn-lg btn-block">' + "Order Now" + '</a>' 
 				+'</div></div>');
 	});
 };
 $(document).ready(function(){
+	console.log("asfasdfasf");
 	findAll();
 	
 });

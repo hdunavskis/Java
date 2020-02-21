@@ -5,11 +5,14 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.persistence.Entity;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+
 import com.ait.Rest_FastFood.data.FoodDAO;
 import com.ait.Rest_FastFood.model.Food;
 
@@ -29,9 +32,9 @@ public class WebServices {
 		try {
 			List<Food> food = foodDAO.getAllFood();
 			
-			return Response.status(200).entity(food).build();
+			return Response.status(204).entity(food).build();
 		} catch (Exception e) {
-			return Response.status(404).build();
+			return Response.status(Status.NOT_FOUND).build();
 		}
 	}
 	

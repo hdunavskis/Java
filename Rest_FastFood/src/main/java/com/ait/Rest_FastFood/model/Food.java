@@ -7,7 +7,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Food {
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	@Id
 	private String name;
 	private double price;
 	private String description;
@@ -15,10 +16,11 @@ public class Food {
 	
 	public Food() {}
 	
-	public Food(String name, double price) {
-		super();
+	public Food(String name, double price, String description, String picture) {
 		this.name = name;
 		this.price = price;
+		this.description = description;
+		this.picture = picture;
 	}
 	public String getName() {
 		return name;
@@ -39,11 +41,6 @@ public class Food {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	@Override
-	public String toString() {
-		return "Food [name=" + name + ", price=" + price + ", description=" + description + "]";
 	}
 
 	public String getPicture() {

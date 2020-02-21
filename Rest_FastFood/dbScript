@@ -32,5 +32,5 @@ CREATE TABLE `User` (
 ) engine=innodb charset=utf8;
 
 
-INSERT INTO Food VALUES('Hamburger', 9.20, 'decription', 'burger1.png' ),('Hamburger2', 5.20, 'decription2', 'burger2.png' ),('Hamburger3', 8.50, 'decription3','burger3.png' ),('Hamburger4', 3.20, 'decription4', 'burger4.png' ),('Hamburger5', 6.20, 'decription5', 'burger5.png' ),('Hamburger6', 2.20, 'decription6', 'burger6.png' );
+INSERT INTO Food VALUES('Noodles with salad', 9.20, 'decription', 'food1.png' ),('Oven baked pasta', 11.75, 'decription2', 'food2.png' ),('Fresh Salmon', 22.50, 'decription3','food3.png' ),('Fresh Trout', 18.40, 'decription4', 'food4.png' ),('Ceasar salad wrap', 8.90, 'decription5', 'food5.png' ),('Healthy dinner', 14.50, 'decription6', 'food6.png' );
 

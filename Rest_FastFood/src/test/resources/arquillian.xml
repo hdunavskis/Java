@@ -29,11 +29,12 @@
    <defaultProtocol type="Servlet 3.0" />
 
      <!-- Example configuration for a remote WildFly instance -->
-   <container qualifier="jboss" default="true">
-        <!-- By default, arquillian will use the JBOSS_HOME environment variable.  Alternatively, the configuration below can be uncommented. -->
-        <!--<configuration> -->
-        <!--<property name="jbossHome">/path/to/wildfly</property> -->
-        <!--</configuration> -->
-   </container>
+   <container qualifier="remote">
+		<!-- Arquillian will deploy to this WildFly server. -->
+		<configuration>
+			<property name="managementAddress">127.0.0.1</property>
+			<property name="managementPort">9990</property>
+		</configuration>
+	</container>
 
 </arquillian>

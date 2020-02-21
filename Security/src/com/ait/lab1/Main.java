@@ -26,6 +26,7 @@ public class Main {
         algorithm.reset();
         algorithm.update(password.getBytes());
         byte[] messageDigest = algorithm.digest();
+        
         System.out.println("length: " + messageDigest.length);
         String encodedDigest = Base64.getEncoder().encodeToString(messageDigest);
         System.out.println("Base64 encoded message digest " + encodedDigest);
