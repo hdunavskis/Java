@@ -47,16 +47,22 @@ public class IntegrationITest {
 		food = new Food("food", 10.0, "picture", "description");
 	}
 	
+	  
 	@Test
 	public void get_full_menu() {
 		utilsDAO.deleteTables();
 		utilsDAO.postFood(food);
-		assertEquals(Response.status(204), webServices.returnFullMenu());
-		//assertEquals(Status.FOUND.toString(), webServices.returnFullMenu());
+		
+		assertEquals(200, webServices.returnFullMenu().getStatus());
 	}
+
+	
 	@Test
-	public void get_full_menu_fail() {
-		//utilsDAO.deleteTables();
-		//assertEquals(Response.status(404), webServices.returnFullMenu());
+	public void get_full_menu_fail() { 
+		 utilsDAO.deleteTables();
+		
+		 assertEquals(404, webServices.returnFullMenu().getStatus());
 	}
+	 
+	 	 
 }

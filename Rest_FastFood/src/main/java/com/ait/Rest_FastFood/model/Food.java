@@ -50,5 +50,10 @@ public class Food {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Food [name=" + name + ", price=" + price + ", description=" + description + ", picture=" + picture
+				+ "]";
+	}
 }

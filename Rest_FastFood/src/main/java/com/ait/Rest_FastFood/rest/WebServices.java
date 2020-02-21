@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.persistence.Entity;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -32,9 +31,13 @@ public class WebServices {
 		try {
 			List<Food> food = foodDAO.getAllFood();
 			
-			return Response.status(204).entity(food).build();
-		} catch (Exception e) {
+			if(food.size() > 0) {
+				return Response.status(200).entity(food).build();
+			}
 			return Response.status(Status.NOT_FOUND).build();
+			
+		} catch (Exception e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
 	

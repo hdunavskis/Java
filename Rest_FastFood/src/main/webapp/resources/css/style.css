@@ -49,8 +49,8 @@ background-position: center;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: f000;
+  background-color: #BEBEBE;
+  color: red;
 }
 
 .card-columns {
