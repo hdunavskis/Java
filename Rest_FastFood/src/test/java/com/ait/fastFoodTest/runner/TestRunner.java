@@ -5,6 +5,6 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="projectfeatures", glue="com.ait.Rest_FastFood.test")
+@CucumberOptions(features="projectfeatures", glue="com.ait.stepDefinitions")
 public class TestRunner {
 }

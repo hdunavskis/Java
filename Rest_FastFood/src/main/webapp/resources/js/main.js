@@ -17,7 +17,7 @@ var renderCards= function(data) {
 		
 		$('#foodList').append(
 					
-				'<div class="card">'
+				'<div class="card ">'
 				+'<a id="#myPic" href="#">'+' <img height=300 width = 200 src='+ foodpic  + ' class="card-img-top" alt="..."/> </a>'
 				+'<div class="card-body">'+'<h5 class= "card-title">' + food.name + '</h5>' 
 				+ '<p class="card-text">'
@@ -32,6 +32,11 @@ $(document).ready(function(){
 	$("#myPic").click(function () {
 	    $('#myModal').modal('show'); 
 	  });
+	
+	
+	
+	
+	
 	findAll();
 	
 });

@@ -2,9 +2,6 @@ package com.ait.integrationTests;
 
 
 import javax.ejb.EJB;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -44,25 +41,20 @@ public class IntegrationITest {
 	
 	@Before
 	public void init() {
-		food = new Food("food", 10.0, "picture", "description");
+		food = new Food("Ceasar salad wrap", 8.90, "decription5", "food5.png");
+		
 	}
 	
-	  
 	@Test
 	public void get_full_menu() {
 		utilsDAO.deleteTables();
 		utilsDAO.postFood(food);
-		
 		assertEquals(200, webServices.returnFullMenu().getStatus());
-	}
-
+	}	 
 	
 	@Test
-	public void get_full_menu_fail() { 
-		 utilsDAO.deleteTables();
-		
-		 assertEquals(404, webServices.returnFullMenu().getStatus());
-	}
-	 
-	 	 
+	public void return_empty_menu() {
+		utilsDAO.deleteTables();
+		assertEquals(404, webServices.returnFullMenu().getStatus());
+	}	 
 }

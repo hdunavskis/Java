@@ -28,20 +28,12 @@ public class WebServices {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response returnFullMenu() {
-		try {
-			List<Food> food = foodDAO.getAllFood();
-			
-			if(food.size() > 0) {
-				return Response.status(200).entity(food).build();
-			}
-			return Response.status(Status.NOT_FOUND).build();
-			
-		} catch (Exception e) {
-			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
-		}
-	}
-	
 
-   
-   
+		List<Food> food = foodDAO.getAllFood();
+
+		if (food.size() > 0) {
+			return Response.status(Status.OK).entity(food).build();
+		}
+		return Response.status(Status.NOT_FOUND).build();
+	}
 }

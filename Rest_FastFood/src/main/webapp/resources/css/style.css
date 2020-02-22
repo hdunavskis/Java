@@ -50,7 +50,7 @@ background-position: center;
 
 .topnav a:hover {
   background-color: #BEBEBE;
-  color: red;
+  color: #000;
 }
 
 .card-columns {
@@ -66,6 +66,11 @@ background-position: center;
 	font-family: serif;
 	font-weight: bold; 
 }
+.card:hover{
+	
+  box-shadow: 3px 3px 5px 6px #ccc; 
+
+}
 .card-body{
   text-align: center;
  
@@ -76,6 +81,8 @@ background-position: center;
 	 font-weight: bold;
 }
 
-
+.btn-primary:hover{
+	border-color: #e67e00;
+}
 
 

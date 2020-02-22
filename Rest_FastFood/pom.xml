@@ -236,7 +236,12 @@
 		<scope>test</scope>
 	</dependency>
 
-
+<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>gherkin</artifactId>
+    <version>10.0.0</version>
+</dependency>
 
 
 	</dependencies>

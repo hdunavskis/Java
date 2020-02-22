@@ -17,7 +17,7 @@ public class FoodDAO {
 	@PersistenceContext
     private EntityManager em;
 
-	public List<Food> getAllFood() {
+	public List<Food> getAllFood(){
 		Query query=em.createQuery("SELECT f FROM Food f");
         return query.getResultList();
 	}
