@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.ait.Rest_FastFood.data.FoodDAO;
+import com.ait.Rest_FastFood.data.OrderDAO;
 import com.ait.Rest_FastFood.model.Food;
 import com.ait.Rest_FastFood.model.User;
 import com.ait.Rest_FastFood.rest.JaxRsActivator;
@@ -26,7 +27,7 @@ public class IntegrationITest {
 	public static Archive<?> createTestArchive() { 
 	return ShrinkWrap.create(JavaArchive.class, "Test.jar") 
 			.addClasses(JaxRsActivator.class, UtilsDAO.class, 
-					FoodDAO.class, WebServices.class) 
+					FoodDAO.class, OrderDAO.class, WebServices.class) 
 			.addPackage(User.class.getPackage()) 
 			.addAsManifestResource("META-INF/persistence.xml",
 	  "persistence.xml") .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");

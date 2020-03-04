@@ -4,8 +4,12 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class ProductCounter {
-	private Map<String, Long> productCountMap = new HashMap<String, Long>();
-	private Map<String, String> productNames = new TreeMap<String, String>();
+	private Map<String, Long> productCountMap = new HashMap<>();
+	private Map<String, String> productNames = new TreeMap<>();
+	
+	   public ProductCounter(Map<String, String> productNames) {
+	        this.productNames = productNames;
+	    }
 	
     public static void main(String[] args) {
 
@@ -23,10 +27,6 @@ public class ProductCounter {
         pc.processList(parts);
         pc.printReport();
         // Create Product Counter Object and process data
-    }
-
-    public ProductCounter(Map<String, String> productNames) {
-        this.productNames = productNames;
     }
 
     public void processList(String[] list) {

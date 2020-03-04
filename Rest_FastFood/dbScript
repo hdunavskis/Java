@@ -16,7 +16,9 @@ CREATE TABLE `Food` (
 
 CREATE TABLE `Orders` (
   `orderId` int(50) NOT NULL AUTO_INCREMENT,
-  `foodId` int(50) NOT NULL,
+  `foodName` varchar(20) NOT NULL,
+  `amount` varchar(20) NOT NULL,
+  `noteToKitchenStaff` varchar(100) NOT NULL,
   `isReady` tinyInt(1) NOT NULL,
   `isPaid` tinyInt(1) NOT NULL,
   PRIMARY KEY (`orderId`)

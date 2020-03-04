@@ -18,7 +18,7 @@ public class ParenMatcher {
         		stack.push(c);
         		break;
         	case ')':
-        		if(stack.size() > 0) {
+        		if(!stack.isEmpty()) {
     				stack.pop();
     			}
         		else {
@@ -27,7 +27,7 @@ public class ParenMatcher {
         		break;
         	}
 		}
-        if(stack.size() > 0) {
+        if(!stack.isEmpty()) {
         	return false;
         }
         return true;

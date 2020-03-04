@@ -1,12 +1,12 @@
 package com.ait.Rest_FastFood.model;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-abstract public class User {
+@MappedSuperclass
+public abstract class User {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userId;

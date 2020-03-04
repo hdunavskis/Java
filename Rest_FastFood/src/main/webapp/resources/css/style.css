@@ -67,13 +67,15 @@ background-position: center;
 	font-weight: bold; 
 }
 .card:hover{
-	
-  box-shadow: 3px 3px 5px 6px #ccc; 
+	box-shadow: 3px 3px 5px 6px #ccc; 
 
 }
 .card-body{
   text-align: center;
  
+}
+.btn:active{
+	 border-color: #e67e00;
 }
 .btn-primary{
 	 background-color: #e67e00 !important;
@@ -84,5 +86,30 @@ background-position: center;
 .btn-primary:hover{
 	border-color: #e67e00;
 }
+.btn-primary.focus, .btn-primary:focus
+{
+	box-shadow: #e67e00 !important;
+}
 
-
+.menuContainer{
+	padding-right: 50px;
+	padding-left: 50px;
+}
+.tableContainer{
+	
+	
+	padding-top: 50px;
+	padding-left: 150px;
+	padding-right: 150px; 
+}
+.dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers{
+	display:none;
+}
+.dt-checkboxes{
+	width: 25px;
+	height: 25px;
+}
+.row-border{
+	width: 100%;
+	border-color: #fff;
+}
