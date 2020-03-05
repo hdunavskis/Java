@@ -95,16 +95,17 @@ background-position: center;
 	padding-right: 50px;
 	padding-left: 50px;
 }
-.tableContainer{
+/* .tableContainer{
 	
 	
 	padding-top: 50px;
 	padding-left: 150px;
 	padding-right: 150px; 
-}
+} */
 .dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers{
 	display:none;
 }
+
 .dt-checkboxes{
 	width: 25px;
 	height: 25px;
@@ -113,3 +114,30 @@ background-position: center;
 	width: 100%;
 	border-color: #fff;
 }
+#modalButton{
+	display: none;
+}
+.tableContainer{
+	
+   position: fixed;
+   top: 30%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   font-size: 25px;
+
+}
+#orders{
+	background-image: url('../images/banner1.png');	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  	background-size: cover;
+}
+.btn-success, .btn-danger{
+	float: right;
+}
+th { 
+  border: solid;
+  border-width: 2px 0;
+}
+

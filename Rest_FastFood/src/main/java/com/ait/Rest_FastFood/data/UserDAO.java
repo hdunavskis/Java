@@ -22,7 +22,6 @@ public class UserDAO {
 		if(query.getResultList().isEmpty()) {
 			throw new Exception();
 		}
-		System.out.println("stuff -> " + query.getResultList().size());
 		return (Customer) (query.getResultList().get(0));	
 	}
 
