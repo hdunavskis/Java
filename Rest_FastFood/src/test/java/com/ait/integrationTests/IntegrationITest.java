@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.ait.Rest_FastFood.controller.PasswordChecker;
+import com.ait.Rest_FastFood.controller.PasswordHasher;
 import com.ait.Rest_FastFood.data.FoodDAO;
 import com.ait.Rest_FastFood.data.OrderDAO;
 import com.ait.Rest_FastFood.model.Food;
@@ -29,7 +29,7 @@ public class IntegrationITest {
 	public static Archive<?> createTestArchive() { 
 	return ShrinkWrap.create(JavaArchive.class, "Test.jar") 
 			.addClasses(JaxRsActivator.class, UtilsDAO.class, 
-					 WebServices.class, PasswordChecker.class) 
+					 WebServices.class, PasswordHasher.class) 
 			.addPackage(User.class.getPackage())
 			.addPackage(FoodDAO.class.getPackage())
 			.addAsManifestResource("META-INF/persistence.xml",
@@ -39,7 +39,8 @@ public class IntegrationITest {
 	
 	@EJB
 	private WebServices webServices;
-	@EJB private UtilsDAO utilsDAO;
+	@EJB 
+	private UtilsDAO utilsDAO;
 	
 	private Food food;
 	

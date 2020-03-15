@@ -17,8 +17,9 @@ public class ShuttleDAO {
 	@PersistenceContext
     private EntityManager em;
 	
+	@SuppressWarnings("unchecked")
 	public List<Shuttle> getAllShuttles() {
-		Query query=em.createQuery("SELECT s FROM Shuttle s");
-        return query.getResultList();
+		return em.createQuery("SELECT s FROM Shuttle s")
+        		.getResultList();
 	}
 }

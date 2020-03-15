@@ -16,9 +16,10 @@ public class OrderDAO {
 	@PersistenceContext
     private EntityManager em;
 
+	@SuppressWarnings("unchecked")
 	public List<Order> getAllOrders(){
-		Query query=em.createQuery("SELECT o FROM Order o");
-        return query.getResultList();
+		return em.createQuery("SELECT o FROM Order o")
+        		.getResultList();
 	}
 	
 	public void placeAnOrder(Order order){
@@ -29,11 +30,11 @@ public class OrderDAO {
 		em.merge(order);
 	}
 
-	public Order getSingleOrder(int orderId) throws Exception{
-		Order order = em.find(Order.class, orderId);
-		if(order == null) {
-			throw new Exception();
-		}
-		return order;	
+	public Order getSingleOrder(int orderId){
+		return em.find(Order.class, orderId);	
+	}
+	
+	public void removeOrder(int orderId){
+		em.remove(getSingleOrder(orderId));	
 	}
 }

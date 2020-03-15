@@ -17,20 +17,20 @@ public class MissionDAO {
 	@PersistenceContext
     private EntityManager em;
 	
+	@SuppressWarnings("unchecked")
 	public List<Mission> getAllMissions() {
 		
-		Query query=em.createQuery("SELECT m FROM Mission m");
-        return query.getResultList();
+		return em.createQuery("SELECT m FROM Mission m")
+				.getResultList();
 	}
 	public Mission getMissionById(int id) {
 		return em.find(Mission.class, id);
 	}
+	@SuppressWarnings("unchecked")
 	public List<Mission> getMissionForAShuttle(String shuttle) {
 		
-		Query query=em.createQuery("SELECT m FROM Mission m where m.orbitor= ?1");
-		
-		query.setParameter(1, shuttle);
-		return query.getResultList();
+		return em.createQuery("SELECT m FROM Mission m where m.orbitor= :shuttle")
+				.setParameter("shuttle", shuttle)
+				.getResultList();
 	}
-
 }

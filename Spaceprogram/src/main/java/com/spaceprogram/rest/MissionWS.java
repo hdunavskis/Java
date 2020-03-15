@@ -39,28 +39,17 @@ public class MissionWS {
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getMyOrder(@PathParam("id") int id) {
-		
-		try {
-			return Response.status(Status.OK).entity(missionDAO.getMissionById(id)).build();
-			
-		} catch (Exception e) {
-		
-			return Response.status(Status.NOT_FOUND).build();
-		}
+		return Response.status(Status.OK).entity(missionDAO.getMissionById(id)).build();
 	}
 	@GET
 	@Path("/searchshuttle/{shuttle}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getMyOrder(@PathParam("shuttle") String shuttle) {
-		
-		try {
-			List<Mission> missions = missionDAO.getMissionForAShuttle(shuttle);
-			return Response.status(Status.OK).entity(missions).build();
-			
-		} catch (Exception e) {
-		
+
+		List<Mission> missions = missionDAO.getMissionForAShuttle(shuttle);
+		if (missions.isEmpty()) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
+		return Response.status(Status.OK).entity(missions).build();
 	}
-	
 }
