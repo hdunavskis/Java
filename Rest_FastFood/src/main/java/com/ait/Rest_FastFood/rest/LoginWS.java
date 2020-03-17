@@ -12,7 +12,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import com.ait.Rest_FastFood.controller.PasswordChecker;
 import com.ait.Rest_FastFood.data.UserDAO;
-import com.ait.Rest_FastFood.model.Customer;
+import com.ait.Rest_FastFood.model.User;
+
 import javax.ws.rs.core.MediaType;
 
 
@@ -27,14 +28,14 @@ public class LoginWS {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response login(@HeaderParam("authorization") String auth) {
-		Customer customer = isAuthenticationValid(auth);
+		User customer = isAuthenticationValid(auth);
 		if (customer != null) {
 			return Response.status(Status.OK).entity(customer).build();
 		}
 		return Response.status(Status.NOT_FOUND).entity("User not found!").build();
 	}
 
-	private Customer isAuthenticationValid(String authentication) {
+	private User isAuthenticationValid(String authentication) {
 		String[] auth = authentication.split("\\s+");
 		String password = null;
 		String userName = null;
@@ -45,7 +46,7 @@ public class LoginWS {
 			userName = userNameAndPasswordEncrypted.substring(0, userNameAndPasswordEncrypted.indexOf(':'));
 			password = userNameAndPasswordEncrypted.substring(userName.length()+1);
 			
-			Customer customer = userDAO.getCustomer(userName);
+			User customer = userDAO.getCustomer(userName);
 			if(PasswordChecker.checkIfPasswordsMatch(password, customer.getSalt(), customer.getPassword())) {
 				return customer;
 			}

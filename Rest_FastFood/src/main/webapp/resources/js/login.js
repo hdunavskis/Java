@@ -16,7 +16,7 @@ var findUser=function() {
 				$('#logout').css('visibility', 'visible');
 				location.href="makeAnOrder.html";	
 			}
-			else{
+			else if(user.userType =='staff'){
 				sessionStorage.setItem('staff', true);
 				location.href="orders.html";
 			}

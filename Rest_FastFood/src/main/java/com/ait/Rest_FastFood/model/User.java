@@ -1,12 +1,15 @@
 package com.ait.Rest_FastFood.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 
-@MappedSuperclass
-public abstract class User {
+@Entity
+@Table(name = "User")
+public class User {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userId;
@@ -18,7 +21,6 @@ public abstract class User {
 	
 	public User() {}
 	public User(int userID, String userName, String password, String userType) {
-		super();
 		this.userId = userID;
 		this.userName = userName;
 		this.password = password;
@@ -67,7 +69,7 @@ public abstract class User {
 	
 	@Override
 	public String toString() {
-		return "User [userID=" + userId + ", userName=" + userName + ", password=" + password + ", userType=" + userType
+		return "User [userID=" + userId + ", userName=" + userName + ", userType=" + userType
 				+ "]";
 	}
 }
