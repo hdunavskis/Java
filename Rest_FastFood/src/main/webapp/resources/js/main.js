@@ -26,7 +26,10 @@ var renderCards= function(data) {
 };
 
 $(document).ready(function(){
-	findAll();
 	
+	if(top.location.pathname === '/Rest_FastFood/' || top.location.pathname === '/Rest_FastFood/index.html'){
+
+		findAll();
+	}
 });
 

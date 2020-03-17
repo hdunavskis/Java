@@ -38,6 +38,17 @@ public class OrdersWS {
 		}
 		return Response.status(Status.NOT_FOUND).build();
 	}
+	@GET
+	@Path("/customer/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getAllUnPaidOrders(@PathParam("id") int customerId) {
+		List<Order> orders = orderDAO.getAllUnPaidOrders(customerId);
+		
+		if(!orders.isEmpty()) {
+			return Response.status(Status.OK).entity(orders).build();
+		}
+		return Response.status(Status.NOT_FOUND).entity("No orders found").build();
+	}
 
 	@GET
 	@Path("/{id}")

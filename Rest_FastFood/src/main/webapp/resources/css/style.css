@@ -22,11 +22,6 @@ background-position: center;
 	width: 100vw;
 	height: 50vh;
 }
-#orderBody{
-	
-	
-    
-}
 .container {
   position: absolute;
   margin: 20px;
@@ -104,13 +99,7 @@ background-position: center;
 	padding-right: 50px;
 	padding-left: 50px;
 }
-/* .tableContainer{
-	
-	
-	padding-top: 50px;
-	padding-left: 150px;
-	padding-right: 150px; 
-} */
+
 .dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers{
 	display:none;
 }
@@ -153,9 +142,11 @@ th {
 
 
 
+
+
 .project-tab {
-    padding: 10%;
-    margin-top: -8%;
+    padding: 5%;
+    margin-top: 3%;
 }
 .project-tab #tabs{
     background: #007b5e;
@@ -191,9 +182,5 @@ th {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-}
-
-.secondTab{
-	float: 500px;
 }
 

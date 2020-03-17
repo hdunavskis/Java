@@ -22,6 +22,13 @@ public class OrderDAO {
         		.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Order> getAllUnPaidOrders(int customerId){
+		return em.createQuery("SELECT o FROM Order o where customerId = :id AND isPaid = 1")
+				.setParameter("id", customerId)
+				.getResultList();
+	}
+	
 	public void placeAnOrder(Order order){
 		em.persist(order);	
 	}

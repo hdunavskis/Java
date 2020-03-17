@@ -19,7 +19,7 @@ import com.ait.Rest_FastFood.model.Food;
 @Path("/food")
 @Stateless
 @LocalBean
-public class WebServices {
+public class FoodWS {
 	
 	@EJB
 	private FoodDAO foodDAO;

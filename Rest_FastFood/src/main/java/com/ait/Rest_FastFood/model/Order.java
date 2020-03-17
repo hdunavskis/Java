@@ -12,6 +12,7 @@ public class Order {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int orderId;
+	private int customerId;
 	private String foodName;
 	private int amount;
 	private String noteToKitchenStaff;
@@ -77,5 +78,13 @@ public class Order {
 	public String toString() {
 		return "Order [orderId=" + orderId + ", foodName=" + foodName + ", amount=" + amount + ", noteToKitchenStaff="
 				+ noteToKitchenStaff + ", isReady=" + isReady + ", isPaid=" + isPaid + "]";
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 }

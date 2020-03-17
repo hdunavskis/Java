@@ -13,7 +13,6 @@ var removeItem=function(id) {
 	$.ajax({
 		type: 'DELETE',
 		url: rootURL + "orders/" + id,
-		//dataType: "json", 
 		success: function(){
 			alert("notify user");
 		}

@@ -14,16 +14,6 @@ CREATE TABLE `Food` (
   PRIMARY KEY (`name`)
 ) engine=innodb charset=utf8;
 
-CREATE TABLE `Orders` (
-  `orderId` int(50) NOT NULL AUTO_INCREMENT,
-  `foodName` varchar(20) NOT NULL,
-  `amount` varchar(20) NOT NULL,
-  `noteToKitchenStaff` varchar(100) NOT NULL,
-  `isReady` tinyInt(1) NOT NULL,
-  `isPaid` tinyInt(1) NOT NULL,
-  PRIMARY KEY (`orderId`)
-) engine=innodb charset=utf8;
-
 CREATE TABLE `User` (
   `userId` int(50) NOT NULL AUTO_INCREMENT,
   `userName` varchar(50) NOT NULL,
@@ -33,6 +23,18 @@ CREATE TABLE `User` (
   PRIMARY KEY (`userId`)
 ) engine=innodb charset=utf8;
 
+CREATE TABLE `Orders` (
+  `orderId` int(50) NOT NULL AUTO_INCREMENT,
+  `customerId` int(50) NOT NULL,
+  `foodName` varchar(20) NOT NULL,
+  `amount` varchar(20) NOT NULL,
+  `noteToKitchenStaff` varchar(100) NOT NULL,
+  `isReady` tinyInt(1) NOT NULL,
+  `isPaid` tinyInt(1) NOT NULL,
+  PRIMARY KEY (`orderId`),
+  CONSTRAINT fk_customer FOREIGN KEY (`customerId`)
+  REFERENCES User(`userId`) 
+) engine=innodb charset=utf8;
 
 INSERT INTO Food VALUES('Noodles with salad', 9.20, 'decription', 'food1.png' ),('Oven baked pasta', 11.75, 'decription2', 'food2.png' ),('Fresh Salmon', 22.50, 'decription3','food3.png' ),('Fresh Trout', 18.40, 'decription4', 'food4.png' ),('Ceasar salad wrap', 8.90, 'decription5', 'food5.png' ),('Healthy dinner', 14.50, 'decription6', 'food6.png' );
 

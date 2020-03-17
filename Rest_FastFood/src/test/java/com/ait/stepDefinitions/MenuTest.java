@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ait.Rest_FastFood.model.Food;
-import com.ait.Rest_FastFood.rest.WebServices;
+import com.ait.Rest_FastFood.rest.FoodWS;
 import com.ait.Rest_FastFood.util.UtilsDAO;
 
 import cucumber.api.java.en.Given;

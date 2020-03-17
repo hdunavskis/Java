@@ -10,17 +10,15 @@ var findUser=function() {
 		    xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
 		},
 		success: function(user){
-			console.log(user.userType);
+			localStorage.setItem("customerID", user.userID);
 			if(user.userType =='customer'){
 				sessionStorage.setItem('customer', true);
-				$('#logout').css('visibility', 'visible');
 				location.href="makeAnOrder.html";	
 			}
 			else if(user.userType =='staff'){
 				sessionStorage.setItem('staff', true);
 				location.href="orders.html";
 			}
-			
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			alert('Login error' + textStatus);
@@ -29,11 +27,7 @@ var findUser=function() {
 };
 
 $(document).ready(function(){
-	
-	if(!sessionStorage.getItem('customer')){
-		$('#logout').css('display', 'none');	
-	}
-	
+
 	$(document).on("click","#orderButton",function(){
 		if(!sessionStorage.getItem('customer')){
 			$('#modalButton').trigger('click');
@@ -44,10 +38,13 @@ $(document).ready(function(){
 	});	
 	$(document).on("click", "#login", function(){
 		
-		if(!sessionStorage.getItem('staff')){
+		if(!sessionStorage.getItem('staff') && !sessionStorage.getItem('customer')){
 			$('#modalButton').trigger('click');
 		}
-		else{
+		else if (sessionStorage.getItem('customer')){
+			location.href="makeAnOrder.html";
+		}
+		else if (sessionStorage.getItem('staff')){
 			location.href="orders.html";
 		}
 	});
@@ -58,11 +55,15 @@ $(document).ready(function(){
 	
 	$(document).on("click", '#logout', function(){
 		sessionStorage.removeItem('customer');
-		$('#logout').css('display', 'none');
 		
 	});
 	$(document).on("click", '#logoutButton', function(){
-		sessionStorage.removeItem('staff');
+		if(sessionStorage.removeItem('staff')){
+			sessionStorage.removeItem('staff');	
+		}
+		else{
+			sessionStorage.removeItem('customer');	
+		}
 		location.href="index.html";
 	});
 });
