@@ -4,12 +4,8 @@
 <meta charset="UTF-8">
 
 <script type="text/javascript" src="resources/js/jquery-3.4.1.js"></script>
-
-<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="resources/js/login.js"></script>
 <script type="text/javascript" src="resources/js/orders.js"></script>
-
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/style.css"/>
  <!-- Favicon -->
@@ -18,22 +14,21 @@
 <title>Orders</title>
 </head>
 <body id="orders">
-<div id="logoutButton"><button type="button" class="btn btn-danger">Logout</button></div>
+<div id="logoutStaff">
+<button id="logoutButton" type="button" class="btn btn-danger">Logout</button>
+</div>
 
 <div class="tableContainer">
-<table class="row-border" id="dataTable">
-
+<table id="dataTable">
+<caption>All Paid Orders</caption>
 <thead>
-
 	<tr>
-		
 		<th>Order ID</th>
+		<th>Customer ID</th>
 		<th>Food Name</th>
 		<th>Amount</th>
 		<th>Notes</th>
-		<th>Confirm</th>
-		<th>Remove</th>
-		
+		<th>Ready</th>
 	</tr>
 
 	</thead>

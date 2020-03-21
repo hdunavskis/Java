@@ -6,7 +6,6 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import com.ait.Rest_FastFood.model.Order;
 
 @Stateless
@@ -18,13 +17,13 @@ public class OrderDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Order> getAllOrders(){
-		return em.createQuery("SELECT o FROM Order o")
+		return em.createQuery("SELECT o FROM Order o where o.isPaid = true AND o.isReady = false")
         		.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Order> getAllUnPaidOrders(int customerId){
-		return em.createQuery("SELECT o FROM Order o where customerId = :id AND isPaid = 1")
+	public List<Order> getAllCustomerOrders(int customerId){
+		return em.createQuery("SELECT o FROM Order o where o.customerId = :id")
 				.setParameter("id", customerId)
 				.getResultList();
 	}

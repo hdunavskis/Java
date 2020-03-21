@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 20px;
   }
 #bannerImage{
 background-position: center;
@@ -9,12 +10,16 @@ background-position: center;
   width: 100vw;
   height: 100vh;
 }
-#logoutButton{
-	padding-left: 50px;
+#logout{
+	padding-right: 100px;
 	padding-top: 20px;
-	float: left;
+	float: right;
 }
-
+#logoutStaff{
+	float:right;
+	margin-right: 20px;
+	margin-top: -4%;
+}
 #bannerImageMenu{
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -100,30 +105,20 @@ background-position: center;
 	padding-left: 50px;
 }
 
-.dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers{
-	display:none;
-}
-
-.dt-checkboxes{
-	width: 25px;
-	height: 25px;
-}
-.row-border{
-	width: 100%;
-	border-color: #fff;
-}
 #modalButton{
 	display: none;
 }
-.tableContainer{
-	
-   position: fixed;
-   top: 30%;
-   left: 50%;
-   -webkit-transform: translate(-50%, -50%);
-   transform: translate(-50%, -50%);
-   font-size: 25px;
 
+td{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 25px;
+}
+#dataTable{
+	width: 80%;
+	margin: auto;
+	margin-top: 5%;
+	
 }
 #orders{
 	background-image: url('../images/banner1.png');	
@@ -131,36 +126,60 @@ background-position: center;
 	background-attachment: fixed;
   	background-size: cover;
 }
-.btn-success, .btn-info{
+.table thead th, #dataTable { 
+	border-bottom: 1px solid #000; 
+	border-top:0;
+	
+}
+#confirmButton{
 	float: right;
+	
 }
-th { 
-  border: solid;
-  border-width: 2px 0;
+#payNow{
+	float:right;
+	margin-right: 20px;
+}
+td{
+	text-align: center;
+	align-items: center;
+	border-bottom: 1px solid #000; 
+	
+}
+th{
+	text-align: center;
+	align-items: center;
+	border-bottom: 1px solid #000; 
+	padding-bottom: 20px;
+	font-size: 25px;
+}
+.centerButton{
+	display: block;;
+	margin: auto;
 }
 
-
-
-
-
-
+textarea.form-control, select.form-control, .btn{
+	font-size: 20px;
+}
+#nav-profile,#nav-tabContent{
+	padding-top: 20px;
+}
+#foodLable, #selectAmountLabel, #noteLabel{
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+.changeButton, .payButton, .cancelButton{
+	visibility: hidden;	
+}
 .project-tab {
     padding: 5%;
     margin-top: 3%;
-}
-.project-tab #tabs{
-    background: #007b5e;
-    color: #eee;
-}
-.project-tab #tabs h6.section-title{
-    color: #eee;
 }
 .project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #0062cc;
     background-color: transparent;
     border-color: transparent transparent #f3f3f3;
     border-bottom: 3px solid !important;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
 }
 .project-tab .nav-link {

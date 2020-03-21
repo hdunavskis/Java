@@ -14,9 +14,11 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/style.css"/>
 </head>
-<body id="orderBody">
+<body>
 
-<div id="logoutButton"><button type="button" class="btn btn-danger">Logout</button></div>
+<div id="logout">
+	<button id="logoutButton" type="button" class="btn btn-danger">Logout</button>
+	</div>
 	<section id="tabs" class="project-tab">
 		<div class="row">
 			<div class="col-md-12">
@@ -24,7 +26,7 @@
 					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
 							aria-controls="nav-home" aria-selected="true">Order Now</a> 
-						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" 
+						<a class="nav-item nav-link"  id="myOrders" data-toggle="tab" href="#nav-profile" role="tab" 
 						aria-controls="nav-profile" aria-selected="false">My Orders</a>
 					</div>
 				</nav>
@@ -33,13 +35,13 @@
 						role="tabpanel" aria-labelledby="nav-home-tab">
 						<form>
 								<div class="form-group">
-									<label for="exampleFormControlInput1">Food</label> 
+									<label id="foodLable" for="food">Food selection</label> 
 									<select class="form-control" id="food">
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="exampleFormControlSelect1">Select Amount</label> <select
-										class="form-control" id="exampleFormControlSelect1">
+									<label id="selectAmountLabel" for="amount">Select Amount</label> 
+									<select class="form-control" id="amount">
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -48,11 +50,14 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="exampleFormControlTextarea1">Note</label>
-									<textarea class="form-control" id="exampleFormControlTextarea1"
+									<label id="noteLabel" for="note">Note</label>
+									<textarea maxlength="255" class="form-control" id="note"
 										rows="3"></textarea>
 								</div>
-								<div id="placeOrder"><button type="button" class="btn btn-success">Confirm</button></div>
+								<div >
+								<button type="button" class="btn btn-info" id="confirmButton">Pay Later</button>
+								<button type="button" class="btn btn-success" id="payNow">Pay Now</button>
+								</div>
 						</form>
 					</div>
 					<div class="tab-pane fade" id="nav-profile" role="tabpanel"
@@ -62,12 +67,13 @@
 							<caption>My Orders</caption>
 							<thead>
 								<tr>
-									<th>Order Nr</th>
+									<th>Order Nr.</th>
 									<th>Food</th>
 									<th>Quantity</th>
 									<th>Note</th>
-									<th style="float:right;">Change</th>
+									<th>Change</th>
 									<th>Pay</th>
+									<th>Cancel</th>
 								</tr>
 							</thead>
 							<tbody>

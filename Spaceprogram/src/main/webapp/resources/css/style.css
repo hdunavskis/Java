@@ -1,0 +1,172 @@
+/* Default Tags */
+/* MG file car one */
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	 background-color:#110000;
+	color: #000;
+}
+
+p {
+	font-size: 10pt;
+	color: #333;
+}
+
+header p{
+    padding-top:20px;
+    float:right;
+    margin:0.5em;
+}
+
+header input{
+    padding-left:20px;
+    width:8em;
+}
+#contents input {
+	width:13em;
+	float: left;
+        padding:0.5em;
+        margin-bottom:1em;
+}
+
+#contents label {
+	float: left;
+	padding:0.5em;
+	margin-bottom:1em;
+	clear:both;
+}
+
+#contents img {
+	margin-left:130px;
+        border: 5px solid red;
+}
+
+
+header select{
+	float:right;
+	margin:20px;
+	font-size:200%;
+}
+label {
+    width: 10em;
+    padding-right: 1em;
+     float: left;
+}
+#data input {
+    width: 15em;
+    margin-bottom: .5em;
+    clear:both;
+}
+
+#logo button{float:right;
+			margin-right:30px;
+			margin-top:10px;}
+
+.details img {
+	width: 150px;
+	height: 100px;
+	margin: 5px;
+	margin-left:20px;
+}
+.details{float:left;
+		  margin:10px;
+		  padding:10px;
+		  width:200px;
+		  font-family:Lucida Console;
+		  border: 4px solid #ff0000;
+		   border-radius:10px;}
+
+.details h1{
+	font-size:140%;
+		color:#e2be2e;
+		margin:5px;
+}		  
+.details h2{
+			margin:5px;
+			padding:5px;
+			text-align:center;
+			font-size:120%;}
+.myButton {
+	
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	font-weight:bold;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0px -1px 14px #2b665e;
+	 margin-left:55px;
+}
+section h1{
+	color:#ff0000;
+	margin:20px;
+	text-align:center;
+	
+}
+span{
+	margin-left:70px;
+}
+a:hover{color:gray;}
+a{color:black;}
+
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+/* the styles for the elements */
+*{
+	margin: 0;
+	padding: 0;
+}
+html {
+	background-color: white;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 87.5%;
+    width: 1000px;
+    margin: 0 auto;
+    border: 3px solid #C80000;
+    border-radius:10px;
+    background-color: #fffded;
+}
+
+/* the styles for the header */
+header {
+	border-bottom: 3px solid #C80000;
+}
+
+footer{
+	border-top:3px solid #C80000;
+	padding:10px;
+	text-align:center;
+	clear:both;
+}
+

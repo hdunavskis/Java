@@ -28,7 +28,7 @@ CREATE TABLE `Orders` (
   `customerId` int(50) NOT NULL,
   `foodName` varchar(20) NOT NULL,
   `amount` varchar(20) NOT NULL,
-  `noteToKitchenStaff` varchar(100) NOT NULL,
+  `noteToKitchenStaff` varchar(255),
   `isReady` tinyInt(1) NOT NULL,
   `isPaid` tinyInt(1) NOT NULL,
   PRIMARY KEY (`orderId`),

@@ -41,13 +41,13 @@ public class OrdersWS {
 	@GET
 	@Path("/customer/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAllUnPaidOrders(@PathParam("id") int customerId) {
-		List<Order> orders = orderDAO.getAllUnPaidOrders(customerId);
+	public Response getAllCustomerOrders(@PathParam("id") int customerId) {
+		List<Order> orders = orderDAO.getAllCustomerOrders(customerId);
 		
-		if(!orders.isEmpty()) {
-			return Response.status(Status.OK).entity(orders).build();
+		if(orders.isEmpty()) {
+			return Response.status(Status.NOT_FOUND).entity("No results").build();
 		}
-		return Response.status(Status.NOT_FOUND).entity("No orders found").build();
+		return Response.status(Status.OK).entity(orders).build();
 	}
 
 	@GET
@@ -60,24 +60,22 @@ public class OrdersWS {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response createAnOrder(Order order) {
-
+		
 		orderDAO.placeAnOrder(order);
 
-		return Response.status(Status.CREATED).build();
+		return Response.status(Status.OK).build();
 	}
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateOrder(
-			@QueryParam("orderId") int orderId, @QueryParam("amount") int amount, @QueryParam("note") String note) {
+	public Response updateOrder(Order order) {
 		
-		Order order = orderDAO.getSingleOrder(orderId);
+		Order updateOrder = orderDAO.getSingleOrder(order.getOrderId());
 		
-		if(order == null) {
+		if(updateOrder == null) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		order.setNoteToKitchenStaff(note);
-		order.setAmount(amount);
+		
 		orderDAO.update(order);
 
 		return Response.status(Status.NO_CONTENT).build();

@@ -18,12 +18,14 @@ public class Order {
 	private String noteToKitchenStaff;
 	private boolean isReady;
 	private boolean isPaid;
-	
+
+
 	public Order() {}
 	
-	public Order(int orderId, String foodName, int amount, String noteToKitchenStaff, boolean isReady, boolean isPaid) {
-		super();
+	public Order(int orderId, String foodName, int customerId, int amount, String noteToKitchenStaff, boolean isReady, boolean isPaid) {
+		
 		this.orderId = orderId;
+		this.customerId = customerId;
 		this.foodName = foodName;
 		this.amount = amount;
 		this.noteToKitchenStaff = noteToKitchenStaff;
@@ -74,17 +76,18 @@ public class Order {
 		this.noteToKitchenStaff = noteToKitchenStaff;
 	}
 
-	@Override
-	public String toString() {
-		return "Order [orderId=" + orderId + ", foodName=" + foodName + ", amount=" + amount + ", noteToKitchenStaff="
-				+ noteToKitchenStaff + ", isReady=" + isReady + ", isPaid=" + isPaid + "]";
-	}
-
 	public int getCustomerId() {
 		return customerId;
 	}
 
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", customerId=" + customerId + ", foodName=" + foodName + ", amount="
+				+ amount + ", noteToKitchenStaff=" + noteToKitchenStaff + ", isReady=" + isReady + ", isPaid=" + isPaid
+				+ ", isConfirmed=" + "]";
 	}
 }

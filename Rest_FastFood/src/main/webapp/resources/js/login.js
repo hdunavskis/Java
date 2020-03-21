@@ -10,7 +10,7 @@ var findUser=function() {
 		    xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
 		},
 		success: function(user){
-			localStorage.setItem("customerID", user.userID);
+			sessionStorage.setItem("cID", user.userID);
 			if(user.userType =='customer'){
 				sessionStorage.setItem('customer', true);
 				location.href="makeAnOrder.html";	
