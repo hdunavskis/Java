@@ -21,17 +21,6 @@ public class Order {
 
 
 	public Order() {}
-	
-	public Order(int orderId, String foodName, int customerId, int amount, String noteToKitchenStaff, boolean isReady, boolean isPaid) {
-		
-		this.orderId = orderId;
-		this.customerId = customerId;
-		this.foodName = foodName;
-		this.amount = amount;
-		this.noteToKitchenStaff = noteToKitchenStaff;
-		this.isReady = isReady;
-		this.isPaid = isPaid;
-	}
 
 	public int getOrderId() {
 		return orderId;
@@ -88,6 +77,6 @@ public class Order {
 	public String toString() {
 		return "Order [orderId=" + orderId + ", customerId=" + customerId + ", foodName=" + foodName + ", amount="
 				+ amount + ", noteToKitchenStaff=" + noteToKitchenStaff + ", isReady=" + isReady + ", isPaid=" + isPaid
-				+ ", isConfirmed=" + "]";
+				+ "]";
 	}
 }

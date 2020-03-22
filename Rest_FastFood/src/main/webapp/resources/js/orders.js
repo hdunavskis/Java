@@ -66,7 +66,6 @@ $(document).ready(function(){
 			var foodName = row.find("td:eq(2)").html();
 			var amount = row.find("td:eq(3)").html();
 			var notes = $('#textArea'+this.id).val();
-			console.log(notes);
 			updateOrder(orderId, customerId,foodName,amount,notes);
 			$(this).closest('tr').remove();	
 			

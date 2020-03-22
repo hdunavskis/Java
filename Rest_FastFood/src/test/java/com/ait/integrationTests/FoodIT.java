@@ -23,7 +23,7 @@ import com.ait.Rest_FastFood.util.UtilsDAO;
 import static org.junit.Assert.*;
 
 @RunWith(Arquillian.class)
-public class IntegrationITest {
+public class FoodIT {
 
 	@Deployment 
 	public static Archive<?> createTestArchive() { 

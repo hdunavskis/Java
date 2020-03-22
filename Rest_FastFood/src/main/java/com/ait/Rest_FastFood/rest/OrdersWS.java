@@ -30,7 +30,7 @@ public class OrdersWS {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAllOrders() {
+	public Response getAllPaidOrders() {
 		List<Order> orders = orderDAO.getAllOrders();
 		
 		return Response.status(Status.OK).entity(orders).build();
@@ -40,10 +40,7 @@ public class OrdersWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAllCustomerOrders(@PathParam("id") int customerId) {
 		List<Order> orders = orderDAO.getAllCustomerOrders(customerId);
-		/*
-		 * if(orders.isEmpty()) { return
-		 * Response.status(Status.NOT_FOUND).entity("No results").build(); }
-		 */
+		
 		return Response.status(Status.OK).entity(orders).build();
 	}
 

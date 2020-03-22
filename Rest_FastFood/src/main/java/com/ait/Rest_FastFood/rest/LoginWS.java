@@ -32,19 +32,17 @@ public class LoginWS {
 		if (customer != null) {
 			return Response.status(Status.OK).entity(customer).build();
 		}
-		return Response.status(Status.NOT_FOUND).entity("User not found!").build();
+		return Response.status(Status.UNAUTHORIZED).entity("User not found!").build();
 	}
 
 	private User isAuthenticationValid(String authentication) {
 		String[] auth = authentication.split("\\s+");
-		String password = null;
-		String userName = null;
 		try {
 			
 			String userNameAndPasswordEncrypted  = new String(Base64.getDecoder().decode(auth[1]));
 			
-			userName = userNameAndPasswordEncrypted.substring(0, userNameAndPasswordEncrypted.indexOf(':'));
-			password = userNameAndPasswordEncrypted.substring(userName.length()+1);
+			String userName = userNameAndPasswordEncrypted.substring(0, userNameAndPasswordEncrypted.indexOf(':'));
+			String password = userNameAndPasswordEncrypted.substring(userName.length()+1);
 			
 			User customer = userDAO.getCustomer(userName);
 			if(PasswordChecker.checkIfPasswordsMatch(password, customer.getSalt(), customer.getPassword())) {

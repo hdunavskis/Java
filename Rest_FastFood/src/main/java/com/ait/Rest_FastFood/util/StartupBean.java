@@ -1,5 +1,8 @@
 package com.ait.Rest_FastFood.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -7,7 +10,9 @@ import javax.inject.Inject;
 
 import com.ait.Rest_FastFood.controller.Password;
 import com.ait.Rest_FastFood.controller.PasswordHasher;
+import com.ait.Rest_FastFood.data.FoodDAO;
 import com.ait.Rest_FastFood.data.UserDAO;
+import com.ait.Rest_FastFood.model.Food;
 import com.ait.Rest_FastFood.model.User;
 
 @Startup
@@ -16,6 +21,8 @@ public class StartupBean {
 	
 	@Inject 
 	private UserDAO userDAO;
+	@Inject
+	private FoodDAO foodDAO;
 	
 	private static final String CUSTOMER_USERNAME = "customer";
 	private static final String CUSTOMER_PASSWORD = "password";
@@ -42,6 +49,16 @@ public class StartupBean {
 			staff.setSalt(password2.getSalt());
 			staff.setUserType("staff");
 			userDAO.save(staff);
+		}
+		if(foodDAO.getAllFood().isEmpty()) {
+			List<Food> food = new ArrayList<>();
+			food.add(new Food("Noodles with salad",9.2,"description","food1.png"));
+			food.add(new Food("Oven baked pasta",11.75,"description","food2.png"));
+			food.add(new Food("Fresh Salmon",22.50,"description","food3.png"));
+			food.add(new Food("Fresh Trout",18.40,"description","food4.png"));
+			food.add(new Food("Ceasar salad wrap",8.90,"description","food5.png"));
+			food.add(new Food("Healthy dinner",14.50,"description","food6.png"));
+			foodDAO.insertFood(food);
 		}
 		
 	}

@@ -21,4 +21,7 @@ public class FoodDAO {
 		return em.createQuery("SELECT f FROM Food f")
 				.getResultList();
 	}
+	public void insertFood(List<Food> food){
+		food.forEach(f -> em.persist(f));
+	}
 }

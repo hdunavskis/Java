@@ -20,12 +20,6 @@ public class User {
 	
 	
 	public User() {}
-	public User(int userID, String userName, String password, String userType) {
-		this.userId = userID;
-		this.userName = userName;
-		this.password = password;
-		this.userType = userType;
-	}
 
 	public int getUserID() {
 		return userId;
