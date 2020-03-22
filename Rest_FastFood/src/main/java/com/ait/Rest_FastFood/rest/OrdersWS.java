@@ -33,20 +33,17 @@ public class OrdersWS {
 	public Response getAllOrders() {
 		List<Order> orders = orderDAO.getAllOrders();
 		
-		if(!orders.isEmpty()) {
-			return Response.status(Status.OK).entity(orders).build();
-		}
-		return Response.status(Status.NOT_FOUND).build();
+		return Response.status(Status.OK).entity(orders).build();
 	}
 	@GET
 	@Path("/customer/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAllCustomerOrders(@PathParam("id") int customerId) {
 		List<Order> orders = orderDAO.getAllCustomerOrders(customerId);
-		
-		if(orders.isEmpty()) {
-			return Response.status(Status.NOT_FOUND).entity("No results").build();
-		}
+		/*
+		 * if(orders.isEmpty()) { return
+		 * Response.status(Status.NOT_FOUND).entity("No results").build(); }
+		 */
 		return Response.status(Status.OK).entity(orders).build();
 	}
 

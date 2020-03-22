@@ -9,11 +9,12 @@ var findAllCustomerOrders =function() {
 		url: rootURL + "orders/customer/" +sessionStorage.getItem("cID"),
 		dataType: "json", 
 		success: function(data){
+			
+			if(!$.trim(data)){
+				clearInterval(c);
+				c = null;
+			}
 			renderTable(data);
-		},
-		error: function(){
-			clearInterval(c);
-			c = null;
 		}
 	});
 };
@@ -24,12 +25,13 @@ var repeatCall =function() {
 		url: rootURL + "orders/customer/" +sessionStorage.getItem("cID"),
 		dataType: "json", 
 		success: function(data){
+			
+			if(!$.trim(data)){
+				clearInterval(c);
+				c = null;
+				
+			}
 			checkIfPaid(data);
-		},
-		error: function(){
-			clearInterval(c);
-			c = null;
-			findAllCustomerOrders();
 		}
 	});
 };
