@@ -41,9 +41,8 @@ var checkIfPaid = function(data){
 		if(order.isReady){
 			clearInterval(c);
 			c = null;
-			if(confirm('Order '+ order.orderId+' is ready')){
-				removeItem(order.orderId);
-			}
+			removeItem(order.orderId);
+			alert('Order '+ order.orderId+' is ready');
 		}
 	});
 }

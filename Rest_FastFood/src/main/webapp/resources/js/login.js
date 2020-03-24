@@ -20,9 +20,10 @@ var findUser=function() {
 				location.href="orders.html";
 			}
 		},
-		error: function(jqXHR, textStatus, errorThrown){
-			alert('Login error' + textStatus);
+		error: function(){
+			alert('Authentication failed!');
 		}
+		
 	});
 };
 

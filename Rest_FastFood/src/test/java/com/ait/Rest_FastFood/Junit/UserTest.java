@@ -1,4 +1,4 @@
-package com.aot.Rest_FastFood.Junit;
+package com.ait.Rest_FastFood.Junit;
 
 import static org.junit.Assert.*;
 import org.junit.Before;

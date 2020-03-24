@@ -27,7 +27,7 @@ var updateOrder=function(id, customerId, foodName, amount, note) {
 
 var renderTable= function(data) {
     var list=data;
-    $('#dataTable td').remove();
+    $('#dataTable').find("tr:gt(0)").remove();
 	$.each(list, function(index, order) {
 		$('#dataTable').append(
 				'<tr><td>'+ order.orderId 
