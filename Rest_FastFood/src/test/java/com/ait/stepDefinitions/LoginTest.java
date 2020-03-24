@@ -43,6 +43,7 @@ public class LoginTest {
 	    WebElement userInput = driver.findElement(By.id("username"));
 	    wait.until(ExpectedConditions.visibilityOf(userInput));
 	    userInput.sendKeys(arg1);
+	    Thread.sleep(500);
 	    WebElement passwordInput = driver.findElement(By.id("password"));
 	    passwordInput.sendKeys(arg2);
 	}
@@ -64,7 +65,7 @@ public class LoginTest {
 
 	@Then("^the user should get  \"([^\"]*)\" authentication failed$")
 	public void the_user_should_get_authentication_failed(String arg1) throws Throwable {
-		
+		Thread.sleep(500);
 		Alert alert = driver.switchTo().alert();
 		
 		assertEquals(arg1, alert.getText());
