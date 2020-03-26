@@ -42,8 +42,8 @@ public class LoginTest {
 	    
 	    WebElement userInput = driver.findElement(By.id("username"));
 	    wait.until(ExpectedConditions.visibilityOf(userInput));
-	    userInput.sendKeys(arg1);
 	    Thread.sleep(500);
+	    userInput.sendKeys(arg1);
 	    WebElement passwordInput = driver.findElement(By.id("password"));
 	    passwordInput.sendKeys(arg2);
 	}
@@ -57,7 +57,8 @@ public class LoginTest {
 
 	@Then("^the user should be logged in \"([^\"]*)\"$")
 	public void the_user_should_be_logged_in(String arg1) throws Throwable {
-		WebElement myOrders = driver.findElement(By.id("nav-home-tab"));
+		Thread.sleep(500);
+		WebElement myOrders = driver.findElement(By.id("myOrders"));
 		wait.until(ExpectedConditions.visibilityOf(myOrders));
 	    assertEquals(arg1, driver.getTitle());
 	    driver.close();

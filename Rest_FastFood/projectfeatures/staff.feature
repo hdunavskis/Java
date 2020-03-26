@@ -1,4 +1,4 @@
-Feature: The Kitchecn Staff page
+Feature: The Kitchen Staff page
   As a kitchen staff I want to be able to see and approve all orders
 
   Background: 
